@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace AlgSim
+namespace AlgSim.ViewModel
 {
     public class MainPageBinding : INotifyPropertyChanged
     {

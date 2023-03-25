@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlgSim.MainPage">
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="Elemi tételek">
+            <MenuFlyoutItem Text="Összegzés" Command="{Binding DisplayMessage}"></MenuFlyoutItem>
+            <MenuFlyoutItem Text="Eldöntés" Command="{Binding DisplayMessage}"></MenuFlyoutItem>
+        </MenuBarItem>
+        <MenuBarItem Text="Összetett tételek">
+            <MenuFlyoutItem Text="Másolás" Command="{Binding DisplayMessage}"></MenuFlyoutItem>
+            <MenuFlyoutItem Text="Kiválogatás" Command="{Binding DisplayMessage}"></MenuFlyoutItem>
+        </MenuBarItem>
+        <MenuBarItem Text="Rendezések">
+            <MenuFlyoutItem Text="Egyszerű cserés" Command="{Binding DisplayMessage}"></MenuFlyoutItem>
+            <MenuFlyoutItem Text="Minimumkiválasztásos" Command="{Binding DisplayMessage}"></MenuFlyoutItem>
+        </MenuBarItem>
+        <MenuBarItem Text="Kilépés"></MenuBarItem>
+    </ContentPage.MenuBarItems>
+</ContentPage>
