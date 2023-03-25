@@ -217,7 +217,6 @@ D:\Projektmunka\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\cre
 D:\Projektmunka\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\hostfxr.dll
 D:\Projektmunka\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\hostpolicy.dll
 D:\Projektmunka\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\mscordaccore.dll
-D:\Projektmunka\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\mscordaccore_amd64_amd64_7.0.323.6910.dll
 D:\Projektmunka\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\mscordbi.dll
 D:\Projektmunka\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\mscorrc.dll
 D:\Projektmunka\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\msquic.dll
@@ -322,3 +321,4 @@ D:\Projektmunka\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\qua
 D:\Projektmunka\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 D:\Projektmunka\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 D:\Projektmunka\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+D:\Projektmunka\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\mscordaccore_amd64_amd64_7.0.423.11508.dll

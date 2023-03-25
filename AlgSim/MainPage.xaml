@@ -2,18 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AlgSim.MainPage">
-
-    
-    
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="Elemi tételek">
+            <MenuFlyoutItem Text="Összegzés" Command="{Binding Sum}"></MenuFlyoutItem>
+            <MenuFlyoutItem Text="Eldöntés" Command="{Binding Decision}"></MenuFlyoutItem>
+        </MenuBarItem>
+        <MenuBarItem Text="Összetett tételek">
+            <MenuFlyoutItem Text="Másolás" Command="{Binding Copy}"></MenuFlyoutItem>
+            <MenuFlyoutItem Text="Kiválogatás" Command="{Binding Selection}"></MenuFlyoutItem>
+        </MenuBarItem>
+        <MenuBarItem Text="Rendezések">
+            <MenuFlyoutItem Text="Egyszerű cserés" Command="{Binding SimpleSelection}"></MenuFlyoutItem>
+            <MenuFlyoutItem Text="Minimumkiválasztásos" Command="{Binding MinimumSelection}"></MenuFlyoutItem>
+        </MenuBarItem>
+        <MenuBarItem Text="Kilépés">
             
-            
-            
-        </VerticalStackLayout>
-    </ScrollView>
-
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
 </ContentPage>
