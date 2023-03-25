@@ -18,5 +18,15 @@ namespace AlgSim
         public ICommand Selection { get; set; }
         public ICommand SimpleSwap { get; set; }
         public ICommand MinimumSelection { get; set; }
+
+        public MainPageBinding()
+        {
+            Sum = new Command(SumLayout);
+        }
+
+        private async void SumLayout()
+        {
+            await Application.Current.MainPage.DisplayAlert("Unable to dial", "Phone number was not valid.", "OK");
+        }
     }
 }

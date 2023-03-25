@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C4JFQ/NYRVih+HQ5iSlR33QiIF6SwriRsZvSLdlez3N2Q5Vc1Jm4bcoTJyCbpaO+nRok2/9QiYjth0BT8JcQ5g==",
+  "dgSpecHash": "gL4vvw3TJ/1Y3ut2CrW1NlIBh+Yo2pvcmj6cn/iM4Ev4wv/8SAIcqtztgVhyuMOQd+5MZPMazJwPNoJSEPCEpg==",
   "success": true,
-  "projectFilePath": "D:\\Projektmunka\\AlgSim\\AlgSim\\AlgSim.csproj",
+  "projectFilePath": "D:\\GitHub\\AlgSim\\AlgSim\\AlgSim.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\elesl\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
     "C:\\Users\\elesl\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",

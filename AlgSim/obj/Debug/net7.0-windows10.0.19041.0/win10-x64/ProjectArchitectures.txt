@@ -1,1 +1,1 @@
-D:\Projektmunka\AlgSim\AlgSim\AlgSim.csproj;x64
+D:\GitHub\AlgSim\AlgSim\AlgSim.csproj;x64

@@ -15,8 +15,6 @@
             <MenuFlyoutItem Text="Egyszerű cserés" Command="{Binding SimpleSelection}"></MenuFlyoutItem>
             <MenuFlyoutItem Text="Minimumkiválasztásos" Command="{Binding MinimumSelection}"></MenuFlyoutItem>
         </MenuBarItem>
-        <MenuBarItem Text="Kilépés">
-            
-        </MenuBarItem>
+        <MenuBarItem Text="Kilépés"></MenuBarItem>
     </ContentPage.MenuBarItems>
 </ContentPage>

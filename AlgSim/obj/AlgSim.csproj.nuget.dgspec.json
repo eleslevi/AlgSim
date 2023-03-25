@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projektmunka\\AlgSim\\AlgSim\\AlgSim.csproj": {}
+    "D:\\GitHub\\AlgSim\\AlgSim\\AlgSim.csproj": {}
   },
   "projects": {
-    "D:\\Projektmunka\\AlgSim\\AlgSim\\AlgSim.csproj": {
+    "D:\\GitHub\\AlgSim\\AlgSim\\AlgSim.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projektmunka\\AlgSim\\AlgSim\\AlgSim.csproj",
+        "projectUniqueName": "D:\\GitHub\\AlgSim\\AlgSim\\AlgSim.csproj",
         "projectName": "AlgSim",
-        "projectPath": "D:\\Projektmunka\\AlgSim\\AlgSim\\AlgSim.csproj",
+        "projectPath": "D:\\GitHub\\AlgSim\\AlgSim\\AlgSim.csproj",
         "packagesPath": "C:\\Users\\elesl\\.nuget\\packages\\",
-        "outputPath": "D:\\Projektmunka\\AlgSim\\AlgSim\\obj\\",
+        "outputPath": "D:\\GitHub\\AlgSim\\AlgSim\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
