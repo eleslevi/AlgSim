@@ -20,6 +20,24 @@ public partial class AppShell : Shell
 
 	private void ViewModel_MenuClicked(Object? sender, EventArgs e)
 	{
-		DisplayAlert("Próba", "Működik a parancs kiírása", "OK");
+		switch (sender.ToString())
+		{
+            case "Sum": Sum_Clicked();
+				break;
+			case "Decision": Decision_Clicked();
+				break;
+			default: DisplayAlert("Hiányzó tétel", "A tétel még nem elérhető", "OK");
+				break;
+        }
 	}
+
+	private void Sum_Clicked()
+	{
+		
+	}
+
+    private void Decision_Clicked()
+    {
+
+    }
 }

@@ -8,19 +8,21 @@ namespace AlgSim.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
-        public DelegateCommand DisplayMessage { get; private set; }
+        public DelegateCommand Sum { get; private set; }
+        public DelegateCommand Decision { get; private set; }
 
         public EventHandler MenuClicked;
 
 
         public MainViewModel() 
         {
-            DisplayMessage = new DelegateCommand(parameter => OnMenuClicked());
+            Sum = new DelegateCommand(parameter => OnMenuClicked("Sum"));
+            Decision = new DelegateCommand(parameter => OnMenuClicked("Decision"));
         }
 
-        private void OnMenuClicked()
+        private void OnMenuClicked(string type_clicked)
         {
-            MenuClicked?.Invoke(this, EventArgs.Empty);
+            MenuClicked?.Invoke(type_clicked, EventArgs.Empty);
         }
     }
 }

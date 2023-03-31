@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AlgSim.MainPage">
+             x:Class="AlgSim.MainPage"
+             x:Name="MainLayoutPage">
     <ContentPage.MenuBarItems>
         <MenuBarItem Text="Elemi tételek">
-            <MenuFlyoutItem Text="Összegzés" Command="{Binding DisplayMessage}"></MenuFlyoutItem>
-            <MenuFlyoutItem Text="Eldöntés" Command="{Binding DisplayMessage}"></MenuFlyoutItem>
+            <MenuFlyoutItem Text="Összegzés" Command="{Binding Sum}"></MenuFlyoutItem>
+            <MenuFlyoutItem Text="Eldöntés" Command="{Binding Decision}"></MenuFlyoutItem>
         </MenuBarItem>
         <MenuBarItem Text="Összetett tételek">
             <MenuFlyoutItem Text="Másolás" Command="{Binding DisplayMessage}"></MenuFlyoutItem>

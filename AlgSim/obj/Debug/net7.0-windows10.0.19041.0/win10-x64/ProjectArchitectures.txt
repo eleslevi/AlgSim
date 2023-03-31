@@ -1,1 +1,1 @@
-C:\Dokumentumok\Programozas\MAUI\Levi\AlgSim\AlgSim.csproj;x64
+D:\GitHub\AlgSim\AlgSim\AlgSim.csproj;x64
