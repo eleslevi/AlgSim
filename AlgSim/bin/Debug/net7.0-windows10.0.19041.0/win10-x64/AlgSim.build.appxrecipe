@@ -34,6 +34,9 @@
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AlgSim.dll">
       <PackagePath>AlgSim.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\Resources\ContentXMLs\Sum_Content.xml">
+      <PackagePath>Resources\ContentXMLs\Sum_Content.xml</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>AlgSim.exe</PackagePath>
     </AppxPackagedFile>

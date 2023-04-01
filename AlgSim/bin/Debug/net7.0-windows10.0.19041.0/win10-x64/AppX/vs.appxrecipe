@@ -29,13 +29,13 @@
     <AppXManifest Include="D:\GitHub\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-03-31T20:59:05.556</Modified>
+      <Modified>2023-04-01T14:11:08.632</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-03-31T20:59:05.268</Modified>
+      <Modified>2023-04-01T14:11:08.324</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AlgSim.runtimeconfig.json">
       <PackagePath>AlgSim.runtimeconfig.json</PackagePath>
@@ -43,11 +43,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AlgSim.dll">
       <PackagePath>AlgSim.dll</PackagePath>
-      <Modified>2023-03-31T20:59:04.577</Modified>
+      <Modified>2023-04-01T14:11:07.544</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\Resources\ContentXMLs\Sum_Content.xml">
+      <PackagePath>Resources\ContentXMLs\Sum_Content.xml</PackagePath>
+      <Modified>2023-04-01T12:40:25.719</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>AlgSim.exe</PackagePath>
-      <Modified>2023-03-31T20:59:04.584</Modified>
+      <Modified>2023-04-01T14:11:07.551</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\elesl\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.4\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -919,7 +923,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\AlgSim.deps.json">
       <PackagePath>AlgSim.deps.json</PackagePath>
-      <Modified>2023-03-31T20:59:05.444</Modified>
+      <Modified>2023-04-01T14:11:08.522</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\7.0.59\ref\net7.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>

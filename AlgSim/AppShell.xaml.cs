@@ -1,4 +1,5 @@
-﻿using AlgSim.ViewModel;
+﻿using AlgSim.View;
+using AlgSim.ViewModel;
 
 namespace AlgSim;
 
@@ -15,6 +16,7 @@ public partial class AppShell : Shell
 		_mainViewModel = mainViewModel;
 
 		_mainViewModel.MenuClicked += new EventHandler(ViewModel_MenuClicked);
+		_mainViewModel.fillWithRandomNumbersClicked += new EventHandler(fillWithRandomNumbers_Clicked);
 
 	}
 
@@ -31,13 +33,21 @@ public partial class AppShell : Shell
         }
 	}
 
-	private void Sum_Clicked()
-	{
+    private void fillWithRandomNumbers_Clicked(Object? sender, EventArgs e)
+    {
 		
+    }
+
+    private void Sum_Clicked()
+	{
+		Navigation.PushAsync(new Sum_Page
+		{
+			BindingContext = _mainViewModel,
+		});
 	}
 
     private void Decision_Clicked()
     {
-
+		
     }
 }
