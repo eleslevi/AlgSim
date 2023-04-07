@@ -1,3 +1,4 @@
 .vs
-AlgSim/bin
-AlgSim/obj
+AlgSim/bin/
+AlgSim/obj/
+.vs/

@@ -8,15 +8,16 @@ public partial class AppShell : Shell
 {
 
 	private MainViewModel _mainViewModel;
+	private SumPage_ViewModel _sumPageViewModel;
 
 	public AppShell(MainViewModel mainViewModel)
 	{
 		InitializeComponent();
 
 		_mainViewModel = mainViewModel;
+		_sumPageViewModel = new SumPage_ViewModel();
 
 		_mainViewModel.MenuClicked += new EventHandler(ViewModel_MenuClicked);
-		_mainViewModel.fillWithRandomNumbersClicked += new EventHandler(fillWithRandomNumbers_Clicked);
 
 	}
 
@@ -33,16 +34,11 @@ public partial class AppShell : Shell
         }
 	}
 
-    private void fillWithRandomNumbers_Clicked(Object? sender, EventArgs e)
-    {
-		
-    }
-
     private void Sum_Clicked()
 	{
 		Navigation.PushAsync(new Sum_Page
 		{
-			BindingContext = _mainViewModel,
+			BindingContext = _sumPageViewModel,
 		});
 	}
 

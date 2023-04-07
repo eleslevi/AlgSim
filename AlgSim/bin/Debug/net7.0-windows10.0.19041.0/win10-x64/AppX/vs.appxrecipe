@@ -29,29 +29,29 @@
     <AppXManifest Include="D:\GitHub\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-04-01T14:11:08.632</Modified>
+      <Modified>2023-04-07T21:06:27.831</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-04-01T14:11:08.324</Modified>
+      <Modified>2023-04-07T21:06:27.538</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AlgSim.runtimeconfig.json">
       <PackagePath>AlgSim.runtimeconfig.json</PackagePath>
-      <Modified>2023-03-31T18:05:06.458</Modified>
+      <Modified>2023-04-06T20:56:33.009</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AlgSim.dll">
       <PackagePath>AlgSim.dll</PackagePath>
-      <Modified>2023-04-01T14:11:07.544</Modified>
+      <Modified>2023-04-07T21:06:26.807</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\Resources\ContentXMLs\Sum_Content.xml">
       <PackagePath>Resources\ContentXMLs\Sum_Content.xml</PackagePath>
-      <Modified>2023-04-01T12:40:25.719</Modified>
+      <Modified>2023-04-06T20:53:20.574</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>AlgSim.exe</PackagePath>
-      <Modified>2023-04-01T14:11:07.551</Modified>
+      <Modified>2023-04-07T21:06:26.814</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\elesl\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.4\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -923,7 +923,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\AlgSim.deps.json">
       <PackagePath>AlgSim.deps.json</PackagePath>
-      <Modified>2023-04-01T14:11:08.522</Modified>
+      <Modified>2023-04-07T21:06:27.720</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\7.0.59\ref\net7.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -943,23 +943,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2023-03-31T18:03:40.874</Modified>
+      <Modified>2023-04-01T16:37:32.987</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2023-03-31T18:03:40.886</Modified>
+      <Modified>2023-04-01T16:37:32.999</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2023-03-31T18:03:40.902</Modified>
+      <Modified>2023-04-01T16:37:33.016</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2023-03-31T18:03:40.926</Modified>
+      <Modified>2023-04-01T16:37:33.040</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.021</Modified>
+      <Modified>2023-04-01T16:37:33.141</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
@@ -971,207 +971,207 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2023-03-31T18:03:41.058</Modified>
+      <Modified>2023-04-01T16:37:33.182</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.228</Modified>
+      <Modified>2023-04-01T16:37:33.376</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.237</Modified>
+      <Modified>2023-04-01T16:37:33.385</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.244</Modified>
+      <Modified>2023-04-01T16:37:33.394</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.258</Modified>
+      <Modified>2023-04-01T16:37:33.408</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.309</Modified>
+      <Modified>2023-04-01T16:37:33.459</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.104</Modified>
+      <Modified>2023-04-01T16:37:33.233</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.106</Modified>
+      <Modified>2023-04-01T16:37:33.235</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.115</Modified>
+      <Modified>2023-04-01T16:37:33.245</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.108</Modified>
+      <Modified>2023-04-01T16:37:33.237</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.110</Modified>
+      <Modified>2023-04-01T16:37:33.240</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.091</Modified>
+      <Modified>2023-04-01T16:37:33.219</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.093</Modified>
+      <Modified>2023-04-01T16:37:33.221</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.102</Modified>
+      <Modified>2023-04-01T16:37:33.231</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.095</Modified>
+      <Modified>2023-04-01T16:37:33.223</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.097</Modified>
+      <Modified>2023-04-01T16:37:33.225</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.065</Modified>
+      <Modified>2023-04-01T16:37:33.192</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.067</Modified>
+      <Modified>2023-04-01T16:37:33.195</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.069</Modified>
+      <Modified>2023-04-01T16:37:33.197</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.072</Modified>
+      <Modified>2023-04-01T16:37:33.200</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.076</Modified>
+      <Modified>2023-04-01T16:37:33.203</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.078</Modified>
+      <Modified>2023-04-01T16:37:33.205</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.080</Modified>
+      <Modified>2023-04-01T16:37:33.207</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.089</Modified>
+      <Modified>2023-04-01T16:37:33.216</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.082</Modified>
+      <Modified>2023-04-01T16:37:33.209</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.084</Modified>
+      <Modified>2023-04-01T16:37:33.211</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.146</Modified>
+      <Modified>2023-04-01T16:37:33.279</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.150</Modified>
+      <Modified>2023-04-01T16:37:33.283</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.154</Modified>
+      <Modified>2023-04-01T16:37:33.289</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.160</Modified>
+      <Modified>2023-04-01T16:37:33.297</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.172</Modified>
+      <Modified>2023-04-01T16:37:33.309</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.130</Modified>
+      <Modified>2023-04-01T16:37:33.263</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.132</Modified>
+      <Modified>2023-04-01T16:37:33.265</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.135</Modified>
+      <Modified>2023-04-01T16:37:33.267</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.137</Modified>
+      <Modified>2023-04-01T16:37:33.270</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.143</Modified>
+      <Modified>2023-04-01T16:37:33.276</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.117</Modified>
+      <Modified>2023-04-01T16:37:33.247</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.120</Modified>
+      <Modified>2023-04-01T16:37:33.250</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.122</Modified>
+      <Modified>2023-04-01T16:37:33.253</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.124</Modified>
+      <Modified>2023-04-01T16:37:33.256</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.128</Modified>
+      <Modified>2023-04-01T16:37:33.260</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.176</Modified>
+      <Modified>2023-04-01T16:37:33.314</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.181</Modified>
+      <Modified>2023-04-01T16:37:33.323</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.187</Modified>
+      <Modified>2023-04-01T16:37:33.329</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.196</Modified>
+      <Modified>2023-04-01T16:37:33.342</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.221</Modified>
+      <Modified>2023-04-01T16:37:33.369</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.091</Modified>
+      <Modified>2023-04-01T16:37:33.219</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.098</Modified>
+      <Modified>2023-04-01T16:37:33.227</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.108</Modified>
+      <Modified>2023-04-01T16:37:33.237</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.122</Modified>
+      <Modified>2023-04-01T16:37:33.252</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\AlgSim\AlgSim\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2023-03-31T18:03:41.158</Modified>
+      <Modified>2023-04-01T16:37:33.289</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

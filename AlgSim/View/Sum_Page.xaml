@@ -51,16 +51,16 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <Entry Grid.Column="0" TextColor="Black" BackgroundColor="White" x:Name="entry0"></Entry>
-                        <Entry Grid.Column="1" TextColor="Black" BackgroundColor="White" x:Name="entry1"></Entry>
-                        <Entry Grid.Column="2" TextColor="Black" BackgroundColor="White" x:Name="entry2"></Entry>
-                        <Entry Grid.Column="3" TextColor="Black" BackgroundColor="White" x:Name="entry3"></Entry>
-                        <Entry Grid.Column="4" TextColor="Black" BackgroundColor="White" x:Name="entry4"></Entry>
-                        <Entry Grid.Column="5" TextColor="Black" BackgroundColor="White" x:Name="entry5"></Entry>
-                        <Entry Grid.Column="6" TextColor="Black" BackgroundColor="White" x:Name="entry6"></Entry>
-                        <Entry Grid.Column="7" TextColor="Black" BackgroundColor="White" x:Name="entry7"></Entry>
-                        <Entry Grid.Column="8" TextColor="Black" BackgroundColor="White" x:Name="entry8"></Entry>
-                        <Entry Grid.Column="9" TextColor="Black" BackgroundColor="White" x:Name="entry9"></Entry>
+                        <Entry Text="{Binding numbers[0]}" Grid.Column="0" TextColor="Black" BackgroundColor="White" x:Name="entry0"></Entry>
+                        <Entry Text="{Binding numbers[1]}" Grid.Column="1" TextColor="Black" BackgroundColor="White" x:Name="entry1"></Entry>
+                        <Entry Text="{Binding numbers[2]}" Grid.Column="2" TextColor="Black" BackgroundColor="White" x:Name="entry2"></Entry>
+                        <Entry Text="{Binding numbers[3]}" Grid.Column="3" TextColor="Black" BackgroundColor="White" x:Name="entry3"></Entry>
+                        <Entry Text="{Binding numbers[4]}" Grid.Column="4" TextColor="Black" BackgroundColor="White" x:Name="entry4"></Entry>
+                        <Entry Text="{Binding numbers[5]}" Grid.Column="5" TextColor="Black" BackgroundColor="White" x:Name="entry5"></Entry>
+                        <Entry Text="{Binding numbers[6]}" Grid.Column="6" TextColor="Black" BackgroundColor="White" x:Name="entry6"></Entry>
+                        <Entry Text="{Binding numbers[7]}" Grid.Column="7" TextColor="Black" BackgroundColor="White" x:Name="entry7"></Entry>
+                        <Entry Text="{Binding numbers[8]}" Grid.Column="8" TextColor="Black" BackgroundColor="White" x:Name="entry8"></Entry>
+                        <Entry Text="{Binding numbers[9]}" Grid.Column="9" TextColor="Black" BackgroundColor="White" x:Name="entry9"></Entry>
                     </Grid>
 
                     <Grid Grid.Row="1">

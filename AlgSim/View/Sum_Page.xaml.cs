@@ -1,6 +1,9 @@
 using System.Reflection;
 using System.Xml;
 using System.Xml.Linq;
+using System.Collections;
+using AlgSim;
+using System.Collections.ObjectModel;
 
 namespace AlgSim.View;
 
@@ -32,5 +35,7 @@ public partial class Sum_Page : ContentPage
         task_line_4.TextColor = Colors.Black;
         task_line_5.TextColor = Colors.Black;
         task_line_6.TextColor = Colors.Black;
+
+        currentPage.currentSumPage = this;
     }
 }
