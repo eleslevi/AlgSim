@@ -35,6 +35,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
                     
                     <Grid Grid.Row="0">
@@ -51,16 +52,16 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <Entry Text="{Binding numbers[0]}" Grid.Column="0" TextColor="Black" BackgroundColor="White" x:Name="entry0"></Entry>
-                        <Entry Text="{Binding numbers[1]}" Grid.Column="1" TextColor="Black" BackgroundColor="White" x:Name="entry1"></Entry>
-                        <Entry Text="{Binding numbers[2]}" Grid.Column="2" TextColor="Black" BackgroundColor="White" x:Name="entry2"></Entry>
-                        <Entry Text="{Binding numbers[3]}" Grid.Column="3" TextColor="Black" BackgroundColor="White" x:Name="entry3"></Entry>
-                        <Entry Text="{Binding numbers[4]}" Grid.Column="4" TextColor="Black" BackgroundColor="White" x:Name="entry4"></Entry>
-                        <Entry Text="{Binding numbers[5]}" Grid.Column="5" TextColor="Black" BackgroundColor="White" x:Name="entry5"></Entry>
-                        <Entry Text="{Binding numbers[6]}" Grid.Column="6" TextColor="Black" BackgroundColor="White" x:Name="entry6"></Entry>
-                        <Entry Text="{Binding numbers[7]}" Grid.Column="7" TextColor="Black" BackgroundColor="White" x:Name="entry7"></Entry>
-                        <Entry Text="{Binding numbers[8]}" Grid.Column="8" TextColor="Black" BackgroundColor="White" x:Name="entry8"></Entry>
-                        <Entry Text="{Binding numbers[9]}" Grid.Column="9" TextColor="Black" BackgroundColor="White" x:Name="entry9"></Entry>
+                        <Entry Text="{Binding numbers[0]}" Grid.Column="0" TextColor="Black" BackgroundColor="{Binding backgroundColors[0]}" x:Name="entry0"></Entry>
+                        <Entry Text="{Binding numbers[1]}" Grid.Column="1" TextColor="Black" BackgroundColor="{Binding backgroundColors[1]}" x:Name="entry1"></Entry>
+                        <Entry Text="{Binding numbers[2]}" Grid.Column="2" TextColor="Black" BackgroundColor="{Binding backgroundColors[2]}" x:Name="entry2"></Entry>
+                        <Entry Text="{Binding numbers[3]}" Grid.Column="3" TextColor="Black" BackgroundColor="{Binding backgroundColors[3]}" x:Name="entry3"></Entry>
+                        <Entry Text="{Binding numbers[4]}" Grid.Column="4" TextColor="Black" BackgroundColor="{Binding backgroundColors[4]}" x:Name="entry4"></Entry>
+                        <Entry Text="{Binding numbers[5]}" Grid.Column="5" TextColor="Black" BackgroundColor="{Binding backgroundColors[5]}" x:Name="entry5"></Entry>
+                        <Entry Text="{Binding numbers[6]}" Grid.Column="6" TextColor="Black" BackgroundColor="{Binding backgroundColors[6]}" x:Name="entry6"></Entry>
+                        <Entry Text="{Binding numbers[7]}" Grid.Column="7" TextColor="Black" BackgroundColor="{Binding backgroundColors[7]}" x:Name="entry7"></Entry>
+                        <Entry Text="{Binding numbers[8]}" Grid.Column="8" TextColor="Black" BackgroundColor="{Binding backgroundColors[8]}" x:Name="entry8"></Entry>
+                        <Entry Text="{Binding numbers[9]}" Grid.Column="9" TextColor="Black" BackgroundColor="{Binding backgroundColors[9]}" x:Name="entry9"></Entry>
                     </Grid>
 
                     <Grid Grid.Row="1">
@@ -71,20 +72,30 @@
                         </Grid.ColumnDefinitions>
 
                         <Button Grid.Column="0" Text="Véletlen számok" TextColor="Black" Command="{Binding fillWithRandomNumbers}"></Button>
-                        <Button Grid.Column="1" Text="Visszaállítás" TextColor="Black" Command="{Binding reset}"></Button>
+                        <Button Grid.Column="1" Text="Visszaállítás" TextColor="Black" Command="{Binding resetNumbers}"></Button>
                         <Button Grid.Column="2" Text="Szimulálás" TextColor="Black" Command="{Binding stepSim}"></Button>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Text="Összeg:" TextColor="Black" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                        <Button Grid.Column="1" IsEnabled="False" BackgroundColor="White" TextColor="Black" Text="{Binding currentSum[0]}" FontSize="Medium"></Button>
                     </Grid>
                 </Grid>
             </StackLayout>
 
             <!-- Második sor tartalma -->
             <StackLayout Orientation="Vertical" HorizontalOptions="Center" Grid.Row="1" BackgroundColor="White">
-                <Label x:Name="task_line_1"></Label>
-                <Label x:Name="task_line_2"></Label>
-                <Label x:Name="task_line_3"></Label>
-                <Label x:Name="task_line_4"></Label>
-                <Label x:Name="task_line_5"></Label>
-                <Label x:Name="task_line_6"></Label>
+                <Label x:Name="task_line_1" BackgroundColor="{Binding taskBackgroundColors[0]}"></Label>
+                <Label x:Name="task_line_2" BackgroundColor="{Binding taskBackgroundColors[1]}"></Label>
+                <Label x:Name="task_line_3" BackgroundColor="{Binding taskBackgroundColors[2]}"></Label>
+                <Label x:Name="task_line_4" BackgroundColor="{Binding taskBackgroundColors[3]}"></Label>
+                <Label x:Name="task_line_5" BackgroundColor="{Binding taskBackgroundColors[4]}"></Label>
+                <Label x:Name="task_line_6" BackgroundColor="{Binding taskBackgroundColors[5]}"></Label>
             </StackLayout>
         </Grid>
 

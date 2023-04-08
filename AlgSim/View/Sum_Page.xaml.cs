@@ -35,7 +35,5 @@ public partial class Sum_Page : ContentPage
         task_line_4.TextColor = Colors.Black;
         task_line_5.TextColor = Colors.Black;
         task_line_6.TextColor = Colors.Black;
-
-        currentPage.currentSumPage = this;
     }
 }
