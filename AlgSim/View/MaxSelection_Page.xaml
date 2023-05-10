@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AlgSim.View.Sum_Page"
-             Title="Összegzés"
+             x:Class="AlgSim.View.MaxSelection_Page"
+             Title=""
              BackgroundColor="LightGray">
     <ScrollView>
         <Grid>
-            <!-- 3 oszlop definiálása -->
+            <!-- 3 sor definiálása -->
             <Grid.RowDefinitions>
                 <RowDefinition Height="600"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
@@ -23,9 +23,10 @@
 
                 <!-- Első sor tartalma -->
                 <StackLayout Orientation="Vertical" HorizontalOptions="Center" Grid.Row="0" BackgroundColor="LightGray" Padding="5,5,5,5">
-                    <Label HorizontalOptions="CenterAndExpand" Text="Szimuláció" TextColor="Black" FontSize="Large"></Label>
+                    <Label HorizontalOptions="CenterAndExpand" Text="Maximumkiválasztás" TextColor="Black" FontSize="Large"></Label>
                     <Grid Padding="5,5,5,5">
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
@@ -75,8 +76,18 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
 
-                            <Label Grid.Column="0" Text="Összeg:" TextColor="Black" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
-                            <Button Grid.Column="1" IsEnabled="False" BackgroundColor="White" TextColor="Black" Text="{Binding currentSum[0]}" FontSize="Medium"></Button>
+                            <Label Grid.Column="0" Text="Index:" TextColor="Black" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                            <Button Grid.Column="1" IsEnabled="False" BackgroundColor="White" TextColor="Black" Text="{Binding max[0]}" FontSize="Medium"></Button>
+                        </Grid>
+
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0" Text="Érték:" TextColor="Black" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                            <Button Grid.Column="1" IsEnabled="False" BackgroundColor="White" TextColor="Black" Text="{Binding max[1]}" FontSize="Medium"></Button>
                         </Grid>
                     </Grid>
                 </StackLayout>
@@ -89,6 +100,7 @@
                     <Label x:Name="task_line_4" BackgroundColor="{Binding taskBackgroundColors[3]}"></Label>
                     <Label x:Name="task_line_5" BackgroundColor="{Binding taskBackgroundColors[4]}"></Label>
                     <Label x:Name="task_line_6" BackgroundColor="{Binding taskBackgroundColors[5]}"></Label>
+                    <Label x:Name="task_line_7" BackgroundColor="{Binding taskBackgroundColors[6]}"></Label>
                 </StackLayout>
             </Grid>
 
@@ -99,12 +111,10 @@
             </StackLayout>
 
             <!-- Harmadik oszlop tartalma -->
-            <ScrollView Grid.Row="2">
-                <StackLayout Orientation="Vertical" HorizontalOptions="Center" BackgroundColor="White">
-                    <Label HorizontalOptions="Center" Text="Feladatok" TextColor="Black" FontSize="Large"></Label>
-                    <Label x:Name="tasks_label"></Label>
-                </StackLayout>
-            </ScrollView>
+            <StackLayout Grid.Row="2" Orientation="Vertical" HorizontalOptions="Center" BackgroundColor="White">
+                <Label HorizontalOptions="Center" Text="Feladatok" TextColor="Black" FontSize="Large"></Label>
+                <Label x:Name="tasks_label"></Label>
+            </StackLayout>
         </Grid>
     </ScrollView>
 </ContentPage>

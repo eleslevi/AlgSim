@@ -10,6 +10,7 @@ namespace AlgSim.ViewModel
     {
         public DelegateCommand Sum { get; private set; }
         public DelegateCommand Decision { get; private set; }
+        public DelegateCommand MaxSelection { get; private set; }
 
         public EventHandler MenuClicked;
 
@@ -18,6 +19,7 @@ namespace AlgSim.ViewModel
         {
             Sum = new DelegateCommand(parameter => OnMenuClicked("Sum"));
             Decision = new DelegateCommand(parameter => OnMenuClicked("Decision"));
+            MaxSelection = new DelegateCommand(parameter => OnMenuClicked("MaxSelection"));
         }
 
         private void OnMenuClicked(string type_clicked)

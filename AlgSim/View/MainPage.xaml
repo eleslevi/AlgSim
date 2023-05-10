@@ -2,19 +2,33 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AlgSim.MainPage">
-    <ContentPage.MenuBarItems>
-        <MenuBarItem Text="Elemi tételek">
-            <MenuFlyoutItem Text="Összegzés" Command="{Binding Sum}"></MenuFlyoutItem>
-            <MenuFlyoutItem Text="Eldöntés" Command="{Binding Decision}"></MenuFlyoutItem>
-        </MenuBarItem>
-        <MenuBarItem Text="Összetett tételek">
-            <MenuFlyoutItem Text="Másolás" Command="{Binding DisplayMessage}"></MenuFlyoutItem>
-            <MenuFlyoutItem Text="Kiválogatás" Command="{Binding DisplayMessage}"></MenuFlyoutItem>
-        </MenuBarItem>
-        <MenuBarItem Text="Rendezések">
-            <MenuFlyoutItem Text="Egyszerű cserés" Command="{Binding DisplayMessage}"></MenuFlyoutItem>
-            <MenuFlyoutItem Text="Minimumkiválasztásos" Command="{Binding DisplayMessage}"></MenuFlyoutItem>
-        </MenuBarItem>
-        <MenuBarItem Text="Kilépés"></MenuBarItem>
-    </ContentPage.MenuBarItems>
+    <!-- dotnet build -f net7.0-android  : for android apk build-->
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Elemi tételek</Label>
+            <Button Grid.Row="1" Text="Összegzés" Command="{Binding Sum}"></Button>
+            <Button Grid.Row="2" Text="Eldöntés" Command="{Binding Decision}"></Button>
+            <Button Grid.Row="3" Text="Maximimumkiválasztás" Command="{Binding MaxSelection}"></Button>
+            
+            <Label Grid.Row="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Összetett tételek</Label>
+            <Button Grid.Row="5" Text="Másolás" Command="{Binding DisplayMessage}"></Button>
+            <Button Grid.Row="6" Text="Kiválogatás" Command="{Binding DisplayMessage}"></Button>
+            
+            <Label Grid.Row="7" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Rendezések</Label>
+            <Button Grid.Row="8" Text="Egyszerű cserés" Command="{Binding DisplayMessage}"></Button>
+            <Button Grid.Row="9" Text="Minimumkiválasztásos" Command="{Binding DisplayMessage}"></Button>
+        </Grid>
+    </ScrollView>
 </ContentPage>

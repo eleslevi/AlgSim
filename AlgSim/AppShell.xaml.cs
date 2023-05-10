@@ -9,6 +9,7 @@ public partial class AppShell : Shell
 
 	private MainViewModel _mainViewModel;
 	private SumPage_ViewModel _sumPageViewModel;
+	private MaxSelection_ViewModel _maxSelectionViewModel;
 
 	public AppShell(MainViewModel mainViewModel)
 	{
@@ -16,6 +17,7 @@ public partial class AppShell : Shell
 
 		_mainViewModel = mainViewModel;
 		_sumPageViewModel = new SumPage_ViewModel();
+		_maxSelectionViewModel = new MaxSelection_ViewModel();
 
 		_mainViewModel.MenuClicked += new EventHandler(ViewModel_MenuClicked);
 
@@ -28,6 +30,8 @@ public partial class AppShell : Shell
             case "Sum": Sum_Clicked();
 				break;
 			case "Decision": Decision_Clicked();
+				break;
+			case "MaxSelection": MaxSelection_Clicked();
 				break;
 			default: DisplayAlert("Hiányzó tétel", "A tétel még nem elérhető", "OK");
 				break;
@@ -46,4 +50,12 @@ public partial class AppShell : Shell
     {
 		
     }
+
+	private void MaxSelection_Clicked()
+	{
+		Navigation.PushAsync(new MaxSelection_Page 
+		{ 
+			BindingContext = _maxSelectionViewModel, 
+		});
+	}
 }
