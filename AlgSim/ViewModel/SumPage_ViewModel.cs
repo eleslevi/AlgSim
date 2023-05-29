@@ -12,9 +12,10 @@ public class SumPage_ViewModel : ViewModelBase
     private Boolean isSimulationRunning = false;
 
     private int sim_cycle_iterator = 0;
-    
-    private Color whiteBC = Colors.White;
-    private Color selectedBC = Colors.LightBlue;
+
+    private String whiteBC = "White";
+    private String blackBC = "Black";
+    private String selectedBC = "LightBlue";
 
     public ObservableCollection<int> currentSum { get; set; } = new ObservableCollection<int> { 0 };
     public ObservableCollection<int> numbers { get; set; } = new ObservableCollection<int>()
@@ -30,27 +31,28 @@ public class SumPage_ViewModel : ViewModelBase
         0,
         0,
     };
-    public ObservableCollection<Color> backgroundColors { get; set; } = new ObservableCollection<Color>()
+    public ObservableCollection<String> backgroundColors { get; set; } = new ObservableCollection<String>()
     {
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
     };
+
     public ObservableCollection<Color> taskBackgroundColors { get; set; } = new ObservableCollection<Color>()
     {
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
     };
 
     private enum cycle
@@ -83,15 +85,15 @@ public class SumPage_ViewModel : ViewModelBase
             switch (current_cycle)
             {
                 case cycle.start_task:
-                    taskBackgroundColors[(int)current_cycle] = whiteBC;
+                    taskBackgroundColors[(int)current_cycle] = Colors.Black;
                     current_cycle = cycle.init_sum;
                     break;
                 case cycle.init_sum:
-                    taskBackgroundColors[(int)current_cycle] = whiteBC;
+                    taskBackgroundColors[(int)current_cycle] = Colors.Black;
                     current_cycle = cycle.step_cycle;
                     break;
                 case cycle.step_cycle:
-                    taskBackgroundColors[(int)current_cycle] = whiteBC;
+                    taskBackgroundColors[(int)current_cycle] = Colors.Black;
                     if (sim_cycle_iterator < numbers.Count)
                     {
                         current_cycle = cycle.add_numbers;
@@ -102,19 +104,19 @@ public class SumPage_ViewModel : ViewModelBase
                     }
                     break;
                 case cycle.add_numbers:
-                    taskBackgroundColors[(int)current_cycle] = whiteBC;
+                    taskBackgroundColors[(int)current_cycle] = Colors.Black;
                     current_cycle = cycle.end_cycle;
                     backgroundColors[sim_cycle_iterator] = selectedBC;
                     break;
                 case cycle.end_cycle:
-                    taskBackgroundColors[(int)current_cycle] = whiteBC;
+                    taskBackgroundColors[(int)current_cycle] = Colors.Black;
                     current_cycle = cycle.step_cycle;
                     currentSum[0] = currentSum[0] + numbers[sim_cycle_iterator];
                     backgroundColors[sim_cycle_iterator] = whiteBC;
                     sim_cycle_iterator++;
                     break;
                 case cycle.end_task:
-                    taskBackgroundColors[(int)current_cycle] = whiteBC;
+                    taskBackgroundColors[(int)current_cycle] = Colors.Black;
                     break;
             }
         }
@@ -132,8 +134,14 @@ public class SumPage_ViewModel : ViewModelBase
             {
                 backgroundColors[i] = whiteBC;
             }
-            OnPropertyChanged(nameof(backgroundColors));
             isSimulationRunning = false;
+            taskBackgroundColors[(int)current_cycle] = Colors.Black;
+            current_cycle = cycle.start_task;
+            currentSum[0] = 0;
+            sim_cycle_iterator = 0;
+            OnPropertyChanged(nameof(backgroundColors));
+            OnPropertyChanged(nameof(taskBackgroundColors));
+            OnPropertyChanged(nameof(currentSum));
         }
     }
 

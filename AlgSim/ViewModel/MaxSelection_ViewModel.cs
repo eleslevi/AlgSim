@@ -13,9 +13,10 @@ public class MaxSelection_ViewModel : ContentPage
 
     private int sim_cycle_iterator = 1;
 
-    private Color whiteBC = Colors.White;
-    private Color selectedBC = Colors.LightBlue;
-    private Color maxBC = Colors.LightGreen;
+    private String whiteBC = "White";
+    private String blackBC = "Black";
+    private String selectedBC = "LightBlue";
+    private String maxBC = "LightGreen";
 
     public ObservableCollection<int> max { get; set; } = new ObservableCollection<int> { 0, 0 };
     public ObservableCollection<int> numbers { get; set; } = new ObservableCollection<int>()
@@ -31,28 +32,29 @@ public class MaxSelection_ViewModel : ContentPage
         0,
         0,
     };
-    public ObservableCollection<Color> backgroundColors { get; set; } = new ObservableCollection<Color>()
+
+    public ObservableCollection<String> backgroundColors { get; set; } = new ObservableCollection<String>()
     {
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
     };
     public ObservableCollection<Color> taskBackgroundColors { get; set; } = new ObservableCollection<Color>()
     {
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
     };
 
     private enum cycle
@@ -86,18 +88,18 @@ public class MaxSelection_ViewModel : ContentPage
             switch (current_cycle)
             {
                 case cycle.start_task:
-                    taskBackgroundColors[(int)current_cycle] = whiteBC;
+                    taskBackgroundColors[(int)current_cycle] = Colors.Black;
                     current_cycle = cycle.init_index;
                     backgroundColors[0] = maxBC;
                     max[0] = 0;
                     max[1] = numbers[0];
                     break;
                 case cycle.init_index:
-                    taskBackgroundColors[(int)current_cycle] = whiteBC;
+                    taskBackgroundColors[(int)current_cycle] = Colors.Black;
                     current_cycle = cycle.step_cycle;
                     break;
                 case cycle.step_cycle:
-                    taskBackgroundColors[(int)current_cycle] = whiteBC;
+                    taskBackgroundColors[(int)current_cycle] = Colors.Black;
                     if (sim_cycle_iterator < numbers.Count)
                     {
                         backgroundColors[sim_cycle_iterator] = selectedBC;
@@ -109,7 +111,7 @@ public class MaxSelection_ViewModel : ContentPage
                     }
                     break;
                 case cycle.check_greater:
-                    taskBackgroundColors[(int)current_cycle] = whiteBC;
+                    taskBackgroundColors[(int)current_cycle] = Colors.Black;
                     if (numbers[sim_cycle_iterator] > numbers[max[0]])
                     {
                         current_cycle = cycle.set_new_max;
@@ -120,7 +122,7 @@ public class MaxSelection_ViewModel : ContentPage
                     }
                     break;
                 case cycle.set_new_max:
-                    taskBackgroundColors[(int)current_cycle] = whiteBC;
+                    taskBackgroundColors[(int)current_cycle] = Colors.Black;
                     current_cycle = cycle.end_cycle;
                     backgroundColors[max[0]] = whiteBC;
                     backgroundColors[sim_cycle_iterator] = maxBC;
@@ -128,7 +130,7 @@ public class MaxSelection_ViewModel : ContentPage
                     max[1] = numbers[sim_cycle_iterator];
                     break;
                 case cycle.end_cycle:
-                    taskBackgroundColors[(int)current_cycle] = whiteBC;
+                    taskBackgroundColors[(int)current_cycle] = Colors.Black;
                     if(sim_cycle_iterator != max[0])
                     {
                         backgroundColors[sim_cycle_iterator] = whiteBC;
@@ -137,7 +139,7 @@ public class MaxSelection_ViewModel : ContentPage
                     sim_cycle_iterator++;
                     break;
                 case cycle.end_task:
-                    taskBackgroundColors[(int)current_cycle] = whiteBC;
+                    taskBackgroundColors[(int)current_cycle] = Colors.Black;
                     break;
             }
         }
@@ -153,16 +155,16 @@ public class MaxSelection_ViewModel : ContentPage
         {
             for (int i = 0; i < backgroundColors.Count; i++)
             {
-                numbers[i] = 0;
                 backgroundColors[i] = whiteBC;
             }
             for (int i = 0; i < taskBackgroundColors.Count; i++)
             {
-                taskBackgroundColors[i] = whiteBC;
+                taskBackgroundColors[i] = Colors.Black;
             }
             max[0] = 0;
             max[1] = 0;
             sim_cycle_iterator = 1;
+            current_cycle = cycle.start_task;
             OnPropertyChanged(nameof(max));
             OnPropertyChanged(nameof(backgroundColors));
             OnPropertyChanged(nameof(taskBackgroundColors));

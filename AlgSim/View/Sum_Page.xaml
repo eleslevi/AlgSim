@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AlgSim.Classes"
              x:Class="AlgSim.View.Sum_Page"
              Title="Összegzés"
-             BackgroundColor="LightGray">
+             BackgroundColor="Black">
+    <ContentPage.Resources>
+        <local:StringToColor x:Key="StringToColor" />
+    </ContentPage.Resources>
     <ScrollView>
         <Grid>
             <!-- 3 oszlop definiálása -->
             <Grid.RowDefinitions>
-                <RowDefinition Height="600"></RowDefinition>
+                <RowDefinition Height="650"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-
+            
             <!-- Második oszlop tartalma -->
             <Grid Grid.Row="0">
                 <!-- Középső oszlopban 2 sor definiálása -->
@@ -22,13 +26,13 @@
                 </Grid.RowDefinitions>
 
                 <!-- Első sor tartalma -->
-                <StackLayout Orientation="Vertical" HorizontalOptions="Center" Grid.Row="0" BackgroundColor="LightGray" Padding="5,5,5,5">
-                    <Label HorizontalOptions="CenterAndExpand" Text="Szimuláció" TextColor="Black" FontSize="Large"></Label>
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Grid.Row="0" Padding="5,5,5,5">
+                    <Label HorizontalOptions="CenterAndExpand" Text="Szimuláció" FontSize="Large"></Label>
                     <Grid Padding="5,5,5,5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"></RowDefinition>
                             <RowDefinition Height="*"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="60"></RowDefinition>
                         </Grid.RowDefinitions>
 
                         <Grid Grid.Row="0">
@@ -45,16 +49,16 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
 
-                            <Entry Text="{Binding numbers[0]}" Grid.Column="0" TextColor="Black" BackgroundColor="{Binding backgroundColors[0]}" x:Name="entry0"></Entry>
-                            <Entry Text="{Binding numbers[1]}" Grid.Column="1" TextColor="Black" BackgroundColor="{Binding backgroundColors[1]}" x:Name="entry1"></Entry>
-                            <Entry Text="{Binding numbers[2]}" Grid.Column="2" TextColor="Black" BackgroundColor="{Binding backgroundColors[2]}" x:Name="entry2"></Entry>
-                            <Entry Text="{Binding numbers[3]}" Grid.Column="3" TextColor="Black" BackgroundColor="{Binding backgroundColors[3]}" x:Name="entry3"></Entry>
-                            <Entry Text="{Binding numbers[4]}" Grid.Column="4" TextColor="Black" BackgroundColor="{Binding backgroundColors[4]}" x:Name="entry4"></Entry>
-                            <Entry Text="{Binding numbers[5]}" Grid.Column="5" TextColor="Black" BackgroundColor="{Binding backgroundColors[5]}" x:Name="entry5"></Entry>
-                            <Entry Text="{Binding numbers[6]}" Grid.Column="6" TextColor="Black" BackgroundColor="{Binding backgroundColors[6]}" x:Name="entry6"></Entry>
-                            <Entry Text="{Binding numbers[7]}" Grid.Column="7" TextColor="Black" BackgroundColor="{Binding backgroundColors[7]}" x:Name="entry7"></Entry>
-                            <Entry Text="{Binding numbers[8]}" Grid.Column="8" TextColor="Black" BackgroundColor="{Binding backgroundColors[8]}" x:Name="entry8"></Entry>
-                            <Entry Text="{Binding numbers[9]}" Grid.Column="9" TextColor="Black" BackgroundColor="{Binding backgroundColors[9]}" x:Name="entry9"></Entry>
+                            <Button Text="{Binding numbers[0]}" Grid.Column="0" BackgroundColor="{Binding backgroundColors[0], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[0]}"></Button>
+                            <Button Text="{Binding numbers[1]}" Grid.Column="1" BackgroundColor="{Binding backgroundColors[1], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[1]}"></Button>
+                            <Button Text="{Binding numbers[2]}" Grid.Column="2" BackgroundColor="{Binding backgroundColors[2], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[2]}"></Button>
+                            <Button Text="{Binding numbers[3]}" Grid.Column="3" BackgroundColor="{Binding backgroundColors[3], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[3]}"></Button>
+                            <Button Text="{Binding numbers[4]}" Grid.Column="4" BackgroundColor="{Binding backgroundColors[4], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[4]}"></Button>
+                            <Button Text="{Binding numbers[5]}" Grid.Column="5" BackgroundColor="{Binding backgroundColors[5], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[5]}"></Button>
+                            <Button Text="{Binding numbers[6]}" Grid.Column="6" BackgroundColor="{Binding backgroundColors[6], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[6]}"></Button>
+                            <Button Text="{Binding numbers[7]}" Grid.Column="7" BackgroundColor="{Binding backgroundColors[7], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[7]}"></Button>
+                            <Button Text="{Binding numbers[8]}" Grid.Column="8" BackgroundColor="{Binding backgroundColors[8], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[8]}"></Button>
+                            <Button Text="{Binding numbers[9]}" Grid.Column="9" BackgroundColor="{Binding backgroundColors[9], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[9]}"></Button>
                         </Grid>
 
                         <Grid Grid.Row="1">
@@ -64,9 +68,9 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
 
-                            <Button Grid.Column="0" Text="Véletlen számok" TextColor="Black" Command="{Binding fillWithRandomNumbers}"></Button>
-                            <Button Grid.Column="1" Text="Visszaállítás" TextColor="Black" Command="{Binding resetNumbers}"></Button>
-                            <Button Grid.Column="2" Text="Szimulálás" TextColor="Black" Command="{Binding stepSim}"></Button>
+                            <Button Grid.Column="0" Text="Véletlen számok"  Command="{Binding fillWithRandomNumbers}"></Button>
+                            <Button Grid.Column="1" Text="Visszaállítás"  Command="{Binding resetNumbers}"></Button>
+                            <Button Grid.Column="2" Text="Szimulálás"  Command="{Binding stepSim}"></Button>
                         </Grid>
 
                         <Grid Grid.Row="2">
@@ -75,36 +79,36 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
 
-                            <Label Grid.Column="0" Text="Összeg:" TextColor="Black" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                            <Label Grid.Column="0" Text="Összeg:"  FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
                             <Button Grid.Column="1" IsEnabled="False" BackgroundColor="White" TextColor="Black" Text="{Binding currentSum[0]}" FontSize="Medium"></Button>
                         </Grid>
                     </Grid>
                 </StackLayout>
 
                 <!-- Második sor tartalma -->
-                <StackLayout Orientation="Vertical" HorizontalOptions="Center" Grid.Row="1" BackgroundColor="White">
-                    <Label x:Name="task_line_1" BackgroundColor="{Binding taskBackgroundColors[0]}"></Label>
-                    <Label x:Name="task_line_2" BackgroundColor="{Binding taskBackgroundColors[1]}"></Label>
-                    <Label x:Name="task_line_3" BackgroundColor="{Binding taskBackgroundColors[2]}"></Label>
-                    <Label x:Name="task_line_4" BackgroundColor="{Binding taskBackgroundColors[3]}"></Label>
-                    <Label x:Name="task_line_5" BackgroundColor="{Binding taskBackgroundColors[4]}"></Label>
-                    <Label x:Name="task_line_6" BackgroundColor="{Binding taskBackgroundColors[5]}"></Label>
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Grid.Row="1">
+                    <Label HorizontalOptions="Center" x:Name="task_line_1" BackgroundColor="{Binding taskBackgroundColors[0]}"></Label>
+                    <Label HorizontalOptions="Center" x:Name="task_line_2" BackgroundColor="{Binding taskBackgroundColors[1]}"></Label>
+                    <Label HorizontalOptions="Center" x:Name="task_line_3" BackgroundColor="{Binding taskBackgroundColors[2]}"></Label>
+                    <Label HorizontalOptions="Center" x:Name="task_line_4" BackgroundColor="{Binding taskBackgroundColors[3]}"></Label>
+                    <Label HorizontalOptions="Center" x:Name="task_line_5" BackgroundColor="{Binding taskBackgroundColors[4]}"></Label>
+                    <Label HorizontalOptions="Center" x:Name="task_line_6" BackgroundColor="{Binding taskBackgroundColors[5]}"></Label>
                 </StackLayout>
             </Grid>
 
             <!-- Első oszlop tartalma -->
-            <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center" BackgroundColor="White">
-                <Label HorizontalOptions="Center" Text="Magyarázat" TextColor="Black" FontSize="Large"></Label>
-                <Label x:Name="explanation_label" HorizontalOptions="CenterAndExpand"></Label>
+            <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center">
+                <Label HorizontalOptions="Center" Text="Magyarázat"  FontSize="Large"></Label>
+                <Label x:Name="explanation_label" HorizontalOptions="CenterAndExpand" HeightRequest="1200"></Label>
             </StackLayout>
 
             <!-- Harmadik oszlop tartalma -->
-            <ScrollView Grid.Row="2">
-                <StackLayout Orientation="Vertical" HorizontalOptions="Center" BackgroundColor="White">
-                    <Label HorizontalOptions="Center" Text="Feladatok" TextColor="Black" FontSize="Large"></Label>
+            <StackLayout Grid.Row="2">
+                <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                    <Label HorizontalOptions="Center" Text="Feladatok"  FontSize="Large"></Label>
                     <Label x:Name="tasks_label"></Label>
                 </StackLayout>
-            </ScrollView>
+            </StackLayout>
         </Grid>
     </ScrollView>
 </ContentPage>
