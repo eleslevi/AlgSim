@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Task>
+	<Explanation>
+		Feladat: Adott egy N elemből álló sorozat (A). Rendezzük az elemeket növekvő sorrendbe!
+
+		Megoldás: Végigmegyünk a sorozaton egy ciklussal úgy, hogy minden egyes eleméhez, őt minimumnak választva, megnézzük az összes mögötte levőt. Ha azok között találunk olyat, ami nála, vagy az aktuális minimumnál kisebb, akkor az ő indexét megjegyezzük (ő lesz a minimum), majd miután az aktuális elemet az összes mögötte levővel összehasonlítottuk, megcseréljük őt azzal az elemmel, aki a minimum.
+
+		Példa: 
+		A sorozat (A): 5, 7, 2, 4
+		A sorozat elemszáma (N): 4
+
+		Ciklus I:=1-től N-1-ig
+		Min:=I;
+		Ciklus J:=I+1-től N-ig
+		Ha A(Min)>A(J) akkor Min:=J;
+		Ciklus vége
+		Csere(A(I),A(Min));
+		Ciklus vége
+
+		A külső ciklus első végrehajtása:
+		i=1, Min=1;
+		Belső ciklus első végrehajtása: j=2 &#x2192; A(1)=5, A(2)=7 &#x2192; (A(Min)>A(J))=hamis &#x2192; Min értéke nem változik.
+		Belső ciklus második végrehajtása: j=3 &#x2192; A(1)=5, A(3)=2 &#x2192; A(Min)>A(J) &#x2192; Min:=3
+		Belső ciklus harmadik végrehajtása: j=4 &#x2192; A(3)=2, A(4)=4 &#x2192; (A(Min)>A(J))=hamis &#x2192; Min értéke nem változik
+		A belső ciklus végrehajtása itt befejeződik, mivel J=N
+		Csere(A(I),A(Min)) &#x2192; A=2, 7, 5, 4
+
+		A külső ciklus második végrehajtása:
+		i=2, Min=2;
+		Belső ciklus első végrehajtása: j=3 &#x2192; A(2)=7, A(3)=5 &#x2192; A(Min)>A(J) &#x2192; Min:=3
+		Belső ciklus második végrehajtása: j=4 &#x2192; A(3)=5, A(4)=4 &#x2192; A(Min)>A(J) &#x2192; Min:=4
+		A belső ciklus végrehajtása itt befejeződik, mert J=N
+		Csere(A(I),A(Min)) &#x2192; A=2, 4, 5, 7
+
+
+		A külső ciklus harmadik végrehajtása:
+		i=3, Min=3
+		Belső ciklus első végrehajtása: j=4 &#x2192; A(3)=5, A(4)=7 &#x2192; (A(I)>A(J))=hamis &#x2192; Min értéke nem változik
+		A belső ciklus végrehajtása itt befejeződik, mivel J=N.
+		Csere(A(I),A(Min)) &#x2192; A=2, 4, 5, 7
+
+		A külső ciklus végrehajtása is befejeződik, mivel I=N-1.
+	</Explanation>
+	<TaskLines>
+		<Line1>     Eljárás Rendezés(N,A)</Line1>
+		<Line2>             Ciklus I:=1 -től N -ig</Line2>
+		<Line3>                     Min:=I;</Line3>
+		<Line4>                     Ciklus J=I+1 -től N -ig</Line4>
+		<Line5>                             Ha A(Min)>A(J) akkor</Line5>
+		<Line6>                                     Min:=J;</Line6>
+		<Line7>                             Elágazás vége</Line7>
+		<Line8>                     Ciklus vége</Line8>
+		<Line9>                     Csere(A(I),A(Min));</Line9>
+		<Line10>             Ciklus vége</Line10>
+		<Line11>     Eljárás vége</Line11>
+	</TaskLines>
+	<Tasks>
+		1.	Ismerjük egy évfolyam tanulóinak félévi átlagát, rendezzük őket növekvő sorrendbe az átlag szerint az ösztöndíj megállapításához!
+
+		2.	Tudjuk, hogy egy iskolai versenyen hányas rajtszámú versenyzők hány pontot értek el, adjuk meg a verseny eredményét (ki hányadik helyen végzett)!
+
+		3.	Pizzát szeretnénk venni, de a különböző éttermekben más az áruk, rendezzük növekvő sorrendbe az árakat!
+	</Tasks>
+</Task>

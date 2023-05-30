@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Task>
+	<Explanation>
+		Feladat: Adott egy N és egy M elemből álló sorozat (A és B). Adjuk meg a két sorozat közös elemeit egy C sorozatban.
+
+		Megoldás: A metszet képzése úgy történik, hogy egy számlálásos ciklussal végigmegyünk az összes elemen és mindegyiknél megvizsgáljuk, hogy a B sorozatban is szerepel-e. Ezt úgy tesszük meg, hogy az A sorozat minden egyes eleménél lefuttatunk egy ciklust a B sorozaton addig amíg a végére nem érünk, vagy meg nem találjuk az A-beli elemet. Ebből a ciklusból kétféleképpen léphetünk ki. Vagy a B sorozat végére értünk és nem találtuk meg az A-beli elemet, vagy még a sorozaton belül vagyunk (JM) és megtaláltuk az elemet. Az előbbi esetben az A sorozat következő elemére lépünk, az utóbbiban pedig növeljük a C sorozat elemszámát (kezdetben 0 volt) és betesszük az elemszámadik (db) helyre a C sorozatba. A metszetképzés akkor ér véget, ha az A sorozat összes elemét megvizsgáltuk.
+
+		Példa: 
+		Az egyik sorozat (A): 5, 4, 2, 7
+		A másik sorozat (B): 4, 12, 3, 5, 9
+		A darabszám kezdetben: 0
+		Az "A" sorozat elemszáma (N): 4
+		A "B" sorozat elemszáma (M): 5
+		C sorozat üres
+
+		Ciklus I:=1-től 4-ig
+		J:=1;
+		Ciklus amíg J&#x2264;M és A(I)&#x2260;B(J)
+		J:=J+1;
+		Ciklus vége
+		Ha J&#x2264;M akkor DB:=DB+1; C(DB):=A(I);
+		Ciklus vége
+
+		A külső ciklus első végrehajtása:
+		i=1, j=1;
+		Belső ciklus első végrehajtása: 1&#x2264;5 és 5&#x2260;4 &#x2192; J:=J+1 &#x2192; J:=1+1 &#x2192; J:=2
+		Belső ciklus második végrehajtása: 2&#x2264;5 és 5&#x2260;12 &#x2192; J:=J+1 &#x2192; J:=2+1 &#x2192; J:=3
+		Belső ciklus harmadik végrehajtása: 3&#x2264;5 és 5&#x2260;3 &#x2192; J:=J+1 &#x2192; J:=3+1 &#x2192; J:=4
+		Belső ciklus negyedik végrehajtása: 4&#x2264;5 és (5&#x2260;5)=hamis &#x2192; a második feltétel hamis, ezért kilépünk a belső ciklusból
+		4&#x2264;5 &#x2192; DB-t növeljük és az elemet betesszük a C sorozatba
+		DB:=DB+1 &#x2192; DB:=0+1 &#x2192; DB:=1
+		C(DB):=A(I) &#x2192; C(1):=5 &#x2192; C sorozat=5
+		
+		A külső ciklus második végrehajtása:
+		i=2, j=1;
+		Belső ciklus első végrehajtása: 1&#x2264;5 és 4&#x2260;4=hamis &#x2192; a második feltétel hamis, ezért kilépünk a belső ciklusból
+		1&#x2264;5=igaz &#x2192; DB-t növeljük és az elemet betesszük a C sorozatba
+		DB:=DB+1 &#x2192; DB:=1+1 &#x2192; DB:=2
+		C(DB):=A(I) &#x2192; B(2):=4 &#x2192; C sorozat=5, 4
+
+		A külső ciklus harmadik végrehajtása:
+		i=3, j=1;
+		Belső ciklus első végrehajtása: 1&#x2264;5 és 2&#x2260;4 &#x2192; J:=J+1 &#x2192; J:=1+1 &#x2192; J:=2
+		Belső ciklus második végrehajtása: 2&#x2264;5 és 2&#x2260;12 &#x2192; J:=J+1 &#x2192; J:=2+1 &#x2192; J:=3
+		Belső ciklus harmadik végrehajtása: 3&#x2264;5 és 2&#x2260;3 &#x2192; J:=J+1 &#x2192; J:=3+1 &#x2192; J:=4
+		Belső ciklus negyedik végrehajtása: 4&#x2264;5 és 2&#x2260;5 &#x2192; J:=J+1 &#x2192; J:=4+1 &#x2192; J:=5
+		Belső ciklus ötödik végrehajtása: 5&#x2264;5 és 2&#x2260;9 &#x2192; J:=J+1 &#x2192; J:=5+1 &#x2192; J:=6
+		A belső ciklus feltételének újabb vizsgálatakor (6&#x2264;5)=hamis &#x2192; kilépünk a belső ciklusból
+		6&#x2264;5=hamis &#x2192; az A sorozat következő elemére lépünk
+
+		A külső ciklus negyedik végrehajtása:
+		i=4, j=1;
+		Belső ciklus első végrehajtása: 1&#x2264;5 és 7&#x2260;4 &#x2192; J:=J+1 &#x2192; J:=1+1 &#x2192; J:=2
+		Belső ciklus második végrehajtása: 2&#x2264;5 és 7&#x2260;12 &#x2192; J:=J+1 &#x2192; J:=2+1 &#x2192; J:=3
+		Belső ciklus harmadik végrehajtása: 3&#x2264;5 és 7&#x2260;3 &#x2192; J:=J+1 &#x2192; J:=3+1 &#x2192; J:=4
+		Belső ciklus negyedik végrehajtása: 4&#x2264;5 és 7&#x2260;5 &#x2192; J:=J+1 &#x2192; J:=4+1 &#x2192; J:=5
+		Belső ciklus ötödik végrehajtása: 5&#x2264;5 és 7&#x2260;9 &#x2192; J:=J+1 &#x2192; J:=5+1 &#x2192; J:=6
+		A belső ciklus feltételének újabb vizsgálatakor (6&#x2264;5)=hamis &#x2192; kilépünk a belső ciklusból
+		6&#x2264;5=hamis &#x2192; a belső ciklus futása befejeződik
+
+		A külső ciklus végrehajtása itt befejeződik, mivel i értéke elérte a 4-et. Megkaptuk a két sorozat metszetét a C sorozatban, a metszet elemszámát pedig a db változóban.
+
+	</Explanation>
+	<TaskLines>
+		<Line1>     Eljárás Metszet(N,A,M,B,DB,C)</Line1>
+		<Line2>             DB:=0;</Line2>
+		<Line3>             Ciklus I:=1 -től N-ig</Line3>
+		<Line4>                     J:=1;</Line4>
+		<Line5>                     Ciklus amíg J&#x2264;M és A(I)&#x2260;B(J)</Line5>
+		<Line6>                             J:=J+1;</Line6>
+		<Line7>                     Ciklus vége</Line7>
+		<Line8>                     Ha J&#x2264;M akkor</Line8>
+		<Line9>                             DB:=DB+1;</Line9>
+		<Line10>                             C(DB):=A(I);</Line10>
+		<Line11>                     Elágazás vége</Line11>
+		<Line12>             Ciklus vége</Line12>
+		<Line13>     Eljárás vége</Line13>
+	</TaskLines>
+	<Tasks>
+		1.	Adott 2 sorozat. Egyikben hárommal, másikban kettővel osztható számok szerepelnek. Add meg azokat, amik kettővel és hárommal is oszthatók!
+
+		2.	Adott 2 olyan sorozat, amiben Hallgatók nevei szerepelnek. Az elsőben azoké, akik angolt tanulnak, a másodikban pedig azoké, akik németet! Add meg azoknak a nevét, akik mindkét nyelvet tanulják!
+
+		3.	Két étterem étlapján szereplő ételeket tárolunk két sorozatban. Adjuk meg azokat az ételeket, amelyek mindkét étteremben megrendelhetők!
+
+		4.	Ezen a héten két lóversenyt rendeztek, a versenyző lovak névsorát, mindkét napon egy-egy listán rögzítették. Melyik lovak szerepeltek mindkét napon?
+	</Tasks>
+</Task>

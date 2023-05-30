@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AlgSim.MainPage">
+              x:Class="AlgSim.MainPage">
     <!-- dotnet build -f net7.0-android  : for android apk build-->
     <ScrollView>
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
@@ -25,10 +28,15 @@
             <Label Grid.Row="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Összetett tételek</Label>
             <Button Grid.Row="5" Text="Másolás" Command="{Binding Copy}"></Button>
             <Button Grid.Row="6" Text="Kiválogatás" Command="{Binding DisplayMessage}"></Button>
+            <Button Grid.Row="7" Text="Metszet" Command="{Binding Intersection}"></Button>
+            <Button Grid.Row="8" Text="Egyesítés" Command="{Binding Union}"></Button>
             
             <Label Grid.Row="7" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Rendezések</Label>
             <Button Grid.Row="8" Text="Egyszerű cserés" Command="{Binding DisplayMessage}"></Button>
             <Button Grid.Row="9" Text="Minimumkiválasztásos" Command="{Binding DisplayMessage}"></Button>
+            <Label Grid.Row="9" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Rendezések</Label>
+            <Button Grid.Row="10" Text="Egyszerű cserés" Command="{Binding Swap}"></Button>
+            <Button Grid.Row="11" Text="Minimumkiválasztásos" Command="{Binding MinSelection}"></Button>
         </Grid>
     </ScrollView>
 </ContentPage>
