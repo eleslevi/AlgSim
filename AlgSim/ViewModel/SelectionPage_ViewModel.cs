@@ -88,7 +88,7 @@ namespace AlgSim.ViewModel
         }
 
         public int value = 0;
-        public int count = 0;
+        public int count = -1;
 
         private enum Statement
         {
@@ -198,11 +198,11 @@ namespace AlgSim.ViewModel
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
                         current_cycle = Cycle.EndIf;
                         backgroundColors[sim_cycle_iterator] = selectedBC;
+                        result[count] = numbers[sim_cycle_iterator];
                         break;
                     case Cycle.EndIf:
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
                         current_cycle = Cycle.EndCycle;
-                        result[sim_cycle_iterator] = numbers[sim_cycle_iterator];
                         break;
                     case Cycle.EndCycle:
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
