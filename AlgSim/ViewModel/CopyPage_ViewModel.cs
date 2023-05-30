@@ -123,14 +123,13 @@ namespace AlgSim.ViewModel
                     case Cycle.EndCycle:
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
                         current_cycle = Cycle.StepCycle;
-                        //result[sim_cycle_iterator] = numbers[sim_cycle_iterator];
                         if (Function)
                         {
                             result[sim_cycle_iterator] = Math.Pow(numbers[sim_cycle_iterator], 2);
                         }
                         else
                         {
-                            result[sim_cycle_iterator] = Math.Sqrt(numbers[sim_cycle_iterator]);
+                            result[sim_cycle_iterator] = Math.Round(Math.Sqrt(numbers[sim_cycle_iterator]), 2);
                         }
                         backgroundColors[sim_cycle_iterator] = whiteBC;
                         sim_cycle_iterator++;

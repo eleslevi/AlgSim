@@ -63,6 +63,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\ContentXMLs\Copy_Content.xml" />
 	  <None Remove="Resources\ContentXMLs\Intersection_Content.xml" />
 	  <None Remove="Resources\ContentXMLs\MaxSelection_Content.xml" />
 	  <None Remove="Resources\ContentXMLs\MinSelection_Content.xml" />
@@ -72,6 +73,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <EmbeddedResource Include="Resources\ContentXMLs\Copy_Content.xml" />
 	  <EmbeddedResource Include="Resources\ContentXMLs\MinSelection_Content.xml">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </EmbeddedResource>

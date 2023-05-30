@@ -15,6 +15,7 @@ namespace AlgSim.ViewModel
         public DelegateCommand Union { get; private set; }
         public DelegateCommand Swap { get; private set; }
         public DelegateCommand MinSelection { get; private set; }
+        public DelegateCommand Copy { get; private set; }
 
         public EventHandler MenuClicked;
 
@@ -24,6 +25,7 @@ namespace AlgSim.ViewModel
             Sum = new DelegateCommand(parameter => OnMenuClicked("Sum"));
             Decision = new DelegateCommand(parameter => OnMenuClicked("Decision"));
             MaxSelection = new DelegateCommand(parameter => OnMenuClicked("MaxSelection"));
+            Copy = new DelegateCommand(parameter => OnMenuClicked("Copy"));
             Intersection = new DelegateCommand(parameter => OnMenuClicked("Intersection"));
             Union = new DelegateCommand(parameter => OnMenuClicked("Union"));
             Swap = new DelegateCommand(parameter => OnMenuClicked("Swap"));
