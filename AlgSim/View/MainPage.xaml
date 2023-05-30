@@ -23,7 +23,7 @@
             <Button Grid.Row="3" Text="Maximimumkiválasztás" Command="{Binding MaxSelection}"></Button>
             
             <Label Grid.Row="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Összetett tételek</Label>
-            <Button Grid.Row="5" Text="Másolás" Command="{Binding DisplayMessage}"></Button>
+            <Button Grid.Row="5" Text="Másolás" Command="{Binding Copy}"></Button>
             <Button Grid.Row="6" Text="Kiválogatás" Command="{Binding DisplayMessage}"></Button>
             
             <Label Grid.Row="7" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Rendezések</Label>

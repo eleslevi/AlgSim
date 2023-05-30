@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Task>
+	<Explanation>
+		Feladat: Adott egy N elemből álló sorozat (A) és egy rajtuk végrehajtandó művelet (f). Hajtsuk végre ezt a műveletet a sorozat minden elemén!
+
+		Megoldás: Egy számlálásos ciklussal végigmegyünk az összes elemen és mindegyiken elvégezzük a műveletet, a művelet eredménye pedig egy új sorozatba kerül.
+
+
+		Példa: A sorozat (A): 5, 4, 2, 7
+
+		Elemszám (N): 4
+		f: négyzetre emelés
+
+		Ciklus I:=1-től 4-ig
+		B(I):=f(A(I));
+		Ciklus vége
+
+		A ciklus első végrehajtásakor:
+		i=1,  A[1]=5
+		f(A(I))=f(5)=52=25  B(I):=25
+
+		A ciklus második végrehajtásakor:
+		i=2,  A[2]=4
+		f(A(I))=f(4)=42=16  B(I):=16
+
+
+		A ciklus harmadik végrehajtásakor:
+		i=3,  A[3]=2
+		f(A(I))=f(2)=22=4  B(I):=4
+
+		A ciklus negyedik végrehajtásakor:
+		i=4,  A[4]=7
+		f(A(I))=f(7)=72=49  B(I):=49
+
+		A ciklus végrehajtása itt befejeződik, mivel i értéke elérte a 4-et. A B sorozatban megkaptuk az A sorozat elemeit a művelet elvégzése után.
+	</Explanation>
+	<TaskLines>
+		<Line1>Eljárás Másolás(N,A,B)</Line1>
+		<Line2>Ciklus i := 1-től n-ig</Line2>
+		<Line3>     B[i]=f(A[i])</Line3>
+		<Line4>Ciklus vége</Line4>
+		<Line5>Eljárás vége</Line5>
+	</TaskLines>
+	<Tasks>
+		1.	Ismerjük egy évfolyam hallgatóinak születési idejét, számítsuk ki az életkorukat!
+
+		2.	Adott néhány százalékérték, alakítsuk át ezeket tizedes tört alakra!
+
+		3.	Árucikkek árából számítsuk ki az ÁFA tartalmukat, ha minden termék ÁFA kulcsa 25%!
+
+		4.	Egy cégnél mindenki 10%-os fizetésemelést kap. Számítsuk ki a megemelt fizetéseket!
+	</Tasks>
+</Task>
