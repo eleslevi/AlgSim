@@ -92,9 +92,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-<<<<<<< Updated upstream
-	  <MauiXaml Update="View\CopyPage.xaml">
-=======
 	  <EmbeddedResource Include="Resources\ContentXMLs\Intersection_Content.xml">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </EmbeddedResource>
@@ -117,7 +114,6 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="View\Intersection_Page.xaml">
->>>>>>> Stashed changes
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\MaxSelection_Page.xaml">
