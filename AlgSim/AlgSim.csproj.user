@@ -15,6 +15,9 @@
     <PlatformTarget>arm64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <MauiXaml Update="View\BubbleOrderPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="View\CopyPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
