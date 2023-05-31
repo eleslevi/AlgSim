@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Task>
+	<Explanation>
+		Feladat: Adott egy N elemből álló sorozat (A). Rendezzük az elemeket növekvő sorrendbe!
+
+		Megoldás: Sorra vesszük az elemeket és mindegyikhez megnézzük a mögötte levőt. Ha a mögötte levőnél nagyobb, akkor megcseréljük őket. Kezdetben végigmegyünk a teljes sorozaton, de mivel a legnagyobb elem a helyére kerül, ezért a következő lépésben már csak az utolsó előtti elemig megyünk és így tovább, mindig egyel kevesebb elemet vizsgálunk. A módszer onnan kapta a nevét, hogy a nagyobb elemek a sorozat vége, a kisebbek pedig a sorozat eleje felé mozognak.
+
+		Példa: A sorozat (A): 5, 7, 2, 4
+		A sorozat elemszáma (N): 4
+
+		Ciklus I:=N-től 2-ig -1-esével
+		Ciklus J:=1-től I-1-ig
+		Ha A(J)>A(J+1) akkor Csere(A(J),A(J+1));
+		Ciklus vége
+		Ciklus vége
+
+		A külső ciklus első végrehajtása:
+		i=4
+		Belső ciklus első végrehajtása: j=1  A(1)=5, A(2)=7  (A(J)>A(J+1))=hamis  A sorozat nem változik
+
+		Belső ciklus második végrehajtása: j=2  A(2)=7, A(3)=2  A(J)>A(J+1)  Csere(A(J),A(J+1))
+		A=5, 2, 7, 4
+
+		Belső ciklus harmadik végrehajtása: j=3  A(3)=7, A(4)=4  A(J)>A(J+1)  Csere(A(J),A(J+1))
+		A=5, 2, 4, 7
+
+		A belső ciklus végrehajtása itt befejeződik, mivel J=I-1
+
+		A  külső ciklus második végrehajtása:
+		i=3
+		Belső ciklus első végrehajtása: j=1  A(1)=5, A(2)=2  A(J)>A(J+1)  Csere(A(J),A(J+1))
+		A=2, 5, 4, 7
+
+		Belső ciklus második végrehajtása: j=2  A(2)=5, A(3)=4  A(J)>A(J+1)  Csere(A(J),A(J+1))
+		A=2, 4, 5, 7
+
+		A belső ciklus végrehajtása itt befejeződik, mert J=I-1
+
+
+		A külső ciklus harmadik végrehajtása:
+		i=2
+		Belső ciklus első végrehajtása: j=1  A(1)=2, A(2)=4  (A(I)>A(J))=hamis  A sorozat nem változik
+
+		A belső ciklus végrehajtása itt befejeződik, mivel J=I-1.
+
+		A külső ciklus végrehajtása is befejeződik, mivel I=2.
+
+	</Explanation>
+	<TaskLines>
+		<Line1>Eljárás Rendezés(N,A)</Line1>
+		<Line2>Ciklus I := N-től 2-ig - 1-esével</Line2>
+		<Line3>	 Ciklus J=1-től I-ig</Line3>
+		<Line4>		Ha A[J]>A[J+1] akkor</Line4>
+		<Line5>		   Csere(A[J], A[J+1])</Line5>
+		<Line6>		Elágazás vége</Line6>
+		<Line7>  Ciklus vége</Line7>
+		<Line8>Ciklus vége</Line8>
+		<Line9>Eljárás vége</Line9>
+	</TaskLines>
+	<Tasks>
+		1.	Ismerjük egy évfolyam tanulóinak félévi átlagát, rendezzük őket növekvő sorrendbe az  átlag szerint az ösztöndíj megállapításához!
+
+		2.	Tudjuk, hogy egy iskolai versenyen hányas rajtszámú versenyzők hány pontot értek el, adjuk meg a verseny eredményét (ki hányadik helyen végzett)!
+
+		3.	Pizzát szeretnénk venni, de a különböző éttermekben más az áruk, rendezzük növekvő sorrendbe az árakat!
+	</Tasks>
+</Task>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Task>
+	<Explanation>
+		Feladat: Adott egy N elemből álló sorozat (A) és egy rajtuk értelmezhető tulajdonság (T). Válogassuk szét az elemeit úgy, hogy a B sorozatba kerüljenek azok az elemek, amelyek rendelkeznek ezzel a tulajdonsággal, a C sorozatba pedig azok, akik nem rendelkeznek vele. Adjuk meg a B sorozat elemszámát is.
+
+		Megoldás: Kezdetben a darabszám=0 és a C sorozat elemeit számoló változó értéke DBC=0. A szétválogatás úgy történik, hogy egy számlálásos ciklussal végigmegyünk az összes elemen és mindegyiknél megvizsgáljuk, hogy ő rendelkezik-e a megadott tulajdonsággal, vagy nem. Ha rendelkezik vele, akkor növeljük egyel a darabszámot és a B sorozat ennyiedik (darabszám) helyére tesszük. Ha nem rendelkezik vele, akkor növeljük azt a változót, amiben a C sorozat elemeit számoljuk és betesszül az elemet a C sorozat ennyiedik (DBC) helyére. A ciklus lefutása után a B sorozat tartalmazza az összes T tulajdonsággal rendelkező elemet, C sorozat a T tulajdonsággal nem rendelkezőket, db pedig a T tulajdonságú elemek számát (B sorozat elemszámát).
+
+		Példa: A sorozat (A): 5, 4, 2, 7
+
+		Az darabszám kezdetben: 0
+		Elemszám (N): 4
+		T: páros szám
+		B sorozat üres
+		C sorozat üres
+
+		Ciklus I:=1-től 4-ig
+		Ha T(A(I)) akkor DB:=DB+1; B(DB):=A(I)
+		különben DBC:=DBC+1; C(DBC):=A(I);
+		Ciklus vége
+
+		A ciklus első végrehajtásakor:
+		i=1,  A[1]=5
+		páros(5)=hamis   DBC-t növeljük és az elemet betesszük a C sorozatba
+		DBC:=DBC+1  DBC:=0+1  DBC:=1
+		C(DBC):=A(I)  C(1):=5  C sorozat=5
+
+		A ciklus második végrehajtásakor:
+		i=2,  A[2]=4
+		páros(4)=igaz  DB-t növeljük és az elemet betesszük a B sorozatba
+		DB:=DB+1  DB:=0+1  DB:=1
+		B(DB):=A(I)  B(1):=4  B sorozat=4
+
+		A ciklus harmadik végrehajtásakor:
+		i=3,  A[3]=2
+		páros(2)=igaz  DB-t növeljük és az elemet betesszük a B sorozatba
+		DB:=DB+1  DB:=1+1  DB:=2
+		B(DB):=A(I)  B(2):=2  B sorozat=4, 2
+
+		A ciklus negyedik végrehajtásakor:
+		i=4,  A[4]=7
+		páros(7)=hamis   DBC-t növeljük és az elemet betesszük a C sorozatba
+		DBC:=DBC+1  DBC:=1+1  DBC:=2
+		C(DBC):=A(I)  C(2):=7  C sorozat=5, 7
+
+		A ciklus végrehajtása itt befejeződik, mivel i értéke elérte a 4-et. Megkaptuk az A sorozat T tulajdonsággal rendelkező elemeit a B sorozatban és ezek darabszámát a db változóban, a T tulajdonsággal nem rendelkezőket pedig a C sorozatban.
+	</Explanation>
+	<TaskLines>
+		<Line1>Eljárás Szétválogatás(N, A, DB, B, C)</Line1>
+		<Line2>DB:=0; DBC:=0;</Line2>
+		<Line3>Ciklus I:=1-től N-ig</Line3>
+		<Line4>   Ha T(A[I]) akkor</Line4>
+		<Line5>      DB:=DB+1;</Line5>
+		<Line6>      B[DB]:=A[I]</Line6>
+		<Line7>   különben</Line7>
+		<Line8>      DBC:=DBC+1;</Line8>
+		<Line9>      C[DBC]:=A[I]</Line9>
+		<Line10>  Elágazás vége</Line10>
+		<Line11>Ciklus vége</Line11>
+		<Line12>Eljárás vége</Line12>
+	</TaskLines>
+	<Tasks>
+		1.	Adott egy számsorozat, válogassuk külön a negatív és a nem negatív számokat!
+
+		2.	Adott egy évfolyam névsora válogassuk szét a fiúkat és a lányokat!
+
+		3.	Kijavították az írásbeli nyelvvizsgákat, el kell dönteni, hogy kinek sikerült, kinek nem. A vizsgázók névsorát válasszuk ketté a sikerességtől függően!
+
+		4.	Van egy listánk virágokról, amin a nevükön kívül az is szerepel, hogy évelő, vagy egynyári virágok. Bontsuk őket 2 csoportra élettartamuk szerint.
+	</Tasks>
+</Task>

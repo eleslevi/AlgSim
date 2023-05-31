@@ -9,6 +9,9 @@ public partial class AppShell : Shell
 	private SumPage_ViewModel _sumPageViewModel;
 	private MaxSelection_ViewModel _maxSelectionViewModel;
 	private CopyPage_ViewModel _copyPageViewModel;
+	private SelectionPage_ViewModel _SelectionPageViewModel;
+    private SplittingPage_ViewModel _SplittingPageViewModel;
+    private BubbleOrderPage_ViewModel _BubblePageViewModel;
     private Intersection_ViewModel _intersectionViewModel;
     private Union_ViewModel _UnionViewModel;
     private Swap_ViewModel _SwapViewModel;
@@ -22,6 +25,9 @@ public partial class AppShell : Shell
 		_sumPageViewModel = new SumPage_ViewModel();
 		_maxSelectionViewModel = new MaxSelection_ViewModel();
 		_copyPageViewModel = new CopyPage_ViewModel();
+		_SelectionPageViewModel = new SelectionPage_ViewModel();
+        _SplittingPageViewModel = new SplittingPage_ViewModel();
+        _BubblePageViewModel = new BubbleOrderPage_ViewModel();
 		_intersectionViewModel = new Intersection_ViewModel();
 		_UnionViewModel = new Union_ViewModel();
 		_SwapViewModel = new Swap_ViewModel() ;
@@ -42,6 +48,13 @@ public partial class AppShell : Shell
 				break;
 			case "Copy": Copy_Clicked();
 				break;
+			case "Seletcion":Selection_Clicked();
+				break;
+            case "Splitting":
+                Splitting_Clicked();
+                break;
+            case "Bubble":
+                Bubble_Clicked();
             case "Intersection": Intersection_Clicked();
                 break;
             case "Union": Union_Clicked();
@@ -65,6 +78,27 @@ public partial class AppShell : Shell
 	private void Copy_Clicked()
     {
         Navigation.PushAsync(new CopyPage
+        {
+            BindingContext = _copyPageViewModel,
+        });
+    }
+	private void Selection_Clicked()
+	{
+		Navigation.PushAsync(new SelectionPage
+		{
+			BindingContext = _SelectionPageViewModel,
+		});
+	}
+    private void Splitting_Clicked()
+    {
+        Navigation.PushAsync(new SplittingPage
+        {
+            BindingContext = _copyPageViewModel,
+        });
+    }
+    private void Bubble_Clicked()
+    {
+        Navigation.PushAsync(new BubbleOrderPage
         {
             BindingContext = _copyPageViewModel,
         });

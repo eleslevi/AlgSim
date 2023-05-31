@@ -121,6 +121,14 @@
 	  <MauiXaml Update="View\MaxSelection_Page.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+    <MauiXaml Update="View\BubbleOrderPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\CopyPage.xaml">
+	  <MauiXaml Update="View\SelectionPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\SplittingPage.xaml">
 	  <MauiXaml Update="View\MinSelection_Page.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

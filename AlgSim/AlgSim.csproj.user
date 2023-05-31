@@ -15,12 +15,20 @@
     <PlatformTarget>arm64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <MauiXaml Update="View\BubbleOrderPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="View\CopyPage.xaml">
     <MauiXaml Update="View\Intersection_Page.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="View\MaxSelection_Page.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="View\SelectionPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="View\SplittingPage.xaml">
     <MauiXaml Update="View\MinSelection_Page.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
