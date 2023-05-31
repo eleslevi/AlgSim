@@ -47,10 +47,14 @@
 
 	</Explanation>
 	<TaskLines>
-		<Line1>Eljárás Másolás(N,A,B)</Line1>
-		<Line2>Ciklus i := 1-től n-ig</Line2>
-		<Line3>     B[i]=f(A[i])</Line3>
-		<Line4>Ciklus vége</Line4>
+		<Line1>Eljárás Rendezés(N,A)</Line1>
+		<Line2>Ciklus I := N-től 2-ig - 1-esével</Line2>
+		<Line3>	 Ciklus J=1-től I-ig</Line3>
+		<Line4>		Ha A[J]>A[J+1] akkor</Line4>
+		<Line5>		   Csere(A[J], A[J+1])</Line5>
+		<Line5>		Elágazás vége</Line5>
+		<Line5>  Ciklus vége</Line5>
+		<Line5>Ciklus vége</Line5>
 		<Line5>Eljárás vége</Line5>
 	</TaskLines>
 	<Tasks>
