@@ -93,12 +93,14 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
 
                             <Button Grid.Column="0" Text="Véletlen számok"  Command="{Binding fillWithRandomNumbers}"></Button>
                             <Button Grid.Column="1" Text="Visszaállítás"  Command="{Binding resetNumbers}"></Button>
                             <Button Grid.Column="2" Text="Szimulálás"  Command="{Binding stepSim}"></Button>
-                            <CollectionView Grid.Column="3" 
+                            <Button Grid.Column="2" Text="{Binding value}"></Button>
+                            <CollectionView Grid.Column="4" 
                                             SelectedItem="{Binding Statement}"
                                             SelectionMode="Single"
                                             x:Name="Filter" ItemsSource="{Binding Statements}">
