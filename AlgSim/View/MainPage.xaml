@@ -30,6 +30,7 @@
             <Label Grid.Row="7" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Rendezések</Label>
             <Button Grid.Row="8" Text="Egyszerű cserés" Command="{Binding DisplayMessage}"></Button>
             <Button Grid.Row="9" Text="Minimumkiválasztásos" Command="{Binding DisplayMessage}"></Button>
+            <Button Grid.Row="10" Text="Buborék" Command="{Binding Bubble}"></Button>
         </Grid>
     </ScrollView>
 </ContentPage>

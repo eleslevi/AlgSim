@@ -12,8 +12,10 @@ public partial class AppShell : Shell
 	private MaxSelection_ViewModel _maxSelectionViewModel;
 	private CopyPage_ViewModel _copyPageViewModel;
 	private SelectionPage_ViewModel _SelectionPageViewModel;
+    private SplittingPage_ViewModel _SplittingPageViewModel;
+    private BubbleOrderPage_ViewModel _BubblePageViewModel;
 
-	public AppShell(MainViewModel mainViewModel)
+    public AppShell(MainViewModel mainViewModel)
 	{
 		InitializeComponent();
 
@@ -22,7 +24,9 @@ public partial class AppShell : Shell
 		_maxSelectionViewModel = new MaxSelection_ViewModel();
 		_copyPageViewModel = new CopyPage_ViewModel();
 		_SelectionPageViewModel = new SelectionPage_ViewModel();
-		_mainViewModel.MenuClicked += new EventHandler(ViewModel_MenuClicked);
+        _SplittingPageViewModel = new SplittingPage_ViewModel();
+        _BubblePageViewModel = new BubbleOrderPage_ViewModel();
+        _mainViewModel.MenuClicked += new EventHandler(ViewModel_MenuClicked);
 
 	}
 
@@ -40,7 +44,13 @@ public partial class AppShell : Shell
 				break;
 			case "Seletcion":Selection_Clicked();
 				break;
-			default: DisplayAlert("Hiányzó tétel", "A tétel még nem elérhető", "OK");
+            case "Splitting":
+                Splitting_Clicked();
+                break;
+            case "Bubble":
+                Bubble_Clicked();
+                break;
+            default: DisplayAlert("Hiányzó tétel", "A tétel még nem elérhető", "OK");
 				break;
         }
 	}
@@ -66,7 +76,21 @@ public partial class AppShell : Shell
 			BindingContext = _SelectionPageViewModel,
 		});
 	}
-        private void Decision_Clicked()
+    private void Splitting_Clicked()
+    {
+        Navigation.PushAsync(new SplittingPage
+        {
+            BindingContext = _copyPageViewModel,
+        });
+    }
+    private void Bubble_Clicked()
+    {
+        Navigation.PushAsync(new BubbleOrderPage
+        {
+            BindingContext = _copyPageViewModel,
+        });
+    }
+    private void Decision_Clicked()
     {
 		
     }
