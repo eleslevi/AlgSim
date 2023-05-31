@@ -78,6 +78,9 @@
 	  <MauiXaml Update="View\SelectionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\SplittingPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\Sum_Page.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
