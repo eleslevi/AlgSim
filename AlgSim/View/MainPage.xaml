@@ -24,7 +24,7 @@
             
             <Label Grid.Row="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Összetett tételek</Label>
             <Button Grid.Row="5" Text="Másolás" Command="{Binding Copy}"></Button>
-            <Button Grid.Row="6" Text="Kiválogatás" Command="{Binding DisplayMessage}"></Button>
+            <Button Grid.Row="6" Text="Kiválogatás" Command="{Binding Selection}"></Button>
             
             <Label Grid.Row="7" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Rendezések</Label>
             <Button Grid.Row="8" Text="Egyszerű cserés" Command="{Binding DisplayMessage}"></Button>

@@ -2,24 +2,24 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AlgSim.Classes"
-             x:Class="AlgSim.View.CopyPage"
-             Title="CopyPage"
-             BackgroundColor="Black">
+             x:Class="AlgSim.View.SelectionPage"
+             Title="SelectionPage"
+    BackgroundColor="Black">
     <ContentPage.Resources>
         <local:StringToColor x:Key="StringToColor" />
     </ContentPage.Resources>
     <ScrollView>
         <Grid>
-            <!-- 3 sor definiálása -->
+            <!-- 3 oszlop definiálása -->
             <Grid.RowDefinitions>
                 <RowDefinition Height="650"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <!-- Második sor tartalma -->
+            <!-- Második oszlop tartalma -->
             <Grid Grid.Row="0">
-                <!-- Középső sorban 2 sor definiálása -->
+                <!-- Középső oszlopban 2 sor definiálása -->
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
@@ -92,14 +92,11 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
 
                             <Button Grid.Column="0" Text="Véletlen számok"  Command="{Binding fillWithRandomNumbers}"></Button>
                             <Button Grid.Column="1" Text="Visszaállítás"  Command="{Binding resetNumbers}"></Button>
                             <Button Grid.Column="2" Text="Szimulálás"  Command="{Binding stepSim}"></Button>
-
-                            <Label>Négyzetre emelés vagy Gyökvonás</Label><CheckBox Grid.Column="3" IsChecked="{Binding Function}" ></CheckBox>
                         </Grid>
 
                         <!--<Grid Grid.Row="2">
@@ -122,22 +119,25 @@
                     <Label HorizontalOptions="Center" x:Name="task_line_4" BackgroundColor="{Binding taskBackgroundColors[3]}"></Label>
                     <Label HorizontalOptions="Center" x:Name="task_line_5" BackgroundColor="{Binding taskBackgroundColors[4]}"></Label>
                     <Label HorizontalOptions="Center" x:Name="task_line_6" BackgroundColor="{Binding taskBackgroundColors[5]}"></Label>
+                    <Label HorizontalOptions="Center" x:Name="task_line_7" BackgroundColor="{Binding taskBackgroundColors[6]}"></Label>
+                    <Label HorizontalOptions="Center" x:Name="task_line_8" BackgroundColor="{Binding taskBackgroundColors[7]}"></Label>
+                    <Label HorizontalOptions="Center" x:Name="task_line_9" BackgroundColor="{Binding taskBackgroundColors[8]}"></Label>
                 </StackLayout>
             </Grid>
-            
-            <!-- Első oszlop tartalma -->
-        <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center">
-            <Label HorizontalOptions="Center" Text="Magyarázat"  FontSize="Large"></Label>
-            <Label x:Name="explanation_label" HorizontalOptions="CenterAndExpand" HeightRequest="1200"></Label>
-        </StackLayout>
 
-        <!-- Harmadik oszlop tartalma -->
-        <StackLayout Grid.Row="2">
-            <StackLayout Orientation="Vertical" HorizontalOptions="Center">
-                <Label HorizontalOptions="Center" Text="Feladatok"  FontSize="Large"></Label>
-                <Label x:Name="tasks_label"></Label>
+            <!-- Első oszlop tartalma -->
+            <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center">
+                <Label HorizontalOptions="Center" Text="Magyarázat"  FontSize="Large"></Label>
+                <Label x:Name="explanation_label" HorizontalOptions="CenterAndExpand" HeightRequest="1200"></Label>
             </StackLayout>
-        </StackLayout>
-      </Grid>
+
+            <!-- Harmadik oszlop tartalma -->
+            <StackLayout Grid.Row="2">
+                <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                    <Label HorizontalOptions="Center" Text="Feladatok"  FontSize="Large"></Label>
+                    <Label x:Name="tasks_label"></Label>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
     </ScrollView>
 </ContentPage>

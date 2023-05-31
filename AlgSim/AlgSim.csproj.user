@@ -21,6 +21,9 @@
     <MauiXaml Update="View\MaxSelection_Page.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="View\SelectionPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="View\Sum_Page.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

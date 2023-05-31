@@ -11,6 +11,7 @@ public partial class AppShell : Shell
 	private SumPage_ViewModel _sumPageViewModel;
 	private MaxSelection_ViewModel _maxSelectionViewModel;
 	private CopyPage_ViewModel _copyPageViewModel;
+	private SelectionPage_ViewModel _SelectionPageViewModel;
 
 	public AppShell(MainViewModel mainViewModel)
 	{
@@ -20,7 +21,7 @@ public partial class AppShell : Shell
 		_sumPageViewModel = new SumPage_ViewModel();
 		_maxSelectionViewModel = new MaxSelection_ViewModel();
 		_copyPageViewModel = new CopyPage_ViewModel();
-
+		_SelectionPageViewModel = new SelectionPage_ViewModel();
 		_mainViewModel.MenuClicked += new EventHandler(ViewModel_MenuClicked);
 
 	}
@@ -36,6 +37,8 @@ public partial class AppShell : Shell
 			case "MaxSelection": MaxSelection_Clicked();
 				break;
 			case "Copy": Copy_Clicked();
+				break;
+			case "Seletcion":Selection_Clicked();
 				break;
 			default: DisplayAlert("Hiányzó tétel", "A tétel még nem elérhető", "OK");
 				break;
@@ -56,7 +59,14 @@ public partial class AppShell : Shell
             BindingContext = _copyPageViewModel,
         });
     }
-    private void Decision_Clicked()
+	private void Selection_Clicked()
+	{
+		Navigation.PushAsync(new SelectionPage
+		{
+			BindingContext = _SelectionPageViewModel,
+		});
+	}
+        private void Decision_Clicked()
     {
 		
     }
