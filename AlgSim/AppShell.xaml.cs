@@ -48,13 +48,12 @@ public partial class AppShell : Shell
 				break;
 			case "Copy": Copy_Clicked();
 				break;
-			case "Seletcion":Selection_Clicked();
+			case "Selection": Selection_Clicked();
 				break;
-            case "Splitting":
-                Splitting_Clicked();
+            case "Splitting": Splitting_Clicked();
                 break;
-            case "Bubble":
-                Bubble_Clicked();
+            case "Bubble": Bubble_Clicked();
+                break;
             case "Intersection": Intersection_Clicked();
                 break;
             case "Union": Union_Clicked();

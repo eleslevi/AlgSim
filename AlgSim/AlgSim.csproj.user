@@ -19,6 +19,8 @@
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="View\CopyPage.xaml">
+		<SubType>Designer</SubType>
+	</MauiXaml>
     <MauiXaml Update="View\Intersection_Page.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
@@ -29,6 +31,8 @@
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="View\SplittingPage.xaml">
+		<SubType>Designer</SubType>
+	</MauiXaml>
     <MauiXaml Update="View\MinSelection_Page.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

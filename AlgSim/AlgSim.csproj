@@ -63,20 +63,26 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\ContentXMLs\BubbleOrder_Content.xml" />
 	  <None Remove="Resources\ContentXMLs\Copy_Content.xml" />
 	  <None Remove="Resources\ContentXMLs\Intersection_Content.xml" />
 	  <None Remove="Resources\ContentXMLs\MaxSelection_Content.xml" />
 	  <None Remove="Resources\ContentXMLs\MinSelection_Content.xml" />
+	  <None Remove="Resources\ContentXMLs\Selection_Content.xml" />
+	  <None Remove="Resources\ContentXMLs\Splitting_Content.xml" />
 	  <None Remove="Resources\ContentXMLs\Sum_Content.xml" />
 	  <None Remove="Resources\ContentXMLs\Swap_Content.xml" />
 	  <None Remove="Resources\ContentXMLs\Union_Content.xml" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <EmbeddedResource Include="Resources\ContentXMLs\BubbleOrder_Content.xml" />
 	  <EmbeddedResource Include="Resources\ContentXMLs\Copy_Content.xml" />
 	  <EmbeddedResource Include="Resources\ContentXMLs\MinSelection_Content.xml">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </EmbeddedResource>
+	  <EmbeddedResource Include="Resources\ContentXMLs\Selection_Content.xml" />
+	  <EmbeddedResource Include="Resources\ContentXMLs\Splitting_Content.xml" />
 	  <EmbeddedResource Include="Resources\ContentXMLs\Swap_Content.xml">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </EmbeddedResource>
@@ -121,14 +127,18 @@
 	  <MauiXaml Update="View\MaxSelection_Page.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-    <MauiXaml Update="View\BubbleOrderPage.xaml">
+		<MauiXaml Update="View\BubbleOrderPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\CopyPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\SelectionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\SplittingPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\MinSelection_Page.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
