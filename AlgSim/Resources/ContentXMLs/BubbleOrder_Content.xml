@@ -52,10 +52,10 @@
 		<Line3>	 Ciklus J=1-től I-ig</Line3>
 		<Line4>		Ha A[J]>A[J+1] akkor</Line4>
 		<Line5>		   Csere(A[J], A[J+1])</Line5>
-		<Line5>		Elágazás vége</Line5>
-		<Line5>  Ciklus vége</Line5>
-		<Line5>Ciklus vége</Line5>
-		<Line5>Eljárás vége</Line5>
+		<Line6>		Elágazás vége</Line6>
+		<Line7>  Ciklus vége</Line7>
+		<Line8>Ciklus vége</Line8>
+		<Line9>Eljárás vége</Line9>
 	</TaskLines>
 	<Tasks>
 		1.	Ismerjük egy évfolyam tanulóinak félévi átlagát, rendezzük őket növekvő sorrendbe az  átlag szerint az ösztöndíj megállapításához!
