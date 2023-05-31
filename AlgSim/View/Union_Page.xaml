@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlgSim.View.Union_Page"
+             Title="Egyesítés"
+             BackgroundColor="LightGray">
+    
+    <Grid ColumnDefinitions="*,*,*,Auto" RowDefinitions="Auto,*,*,*,*,*,*,*,*,*,*,*,*" ColumnSpacing="0" RowSpacing="0" Padding="0">
+        <VerticalStackLayout VerticalOptions="Center" 
+                             Padding="{OnPlatform iOS=0, Android=0, WinUI=20, MacCatalyst=20}" 
+                             Spacing="{OnPlatform iOS=0, Android=0, WinUI=20, MacCatalyst=20}" 
+                             Grid.ColumnSpan="{OnPlatform iOS=3, Android=3, WinUI=0, MacCatalyst=0}" 
+                             Grid.RowSpan="{OnPlatform iOS=0, Android=0, MacCatalyst=12, WinUI=12}" 
+                             Grid.Column="{OnPlatform iOS=0, Android=0, MacCatalyst=3, WinUI=3}" 
+                             Grid.Row="{OnPlatform iOS=0, Android=0, MacCatalyst=1, WinUI=1}">
+            <Label x:Name="task_line_1" BackgroundColor="{Binding taskBackgroundColors[0]}"/>
+            <Label x:Name="task_line_2" BackgroundColor="{Binding taskBackgroundColors[1]}"/>
+            <Label x:Name="task_line_3" BackgroundColor="{Binding taskBackgroundColors[2]}"/>
+            <Label x:Name="task_line_4" BackgroundColor="{Binding taskBackgroundColors[3]}"/>
+            <Label x:Name="task_line_5" BackgroundColor="{Binding taskBackgroundColors[4]}"/>
+            <Label x:Name="task_line_6" BackgroundColor="{Binding taskBackgroundColors[5]}"/>
+            <Label x:Name="task_line_7" BackgroundColor="{Binding taskBackgroundColors[6]}"/>
+            <Label x:Name="task_line_8" BackgroundColor="{Binding taskBackgroundColors[7]}"/>
+            <Label x:Name="task_line_9" BackgroundColor="{Binding taskBackgroundColors[8]}"/>
+            <Label x:Name="task_line_10" BackgroundColor="{Binding taskBackgroundColors[9]}"/>
+            <Label x:Name="task_line_11" BackgroundColor="{Binding taskBackgroundColors[10]}"/>
+            <Label x:Name="task_line_12" BackgroundColor="{Binding taskBackgroundColors[11]}"/>
+            <Label x:Name="task_line_13" BackgroundColor="{Binding taskBackgroundColors[12]}"/>
+            <Label x:Name="task_line_14" BackgroundColor="{Binding taskBackgroundColors[13]}"/>
+        </VerticalStackLayout>
+
+        <Label Text="A Sorozat" Grid.Column="0" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Entry Text="{Binding A[0]}" Grid.Column="0" Grid.Row="2" BackgroundColor="{Binding ColorA[0]}" x:Name="A0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Entry Text="{Binding A[1]}" Grid.Column="0" Grid.Row="3" BackgroundColor="{Binding ColorA[1]}" x:Name="A1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Entry Text="{Binding A[2]}" Grid.Column="0" Grid.Row="4" BackgroundColor="{Binding ColorA[2]}" x:Name="A2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Entry Text="{Binding A[3]}" Grid.Column="0" Grid.Row="5" BackgroundColor="{Binding ColorA[3]}" x:Name="A3" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Entry Text="{Binding A[4]}" Grid.Column="0" Grid.Row="6" BackgroundColor="{Binding ColorA[4]}" x:Name="A4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Button Text="Véletlen számok" Grid.Column="0" Grid.Row="12" Command="{Binding fillWithRandomNumbers}"/>
+
+        <Label Text="Egyesített" Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Label Text="{Binding U[0]}" Grid.Column="1" Grid.Row="2" BackgroundColor="{Binding ColorU[0]}" x:Name="U0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Label Text="{Binding U[1]}" Grid.Column="1" Grid.Row="3" BackgroundColor="{Binding ColorU[1]}" x:Name="U1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Label Text="{Binding U[2]}" Grid.Column="1" Grid.Row="4" BackgroundColor="{Binding ColorU[2]}" x:Name="U2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Label Text="{Binding U[3]}" Grid.Column="1" Grid.Row="5" BackgroundColor="{Binding ColorU[3]}" x:Name="U3" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Label Text="{Binding U[4]}" Grid.Column="1" Grid.Row="6" BackgroundColor="{Binding ColorU[4]}" x:Name="U4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Label Text="{Binding U[5]}" Grid.Column="1" Grid.Row="7" BackgroundColor="{Binding ColorU[5]}" x:Name="U5" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Label Text="{Binding U[6]}" Grid.Column="1" Grid.Row="8" BackgroundColor="{Binding ColorU[6]}" x:Name="U6" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Label Text="{Binding U[7]}" Grid.Column="1" Grid.Row="9" BackgroundColor="{Binding ColorU[7]}" x:Name="U7" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Label Text="{Binding U[8]}" Grid.Column="1" Grid.Row="10" BackgroundColor="{Binding ColorU[8]}" x:Name="U8" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Label Text="{Binding U[9]}" Grid.Column="1" Grid.Row="11" BackgroundColor="{Binding ColorU[9]}" x:Name="U9" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Button Text="Visszaállítás" Grid.Column="1" Grid.Row="12" Command="{Binding resetNumbers}"/>
+
+        <Label Text="B Sorozat" Grid.Column="2" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Entry Text="{Binding B[0]}" Grid.Column="2" Grid.Row="2" BackgroundColor="{Binding ColorB[0]}" x:Name="B0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Entry Text="{Binding B[1]}" Grid.Column="2" Grid.Row="3" BackgroundColor="{Binding ColorB[1]}" x:Name="B1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Entry Text="{Binding B[2]}" Grid.Column="2" Grid.Row="4" BackgroundColor="{Binding ColorB[2]}" x:Name="B2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Entry Text="{Binding B[3]}" Grid.Column="2" Grid.Row="5" BackgroundColor="{Binding ColorB[3]}" x:Name="B3" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Entry Text="{Binding B[4]}" Grid.Column="2" Grid.Row="6" BackgroundColor="{Binding ColorB[4]}" x:Name="B4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Button Text="Szimulálás" Grid.Column="2" Grid.Row="12" Command="{Binding stepSim}"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Task>
+	<Explanation>
+		Feladat: Adott egy N és egy M elemből álló sorozat (A és B). Adjuk meg azokat az elemeket egy C sorozatban, amelyek legalább az egyik sorozatban előfordulnak.
+
+		Megoldás: Az egyesítés első lépéseként az A sorozat összes elemét átmásoljuk a C sorozatba, majd a B sorozaton úgy haladunk végig, hogy minden elemnél megvizsgáljuk, hogy az A sorozatban is szerepel-e. Ezt úgy tesszük meg, hogy a B sorozat minden egyes eleménél lefuttatunk egy ciklust az A sorozaton addig amíg a végére nem érünk, vagy meg nem találjuk az B-beli elemet. Ebből a ciklusból kétféleképpen léphetünk ki. Vagy az A sorozat végére értünk és nem találtuk meg a B-beli elemet, vagy még a sorozaton belül vagyunk (I&#x2264;N) és megtaláltuk az elemet. Az előbbi esetben növeljük a C sorozat elemszámát és betesszük az elemszámadik (db) helyre a C sorozatba, az utóbbiban pedig a B sorozat következő elemére lépünk Az egyesítés akkor ér véget, ha a B sorozat összes elemét megvizsgáltuk.
+
+		Példa: 
+		Az egyik sorozat (A): 5, 4, 2, 7
+		A másik sorozat (B): 4, 12, 3, 5, 9
+		A darabszám kezdetben: 0
+		Az "A" sorozat elemszáma (N): 4
+		A "B" sorozat elemszáma (M): 5
+
+		C:=A &#x2192; C:=5, 4, 2, 7
+		DB:=4
+
+		Ciklus I:=J-től 5-ig
+		I:=1;
+		Ciklus amíg I&#x2264;N és A(I)&#x2260;B(J)
+		I:=I+1;
+		Ciklus vége
+		Ha I>N akkor DB:=DB+1; C(DB):=B(J);
+		Ciklus vége
+
+		A külső ciklus első végrehajtása:
+		i=1, j=1;
+		Belső ciklus első végrehajtása: 1&#x2264;4 és 5&#x2260;4 &#x2192; I:=I+1 &#x2192; I:=1+1 &#x2192; I:=2
+		Belső ciklus második végrehajtása: 2&#x2264;4 és (4&#x2260;4)=hamis &#x2192; a második feltétel hamis, ezért kilépünk a belső ciklusból
+		(2>5)=hamis &#x2192; a belső ciklus végrehajtása befejeződött, a B sorozat következő elemére lépünk
+
+		A külső ciklus második végrehajtása:
+		i=1, j=2;
+		Belső ciklus első végrehajtása: 1&#x2264;4 és 5&#x2260;12 &#x2192; I:=I+1 &#x2192; I:=1+1 &#x2192; I:=2
+		Belső ciklus második végrehajtása: 2&#x2264;4 és 4&#x2260;12 &#x2192; I:=I+1 &#x2192; I:=2+1 &#x2192; I:=3
+		Belső ciklus harmadik végrehajtása: 3&#x2264;4 és 2&#x2260;12 &#x2192; I:=I+1 &#x2192; I:=3+1 &#x2192; I:=4
+		Belső ciklus negyedik végrehajtása: 4&#x2264;4 és 7&#x2260;4 &#x2192; I:=I+1 &#x2192; I:=4+1 &#x2192; I:=5
+		A belső ciklus feltételének újabb vizsgálatakor (5&#x2264;4)=hamis &#x2192; kilépünk a belső ciklusból
+		5>4	&#x2192; DB-t növeljük és az elemet betesszük a C sorozatba
+		DB:=DB+1 &#x2192; DB:=4+1 &#x2192; DB:=5
+		C(DB):=A(I) &#x2192; C(5):=12 &#x2192; C sorozat=5, 4, 2, 7, 12
+
+		A külső ciklus harmadik végrehajtása:
+		i=1, j=3;
+		Belső ciklus első végrehajtása: 1&#x2264;4 és 5&#x2260;3 &#x2192; I:=I+1 &#x2192; I:=1+1 &#x2192; I:=2
+		Belső ciklus második végrehajtása: 2&#x2264;4 és 4&#x2260;3 &#x2192; I:=I+1 &#x2192; I:=2+1 &#x2192; I:=3
+		Belső ciklus harmadik végrehajtása: 3&#x2264;4 és 2&#x2260;3 &#x2192; I:=I+1 &#x2192; I:=3+1 &#x2192; I:=4
+		Belső ciklus negyedik végrehajtása: 4&#x2264;4 és 7&#x2260;3 &#x2192; I:=I+1 &#x2192; I:=4+1 &#x2192; I:=5
+		A belső ciklus feltételének újabb vizsgálatakor (5&#x2264;4)=hamis &#x2192; kilépünk a belső ciklusból
+		5>4 &#x2192; DB-t növeljük és az elemet betesszük a C sorozatba
+		DB:=DB+1 &#x2192; DB:=5+1 &#x2192; DB:=6
+		C(DB):=A(I) &#x2192; C(6):=3 &#x2192; C sorozat=5, 4, 2, 7, 12, 3
+
+		A külső ciklus negyedik végrehajtása:
+		i=1, j=4;
+		Belső ciklus első végrehajtása: 1&#x2264;4 és (5&#x2260;5)=hamis &#x2192; a második feltétel hamis, ezért kilépünk a belső ciklusból
+		(2>5)=hamis &#x2192; a belső ciklus végrehajtása befejeződött, a B sorozat következő elemére lépünk
+
+		A külső ciklus ötödik végrehajtása:
+		i=1, j=5;
+		Belső ciklus első végrehajtása: 1&#x2264;4 és 5&#x2260;9 &#x2192; I:=I+1 &#x2192; I:=1+1 &#x2192; I:=2
+		Belső ciklus második végrehajtása: 2&#x2264;4 és 4&#x2260;9 &#x2192; I:=I+1 &#x2192; I:=2+1 &#x2192; I:=3
+		Belső ciklus harmadik végrehajtása: 3&#x2264;4 és 2&#x2260;9 &#x2192; I:=I+1 &#x2192; I:=3+1 &#x2192; I:=4
+		Belső ciklus negyedik végrehajtása: 4&#x2264;4 és 7&#x2260;9 &#x2192; I:=I+1 &#x2192; I:=4+1 &#x2192; I:=5
+		A belső ciklus feltételének újabb vizsgálatakor (5&#x2264;4)=hamis &#x2192; kilépünk a belső ciklusból
+		5>4 &#x2192; DB-t növeljük és az elemet betesszük a C sorozatba
+		DB:=DB+1 &#x2192; DB:=6+1 &#x2192; DB:=7
+		C(DB):=A(I) &#x2192; C(7):=9 &#x2192; C sorozat=5, 4, 2, 7, 12, 3, 9
+
+		A külső ciklus végrehajtása itt befejeződik, mivel i értéke elérte a 4-et. Megkaptuk a két sorozat egyesítését a C sorozatban, a metszet elemszámát pedig a db változóban.
+</Explanation>
+	<TaskLines>
+		<Line1>     Eljárás Egyesítés(N,A,M,B,DB,C)</Line1>
+		<Line2>             C:=A;</Line2>
+		<Line3>             DB:=N;</Line3>
+		<Line4>             Ciklus J:=1 -től M -ig</Line4>
+		<Line5>                     I:=1;</Line5>
+		<Line6>                     Ciklus amíg I&#x2264;N és A(I)&#x2260;B(J)</Line6>
+		<Line7>                             I:=I+1;</Line7>
+		<Line8>                     Ciklus vége</Line8>
+		<Line9>                     Ha I>N akkor</Line9>
+		<Line10>                             DB:=DB+1;</Line10>
+		<Line11>                             C(DB):=B(J);</Line11>
+		<Line12>                     Elágazás vége</Line12>
+		<Line13>             Ciklus vége</Line13>
+		<Line14>     Eljárás vége</Line14>
+	</TaskLines>
+	<Tasks>
+		1.	Az iskolában két fakultatív tárgy indult, megkaptuk mindkettőnek a névsorát. Adjuk meg az összes olyan hallgató nevét, aki valamilyen fakultációra jár!
+
+		2.	Ezen a héten kétszer rendeztek lóversenyt és listát készítettek mindkét napon az indulókról. Adjuk meg az összes ló nevét, aki ezen a héten versenyzett!
+
+		3.	Összegyűjtöttük két TV csatorna műsortípusait. Készítsünk egy listát arról, hogy milyen műsortípusok közül választhatunk!
+
+		4.	Macskaeledelt szeretnénk venni és a közelben két bolt található. Azért, hogy megtudjuk milyen eledelek közül választhatunk, összesítsük a két boltban kapható választék listáját!
+	</Tasks>
+</Task>

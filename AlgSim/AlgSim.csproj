@@ -53,11 +53,36 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\ContentXMLs\MaxSelection_Content.xml" />
-	  <None Remove="Resources\ContentXMLs\Sum_Content.xml" />
+	  <AndroidResource Remove="Resources\Raw\Content\**" />
+	  <Compile Remove="Resources\Raw\Content\**" />
+	  <EmbeddedResource Remove="Resources\Raw\Content\**" />
+	  <MauiAsset Remove="Resources\Raw\Content\**" />
+	  <MauiCss Remove="Resources\Raw\Content\**" />
+	  <MauiXaml Remove="Resources\Raw\Content\**" />
+	  <None Remove="Resources\Raw\Content\**" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\ContentXMLs\Copy_Content.xml" />
+	  <None Remove="Resources\ContentXMLs\Intersection_Content.xml" />
+	  <None Remove="Resources\ContentXMLs\MaxSelection_Content.xml" />
+	  <None Remove="Resources\ContentXMLs\MinSelection_Content.xml" />
+	  <None Remove="Resources\ContentXMLs\Sum_Content.xml" />
+	  <None Remove="Resources\ContentXMLs\Swap_Content.xml" />
+	  <None Remove="Resources\ContentXMLs\Union_Content.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\ContentXMLs\Copy_Content.xml" />
+	  <EmbeddedResource Include="Resources\ContentXMLs\MinSelection_Content.xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Resources\ContentXMLs\Swap_Content.xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Resources\ContentXMLs\Union_Content.xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </EmbeddedResource>
 	  <EmbeddedResource Include="Resources\ContentXMLs\MaxSelection_Content.xml" />
 	  <EmbeddedResource Include="Resources\ContentXMLs\Sum_Content.xml">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -69,24 +94,55 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="View\BubbleOrderPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="View\CopyPage.xaml">
+	  <EmbeddedResource Include="Resources\ContentXMLs\Intersection_Content.xml">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Properties\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="View\Intersection_Page.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\MaxSelection_Page.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+    <MauiXaml Update="View\BubbleOrderPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\CopyPage.xaml">
 	  <MauiXaml Update="View\SelectionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\SplittingPage.xaml">
+	  <MauiXaml Update="View\MinSelection_Page.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\Sum_Page.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\Swap_Page.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Union_Page.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
+
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionAlgSimHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>

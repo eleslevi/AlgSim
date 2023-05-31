@@ -1,11 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AlgSim.MainPage">
+              x:Class="AlgSim.MainPage">
     <!-- dotnet build -f net7.0-android  : for android apk build-->
     <ScrollView>
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
@@ -25,12 +30,14 @@
             <Label Grid.Row="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Összetett tételek</Label>
             <Button Grid.Row="5" Text="Másolás" Command="{Binding Copy}"></Button>
             <Button Grid.Row="6" Text="Kiválogatás" Command="{Binding Selection}"></Button>
-            <Button Grid.Row="6" Text="Szétválogatás" Command="{Binding Splitting}"></Button>
+            <Button Grid.Row="7" Text="Szétválogatás" Command="{Binding Splitting}"></Button>
             
-            <Label Grid.Row="7" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Rendezések</Label>
-            <Button Grid.Row="8" Text="Egyszerű cserés" Command="{Binding DisplayMessage}"></Button>
-            <Button Grid.Row="9" Text="Minimumkiválasztásos" Command="{Binding DisplayMessage}"></Button>
-            <Button Grid.Row="10" Text="Buborék" Command="{Binding Bubble}"></Button>
+            <Label Grid.Row="8" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Rendezések</Label>
+            <Button Grid.Row="9" Text="Egyszerű cserés" Command="{Binding DisplayMessage}"></Button>
+            <Button Grid.Row="10" Text="Minimumkiválasztásos" Command="{Binding DisplayMessage}"></Button>
+            <Button Grid.Row="11" Text="Buborék" Command="{Binding Bubble}"></Button>
+            <Button Grid.Row="12" Text="Kiválogatás" Command="{Binding DisplayMessage}"></Button>
+            <Button Grid.Row="13" Text="Metszet" Command="{Binding Intersection}"></Button>
         </Grid>
     </ScrollView>
 </ContentPage>
