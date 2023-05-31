@@ -90,13 +90,13 @@ namespace AlgSim.ViewModel
         public int value = 0;
         public int count = -1;
 
-        private enum Statement
-        {
-            kisebb,nagyobb,páratlan,páros
-        }
-        private Statement statement = Statement.kisebb;
-            
-
+        //private enum Statement
+        //{
+        //    kisebb,nagyobb,páratlan,páros
+        //}
+        //private Statement statement = Statement.kisebb;
+        public string Statement = "kisebb";
+        public string[] Statements = {"kisebb", "nagyobb", "páratlan", "páros"};
         private Cycle current_cycle = Cycle.Start_Task;
 
         public SelectionPage_ViewModel()
@@ -139,7 +139,7 @@ namespace AlgSim.ViewModel
                         if (sim_cycle_iterator < numbers.Count)
                         {
                             var item = result[sim_cycle_iterator];
-                            if (statement == Statement.kisebb)
+                            if (Statement == Statements[0])
                             {
                                 if (item < value)
                                 {
@@ -150,7 +150,7 @@ namespace AlgSim.ViewModel
                                     current_cycle = Cycle.EndIf;
                                 }
                             }
-                            else if (statement == Statement.nagyobb)
+                            else if (Statement == Statements[1])
                             {
                                 if (item > value)
                                 {
@@ -161,7 +161,7 @@ namespace AlgSim.ViewModel
                                     current_cycle = Cycle.EndIf;
                                 }
                             }
-                            else if (statement == Statement.páratlan)
+                            else if (Statement == Statements[2])
                             {
                                 if (item % 2 == 1)
                                 {
@@ -172,7 +172,7 @@ namespace AlgSim.ViewModel
                                     current_cycle = Cycle.EndIf;
                                 }
                             }
-                            else if (statement == Statement.páros)
+                            else if (Statement == Statements[3])
                             {
                                 if (item % 2 == 0)
                                 {
@@ -242,7 +242,7 @@ namespace AlgSim.ViewModel
                 isSimulationRunning = false;
                 taskBackgroundColors[(int)current_cycle] = Colors.Black;
                 current_cycle = Cycle.Start_Task;
-                statement = Statement.kisebb;
+                Statement = Statements[0];
                 for (int i = 0; i < result.Count; i++)
                 {
                     result[i] = 0;

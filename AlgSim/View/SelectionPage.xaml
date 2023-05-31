@@ -92,22 +92,32 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
 
                             <Button Grid.Column="0" Text="Véletlen számok"  Command="{Binding fillWithRandomNumbers}"></Button>
                             <Button Grid.Column="1" Text="Visszaállítás"  Command="{Binding resetNumbers}"></Button>
                             <Button Grid.Column="2" Text="Szimulálás"  Command="{Binding stepSim}"></Button>
+                            <CollectionView Grid.Column="3" 
+                                            SelectedItem="{Binding Statement}"
+                                            SelectionMode="Single"
+                                            x:Name="Filter" ItemsSource="{Binding Statements}">
+                                <CollectionView.ItemsLayout>
+                                    <GridItemsLayout Orientation="Vertical" Span="1" VerticalItemSpacing="5"></GridItemsLayout>
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <VerticalStackLayout
+                                            VerticalOptions="CenterAndExpand"
+                                            BackgroundColor="LightGray">
+                                            <!--WTF-->
+                                            <Label VerticalOptions="CenterAndExpand" Text="{Binding Statements}"></Label>
+                                        </VerticalStackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                                
+                            </CollectionView>
                         </Grid>
-
-                        <!--<Grid Grid.Row="2">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-
-                            <Label Grid.Column="0" Text="Összeg:"  FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
-                            <Button Grid.Column="1" IsEnabled="False" BackgroundColor="White" TextColor="Black" Text="{Binding currentSum[0]}" FontSize="Medium"></Button>
-                        </Grid>-->
                     </Grid>
                 </StackLayout>
 
