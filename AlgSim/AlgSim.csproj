@@ -34,7 +34,12 @@
 		<Title></Title>
 	</PropertyGroup>
 
-	<ItemGroup>
+  <PropertyGroup>
+    <WindowsPackageType>None</WindowsPackageType>
+  </PropertyGroup>
+
+
+  <ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\Images\oe_pecsetlogo.png" ForegroundFile="Resources\Images\oe_pecsetlogo.png" />
 
