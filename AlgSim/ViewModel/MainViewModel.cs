@@ -9,16 +9,19 @@ namespace AlgSim.ViewModel
     public class MainViewModel : ViewModelBase
     {
         public DelegateCommand Sum { get; private set; }
-        public DelegateCommand Decision { get; private set; }
         public DelegateCommand MaxSelection { get; private set; }
         public DelegateCommand Intersection { get; private set; }
         public DelegateCommand Union { get; private set; }
         public DelegateCommand Swap { get; private set; }
         public DelegateCommand MinSelection { get; private set; }
-        public DelegateCommand Selection { get; private set; }
+        public DelegateCommand Picking { get; private set; }
         public DelegateCommand Bubble { get; private set; }
         public DelegateCommand Splitting { get; private set; }
         public DelegateCommand Copy { get; private set; }
+        public DelegateCommand Decision { get; private set; }
+        public DelegateCommand Search { get; private set; }
+        public DelegateCommand Selection { get; private set; }
+        public DelegateCommand Count { get; private set; }
 
         public EventHandler MenuClicked;
 
@@ -27,8 +30,11 @@ namespace AlgSim.ViewModel
         {
             Sum = new DelegateCommand(parameter => OnMenuClicked("Sum"));
             Decision = new DelegateCommand(parameter => OnMenuClicked("Decision"));
-            MaxSelection = new DelegateCommand(parameter => OnMenuClicked("MaxSelection"));
+            Search = new DelegateCommand(parameter => OnMenuClicked("Search"));
             Selection = new DelegateCommand(parameter => OnMenuClicked("Selection"));
+            Count = new DelegateCommand(parameter => OnMenuClicked("Count"));
+            MaxSelection = new DelegateCommand(parameter => OnMenuClicked("MaxSelection"));
+            Picking = new DelegateCommand(parameter => OnMenuClicked("Picking"));
             Splitting = new DelegateCommand(parameter => OnMenuClicked("Splitting"));
             Bubble = new DelegateCommand(parameter => OnMenuClicked("Bubble"));
             Copy = new DelegateCommand(parameter => OnMenuClicked("Copy"));

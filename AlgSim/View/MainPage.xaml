@@ -25,30 +25,36 @@
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
             <Label Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Elemi tételek</Label>
             <Button Grid.Row="1" Text="Összegzés" Command="{Binding Sum}"></Button>
             <Button Grid.Row="2" Text="Eldöntés" Command="{Binding Decision}"></Button>
-            <Button Grid.Row="3" Text="Maximumkiválasztás" Command="{Binding MaxSelection}"></Button>
+            <Button Grid.Row="3" Text="Keresés" Command="{Binding Search}"></Button>
+            <Button Grid.Row="4" Text="Kiválasztás" Command="{Binding Selection}"></Button>
+            <Button Grid.Row="5" Text="Megszámlálás" Command="{Binding Count}"></Button>
+            <Button Grid.Row="6" Text="Maximumkiválasztás" Command="{Binding MaxSelection}"></Button>
             
-            <Label Grid.Row="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Összetett tételek</Label>
-            <Button Grid.Row="5" Text="Másolás" Command="{Binding Copy}"></Button>
-            <Button Grid.Row="6" Text="Kiválogatás" Command="{Binding Selection}"></Button>
-            <Button Grid.Row="7" Text="Szétválogatás" Command="{Binding Splitting}"></Button>
-            <Button Grid.Row="8" Text="Egyesítés" Command="{Binding Union}"></Button>
+            <Label Grid.Row="7" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Összetett tételek</Label>
+            <Button Grid.Row="8" Text="Másolás" Command="{Binding Copy}"></Button>
+            <Button Grid.Row="9" Text="Kiválogatás" Command="{Binding Picking}"></Button>
+            <Button Grid.Row="10" Text="Szétválogatás" Command="{Binding Splitting}"></Button>
+            <Button Grid.Row="11" Text="Egyesítés" Command="{Binding Union}"></Button>
             
-            <Label Grid.Row="9" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Rendezések</Label>
-            <Button Grid.Row="10" Text="Egyszerű cserés" Command="{Binding Swap}"></Button>
-            <Button Grid.Row="11" Text="Minimumkiválasztásos" Command="{Binding MinSelection}"></Button>
-            <Button Grid.Row="12" Text="Buborék" Command="{Binding Bubble}"></Button>
-            <Button Grid.Row="13" Text="Metszet" Command="{Binding Intersection}"></Button>
+            <Label Grid.Row="12" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Rendezések</Label>
+            <Button Grid.Row="13" Text="Egyszerű cserés" Command="{Binding Swap}"></Button>
+            <Button Grid.Row="14" Text="Minimumkiválasztásos" Command="{Binding MinSelection}"></Button>
+            <Button Grid.Row="15" Text="Buborék" Command="{Binding Bubble}"></Button>
+            <Button Grid.Row="16" Text="Metszet" Command="{Binding Intersection}"></Button>
 
-            <Label Grid.Row="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Készítette</Label>
-            <Label Grid.Row="15" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Éles Levente</Label>
-            <Label Grid.Row="16" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Illyés Dávid</Label>
-            <Label Grid.Row="17" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Káldy József Álmos</Label>
-            <Label Grid.Row="18" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Kopasz-Bódi Tibor</Label>
+            <Label Grid.Row="17" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Készítette</Label>
+            <Label Grid.Row="18" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Éles Levente</Label>
+            <Label Grid.Row="19" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Illyés Dávid</Label>
+            <Label Grid.Row="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Káldy József Álmos</Label>
+            <Label Grid.Row="21" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Kopasz-Bódi Tibor</Label>
         </Grid>
     </ScrollView>
 </ContentPage>

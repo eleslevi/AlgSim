@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlgSim.View.Eldontes_Page"
+             Title="Eldöntés"
+             BackgroundColor="LightGray">
+    <Grid>
+        <!-- 3 oszlop definiálása -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <!-- Első oszlop tartalma -->
+        <ScrollView Grid.Column="0">
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" BackgroundColor="White">
+                <Label HorizontalOptions="Center" Text="Magyarázat" TextColor="Black" FontSize="Large"></Label>
+                <Label x:Name="explanation_label" HorizontalOptions="CenterAndExpand"></Label>
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Második oszlop tartalma -->
+        <Grid Grid.Column="1">
+            <!-- Középső oszlopban 2 sor definiálása -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!-- Első sor tartalma -->
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" Grid.Row="0" BackgroundColor="LightGray" Padding="5,5,5,5">
+                <Label HorizontalOptions="CenterAndExpand" Text="Szimuláció" TextColor="Black" FontSize="Large"></Label>
+                <Grid Padding="5,5,5,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Entry Text="{Binding numbers[0]}" Grid.Column="0" TextColor="Black" BackgroundColor="{Binding backgroundColors[0]}" x:Name="entry0"></Entry>
+                        <Entry Text="{Binding numbers[1]}" Grid.Column="1" TextColor="Black" BackgroundColor="{Binding backgroundColors[1]}" x:Name="entry1"></Entry>
+                        <Entry Text="{Binding numbers[2]}" Grid.Column="2" TextColor="Black" BackgroundColor="{Binding backgroundColors[2]}" x:Name="entry2"></Entry>
+                        <Entry Text="{Binding numbers[3]}" Grid.Column="3" TextColor="Black" BackgroundColor="{Binding backgroundColors[3]}" x:Name="entry3"></Entry>
+                        <Entry Text="{Binding numbers[4]}" Grid.Column="4" TextColor="Black" BackgroundColor="{Binding backgroundColors[4]}" x:Name="entry4"></Entry>
+                        <Entry Text="{Binding numbers[5]}" Grid.Column="5" TextColor="Black" BackgroundColor="{Binding backgroundColors[5]}" x:Name="entry5"></Entry>
+                        <Entry Text="{Binding numbers[6]}" Grid.Column="6" TextColor="Black" BackgroundColor="{Binding backgroundColors[6]}" x:Name="entry6"></Entry>
+                        <Entry Text="{Binding numbers[7]}" Grid.Column="7" TextColor="Black" BackgroundColor="{Binding backgroundColors[7]}" x:Name="entry7"></Entry>
+                        <Entry Text="{Binding numbers[8]}" Grid.Column="8" TextColor="Black" BackgroundColor="{Binding backgroundColors[8]}" x:Name="entry8"></Entry>
+                        <Entry Text="{Binding numbers[9]}" Grid.Column="9" TextColor="Black" BackgroundColor="{Binding backgroundColors[9]}" x:Name="entry9"></Entry>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column="0" Text="Véletlen számok" TextColor="Black" Command="{Binding FillWithRandomNumbersCommand}"></Button>
+                        <Button Grid.Column="1" Text="Visszaállítás" TextColor="Black" Command="{Binding ResetNumbersCommand}"></Button>
+                        <Button Grid.Column="2" Text="Szimulálás" TextColor="Black" Command="{Binding StepSimulationCommand}"></Button>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Tulajdonság:" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="Small"/>
+                            <Picker x:Name="picker" Title="" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" BackgroundColor="Black"  FontSize="Small" SelectedItem="{Binding SelectedPickerItem}">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Páros szám</x:String>
+                                        <x:String>Páratlan szám</x:String>
+                                        <x:String>Konkrét érték</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                            </Picker>
+                        </StackLayout>
+
+                    </Grid>
+
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Text="Ha konkrét érték, akkor ide írj:" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                        <Entry Grid.Column="1" IsEnabled="True" BackgroundColor="White" TextColor="Black" Text="{Binding currentEldontes[0]}" FontSize="Medium"></Entry>
+                    </Grid>
+
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Text="Szerepel a tömbben:" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+                        <Button Grid.Column="1" IsEnabled="False" BackgroundColor="White" TextColor="Black" Text="{Binding currentEldontes[0]}" FontSize="Medium"></Button>
+                    </Grid>
+                </Grid>
+            </StackLayout>
+
+            <!-- Második sor tartalma -->
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" Grid.Row="1" BackgroundColor="White">
+                <Label x:Name="task_line_1" BackgroundColor="{Binding TaskbackgroundColors[0]}"></Label>
+                <Label x:Name="task_line_2" BackgroundColor="{Binding TaskbackgroundColors[1]}"></Label>
+                <Label x:Name="task_line_3" BackgroundColor="{Binding TaskbackgroundColors[2]}"></Label>
+                <Label x:Name="task_line_4" BackgroundColor="{Binding TaskbackgroundColors[3]}"></Label>
+                <Label x:Name="task_line_5" BackgroundColor="{Binding TaskbackgroundColors[4]}"></Label>
+                <Label x:Name="task_line_6" BackgroundColor="{Binding TaskbackgroundColors[5]}"></Label>
+                <Label x:Name="task_line_7" BackgroundColor="{Binding TaskbackgroundColors[6]}"></Label>
+                <Label x:Name="task_line_8" BackgroundColor="{Binding TaskbackgroundColors[7]}"></Label>
+                <Label x:Name="task_line_9" BackgroundColor="{Binding TaskbackgroundColors[8]}"></Label>
+                <Label x:Name="task_line_10" BackgroundColor="{Binding TaskbackgroundColors[9]}"></Label>
+                <Label x:Name="task_line_11" BackgroundColor="{Binding TaskbackgroundColors[10]}"></Label>
+            </StackLayout>
+        </Grid>
+
+        <!-- Harmadik oszlop tartalma -->
+        <ScrollView Grid.Column="2">
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" BackgroundColor="White">
+                <Label HorizontalOptions="Center" Text="Feladatok" TextColor="Black" FontSize="Large"></Label>
+                <Label x:Name="tasks_label"></Label>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

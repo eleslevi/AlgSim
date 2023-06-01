@@ -65,8 +65,12 @@
 	<ItemGroup>
 	  <None Remove="Resources\ContentXMLs\BubbleOrder_Content.xml" />
 	  <None Remove="Resources\ContentXMLs\Copy_Content.xml" />
+	  <None Remove="Resources\ContentXMLs\Eldontes_Content.xml" />
 	  <None Remove="Resources\ContentXMLs\Intersection_Content.xml" />
+	  <None Remove="Resources\ContentXMLs\Kereses_Content.xml" />
+	  <None Remove="Resources\ContentXMLs\Kivalasztas_Content.xml" />
 	  <None Remove="Resources\ContentXMLs\MaxSelection_Content.xml" />
+	  <None Remove="Resources\ContentXMLs\Megszamolas_Content.xml" />
 	  <None Remove="Resources\ContentXMLs\MinSelection_Content.xml" />
 	  <None Remove="Resources\ContentXMLs\Selection_Content.xml" />
 	  <None Remove="Resources\ContentXMLs\Splitting_Content.xml" />
@@ -78,6 +82,10 @@
 	<ItemGroup>
 	  <EmbeddedResource Include="Resources\ContentXMLs\BubbleOrder_Content.xml" />
 	  <EmbeddedResource Include="Resources\ContentXMLs\Copy_Content.xml" />
+	  <EmbeddedResource Include="Resources\ContentXMLs\Eldontes_Content.xml" />
+	  <EmbeddedResource Include="Resources\ContentXMLs\Kereses_Content.xml" />
+	  <EmbeddedResource Include="Resources\ContentXMLs\Kivalasztas_Content.xml" />
+	  <EmbeddedResource Include="Resources\ContentXMLs\Megszamolas_Content.xml" />
 	  <EmbeddedResource Include="Resources\ContentXMLs\MinSelection_Content.xml">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </EmbeddedResource>
