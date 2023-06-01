@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AlgSim.Classes"
              x:Class="AlgSim.View.CopyPage"
-             Title="CopyPage"
-             BackgroundColor="Black">
+             Shell.NavBarIsVisible="False">
     <ContentPage.Resources>
         <local:StringToColor x:Key="StringToColor" />
     </ContentPage.Resources>
@@ -27,7 +26,7 @@
 
                 <!-- Első sor tartalma -->
                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Grid.Row="0" Padding="5,5,5,5">
-                    <Label HorizontalOptions="CenterAndExpand" Text="Szimuláció" FontSize="Large"></Label>
+                    <Label HorizontalOptions="CenterAndExpand" Text="Másolás" FontSize="Large"></Label>
                     <Grid Padding="5,5,5,5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"></RowDefinition>
@@ -93,24 +92,23 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
 
                             <Button Grid.Column="0" Text="Véletlen számok"  Command="{Binding fillWithRandomNumbers}"></Button>
                             <Button Grid.Column="1" Text="Visszaállítás"  Command="{Binding resetNumbers}"></Button>
                             <Button Grid.Column="2" Text="Szimulálás"  Command="{Binding stepSim}"></Button>
+                            <Grid Grid.Column="3">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
 
-                            <Label>Négyzetre emelés vagy Gyökvonás</Label><CheckBox Grid.Column="3" IsChecked="{Binding Function}" ></CheckBox>
+                                <Label Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Small">Négyzetre emelés ☑</Label>
+                                <Label Grid.Row="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Small">Gyökvonás ☐</Label>
+                            </Grid>
+                            <CheckBox Grid.Column="4" IsChecked="False" CheckedChanged="CheckBox_CheckedChanged"></CheckBox>
                         </Grid>
-
-                        <!--<Grid Grid.Row="2">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-
-                            <Label Grid.Column="0" Text="Összeg:"  FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
-                            <Button Grid.Column="1" IsEnabled="False" BackgroundColor="White" TextColor="Black" Text="{Binding currentSum[0]}" FontSize="Medium"></Button>
-                        </Grid>-->
                     </Grid>
                 </StackLayout>
 

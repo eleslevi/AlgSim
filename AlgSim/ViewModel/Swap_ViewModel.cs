@@ -47,66 +47,66 @@ public class Swap_ViewModel : ContentPage
         null,
     };
 
-    public ObservableCollection<Color> ColorA { get; set; } = new ObservableCollection<Color>()
+    public ObservableCollection<String> ColorA { get; set; } = new ObservableCollection<String>()
     {
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
     };
 
     public ObservableCollection<Color> ColorS { get; set; } = new ObservableCollection<Color>()
     {
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
+        Colors.White,
+        Colors.White,
+        Colors.White,
+        Colors.White,
+        Colors.White,
+        Colors.White,
+        Colors.White,
+        Colors.White,
+        Colors.White,
+        Colors.White,
     };
 
     public ObservableCollection<Color> taskBackgroundColors { get; set; } = new ObservableCollection<Color>()
     {
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
     };
 
     private void resetSimulation()
     {
         for (int i = 0; i < A.Count; i++)
         {
-            ColorA[i] = Colors.White;
+            ColorA[i] = "White";
             A[i] = null;
         }
         for (int i = 0; i < S.Count; i++)
         {
-            ColorS[i] = Colors.LightGray;
+            ColorS[i] = Colors.White;
             S[i] = null;
         }
         for (int i = 0; i < taskBackgroundColors.Count; i++)
         {
-            taskBackgroundColors[i] = Colors.LightGray;
+            taskBackgroundColors[i] = Colors.White;
         }
         OnPropertyChanged(nameof(ColorA));
         OnPropertyChanged(nameof(A));
@@ -180,7 +180,7 @@ public class Swap_ViewModel : ContentPage
                     for (int copy = 0; copy < (N + 1); copy++)
                     {
                         S[copy] = A[copy];
-                        ColorA[copy] = Colors.LightBlue;
+                        ColorA[copy] = "LightBlue";
                         ColorS[copy] = Colors.LightBlue;
                     }
 
@@ -188,16 +188,16 @@ public class Swap_ViewModel : ContentPage
                     break;
 
                 case cycle.start_cycle_A:
-                    taskBackgroundColors[0] = Colors.LightGray;
-                    taskBackgroundColors[7] = Colors.LightGray;
+                    taskBackgroundColors[0] = Colors.Black;
+                    taskBackgroundColors[7] = Colors.Black;
                     taskBackgroundColors[1] = Colors.Red;
 
                     if (i == 0)
                     {
                         for (int copy = 0; copy < (N + 1); copy++)
                         {
-                            ColorA[copy] = Colors.White;
-                            ColorS[copy] = Colors.LightGray;
+                            ColorA[copy] = "White";
+                            ColorS[copy] = Colors.White;
                         }
                     }
 
@@ -219,20 +219,20 @@ public class Swap_ViewModel : ContentPage
                     break;
 
                 case cycle.start_cycle_B:
-                    taskBackgroundColors[1] = Colors.LightGray;
-                    taskBackgroundColors[6] = Colors.LightGray;
+                    taskBackgroundColors[1] = Colors.Black;
+                    taskBackgroundColors[6] = Colors.Black;
                     taskBackgroundColors[2] = Colors.Red;
 
                     if (j_temp != 0 && i != N)
                     {
                         if (j_temp > N)
                         {
-                            ColorS[(j_temp - 1)] = Colors.LightGrey;
+                            ColorS[(j_temp - 1)] = Colors.White;
                             j_temp = 0;
                         }
                         else
                         {
-                            ColorS[j_temp] = Colors.LightGrey;
+                            ColorS[j_temp] = Colors.White;
                             j_temp = 0;
                         }
                     }
@@ -249,7 +249,7 @@ public class Swap_ViewModel : ContentPage
                     break;
 
                 case cycle.start_if:
-                    taskBackgroundColors[2] = Colors.LightGray;
+                    taskBackgroundColors[2] = Colors.Black;
                     taskBackgroundColors[3] = Colors.Red;
 
                     if (S[i] > S[j])
@@ -263,7 +263,7 @@ public class Swap_ViewModel : ContentPage
                     break;
 
                 case cycle.result_swap:
-                    taskBackgroundColors[3] = Colors.LightGray;
+                    taskBackgroundColors[3] = Colors.Black;
                     taskBackgroundColors[4] = Colors.Red;
 
                     int? swap_i = S[i];
@@ -275,20 +275,20 @@ public class Swap_ViewModel : ContentPage
                     break;
 
                 case cycle.end_if:
-                    taskBackgroundColors[3] = Colors.LightGray;
-                    taskBackgroundColors[4] = Colors.LightGray;
+                    taskBackgroundColors[3] = Colors.Black;
+                    taskBackgroundColors[4] = Colors.Black;
                     taskBackgroundColors[5] = Colors.Red;
 
                     current_cycle = cycle.end_cycle_B;
                     break;
 
                 case cycle.end_cycle_B:
-                    taskBackgroundColors[5] = Colors.LightGray;
+                    taskBackgroundColors[5] = Colors.Black;
                     taskBackgroundColors[6] = Colors.Red;
 
                     if (j < N)
                     {
-                        ColorS[j] = Colors.LightGray;
+                        ColorS[j] = Colors.White;
                     }
                     j++;
                     if (j <= N)
@@ -299,12 +299,12 @@ public class Swap_ViewModel : ContentPage
                     break;
 
                 case cycle.end_cycle_A:
-                    taskBackgroundColors[2] = Colors.LightGray;
+                    taskBackgroundColors[2] = Colors.Black;
                     taskBackgroundColors[7] = Colors.Red;
 
                     if (i < N)
                     {
-                        ColorS[i] = Colors.LightGrey;
+                        ColorS[i] = Colors.White;
                     }
                     i++;
                     if (i <= N)
@@ -316,7 +316,7 @@ public class Swap_ViewModel : ContentPage
                     break;
 
                 case cycle.end_Swap:
-                    taskBackgroundColors[1] = Colors.LightGray;
+                    taskBackgroundColors[1] = Colors.Black;
                     taskBackgroundColors[8] = Colors.Red;
 
                     isSimulationRunning = false;
@@ -327,7 +327,6 @@ public class Swap_ViewModel : ContentPage
         OnPropertyChanged(nameof(taskBackgroundColors));
         OnPropertyChanged(nameof(ColorA));
         OnPropertyChanged(nameof(ColorS));
-
         OnPropertyChanged(nameof(S));
     }
 

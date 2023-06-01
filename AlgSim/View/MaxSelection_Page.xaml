@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AlgSim.Classes"
              x:Class="AlgSim.View.MaxSelection_Page"
-             Title=""
-             BackgroundColor="Black">
+             Shell.NavBarIsVisible="False">
     <ContentPage.Resources>
         <local:StringToColor x:Key="StringToColor" />
     </ContentPage.Resources>
@@ -69,9 +68,9 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
 
-                            <Button Grid.Column="0" Text="Véletlen számok" TextColor="Black" Command="{Binding fillWithRandomNumbers}"></Button>
-                            <Button Grid.Column="1" Text="Visszaállítás" TextColor="Black" Command="{Binding resetNumbers}"></Button>
-                            <Button Grid.Column="2" Text="Szimulálás" TextColor="Black" Command="{Binding stepSim}"></Button>
+                            <Button Grid.Column="0" Text="Véletlen számok" Command="{Binding fillWithRandomNumbers}"></Button>
+                            <Button Grid.Column="1" Text="Visszaállítás" Command="{Binding resetNumbers}"></Button>
+                            <Button Grid.Column="2" Text="Szimulálás" Command="{Binding stepSim}"></Button>
                         </Grid>
 
                         <Grid Grid.Row="2">
@@ -81,7 +80,7 @@
                             </Grid.ColumnDefinitions>
 
                             <Label Grid.Column="0" Text="Index:" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
-                            <Button Grid.Column="1" IsEnabled="False" BackgroundColor="White" TextColor="Black" Text="{Binding max[0]}" FontSize="Medium"></Button>
+                            <Button Grid.Column="1" IsEnabled="False" Text="{Binding max[0]}" FontSize="Medium"></Button>
                         </Grid>
 
                         <Grid Grid.Row="3">
@@ -91,7 +90,7 @@
                             </Grid.ColumnDefinitions>
 
                             <Label Grid.Column="0" Text="Érték:" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
-                            <Button Grid.Column="1" IsEnabled="False" BackgroundColor="White" TextColor="Black" Text="{Binding max[1]}" FontSize="Medium"></Button>
+                            <Button Grid.Column="1" IsEnabled="False" Text="{Binding max[1]}" FontSize="Medium"></Button>
                         </Grid>
                     </Grid>
                 </StackLayout>

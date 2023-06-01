@@ -131,6 +131,8 @@ namespace AlgSim.ViewModel
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
                         if (sim_cycle_iterator_in < sim_cycle_iterator_out)
                         {
+                            backgroundColors[sim_cycle_iterator_in] = selectedBC;
+                            backgroundColors[sim_cycle_iterator_in + 1] = selectedBC;
                             current_cycle = Cycle.StartIf;
                         }
                         else
@@ -142,14 +144,11 @@ namespace AlgSim.ViewModel
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
                         if (result[sim_cycle_iterator_in] > result[sim_cycle_iterator_in + 1])
                         {
-                            var item = result[sim_cycle_iterator_in];
+                            double item = result[sim_cycle_iterator_in];
                             result[sim_cycle_iterator_in] = result[sim_cycle_iterator_in + 1];
                             result[sim_cycle_iterator_in + 1] = item;
                         }
-                        else
-                        {
-                            current_cycle = Cycle.EndIf;
-                        }
+                        current_cycle = Cycle.EndIf;
                         break;
                     case Cycle.EndIf:
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
@@ -157,6 +156,8 @@ namespace AlgSim.ViewModel
                         break;
                     case Cycle.EndCycleSecond:
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
+                        backgroundColors[sim_cycle_iterator_in] = whiteBC;
+                        backgroundColors[sim_cycle_iterator_in + 1] = whiteBC;
                         sim_cycle_iterator_in++;
 
                         if (sim_cycle_iterator_in < sim_cycle_iterator_out)
@@ -166,14 +167,14 @@ namespace AlgSim.ViewModel
                         else
                         {
                             current_cycle = Cycle.EndCycleFirst;
+                            sim_cycle_iterator_in = 0;
+                            sim_cycle_iterator_out--;
                         }
-                        //backgroundColors[sim_cycle_iterator] = whiteBC;
                         break;
                     case Cycle.EndCycleFirst:
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
-                        sim_cycle_iterator_out--;
 
-                        if (1 < sim_cycle_iterator_out)
+                        if (sim_cycle_iterator_out > 0)
                         {
                             current_cycle = Cycle.StepCycleFirst;
                         }
@@ -181,7 +182,6 @@ namespace AlgSim.ViewModel
                         {
                             current_cycle = Cycle.End_Task;
                         }
-                        //backgroundColors[sim_cycle_iterator] = whiteBC;
                         break;
                     case Cycle.End_Task:
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;

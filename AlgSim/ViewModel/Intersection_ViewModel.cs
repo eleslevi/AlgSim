@@ -16,7 +16,7 @@ public class Intersection_ViewModel : ContentPage
 	{
         fillWithRandomNumbers = new DelegateCommand(parameter => randomNumbersToFields());
         resetNumbers = new DelegateCommand(parameter => resetSimulation());
-        stepSim = new DelegateCommand(parametr => stepSimulation());
+        stepSim = new DelegateCommand(parameter => stepSimulation());
     }
 
     public ObservableCollection<int?> A { get; set; } = new ObservableCollection<int?>()
@@ -61,80 +61,80 @@ public class Intersection_ViewModel : ContentPage
         null,
     };
 
-    public ObservableCollection<Color> ColorA { get; set; } = new ObservableCollection<Color>()
+    public ObservableCollection<String> ColorA { get; set; } = new ObservableCollection<String>()
     {
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
     };
 
-    public ObservableCollection<Color> ColorI { get; set; } = new ObservableCollection<Color>()
+    public ObservableCollection<String> ColorI { get; set; } = new ObservableCollection<String>()
     {
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
+        "LightGray",
+        "LightGray",
+        "LightGray",
+        "LightGray",
+        "LightGray",
+        "LightGray",
+        "LightGray",
+        "LightGray",
+        "LightGray",
+        "LightGray",
     };
 
-    public ObservableCollection<Color> ColorB { get; set; } = new ObservableCollection<Color>()
+    public ObservableCollection<String> ColorB { get; set; } = new ObservableCollection<String>()
     {
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
     };
 
     public ObservableCollection<Color> taskBackgroundColors { get; set; } = new ObservableCollection<Color>()
     {
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
     };
 
     private void resetSimulation() 
     {
         for (int i = 0; i < A.Count; i++)
         {
-            ColorA[i] = Colors.White;
+            ColorA[i] = "White";
             A[i] = null;
         }
         for (int i = 0; i < I.Count; i++)
         {
-            ColorI[i] = Colors.LightGray;
+            ColorI[i] = "LightGray";
             I[i] = null;
         }
         for (int i = 0; i < B.Count; i++)
         {
-            ColorB[i] = Colors.White;
+            ColorB[i] = "White";
             B[i] = null;
         }
         for (int i = 0; i < taskBackgroundColors.Count; i++)
@@ -162,12 +162,12 @@ public class Intersection_ViewModel : ContentPage
         {
             for (int i = 0; i < A.Count; i++)
             {
-                A[i] = new Random().Next(0, 100);
+                A[i] = new Random().Next(0, 20);
             }
 
             for (int i = 0; i < B.Count; i++)
             {
-                B[i] = new Random().Next(0, 100);
+                B[i] = new Random().Next(0, 20);
             }
 
             OnPropertyChanged(nameof(A));
@@ -233,7 +233,7 @@ private void stepSimulation()
                     break;
 
                 case cycle.tracker_Intersection:
-                    taskBackgroundColors[0] = Colors.LightGray;
+                    taskBackgroundColors[0] = Colors.Black;
                     taskBackgroundColors[1] = Colors.Red;
 
                     DB = -1;
@@ -241,8 +241,8 @@ private void stepSimulation()
                     break;
 
                 case cycle.start_cycle_A:
-                    taskBackgroundColors[1] = Colors.LightGray;
-                    taskBackgroundColors[11] = Colors.LightGray;
+                    taskBackgroundColors[1] = Colors.Black;
+                    taskBackgroundColors[11] = Colors.Black;
                     taskBackgroundColors[2] = Colors.Red;
 
                     if(i <= N)
@@ -250,7 +250,7 @@ private void stepSimulation()
                         current_cycle = cycle.tracker_B;
                         if (i == 0)
                         {
-                            ColorA[(0)] = Colors.LightBlue;
+                            ColorA[(0)] = "LightBlue";
                         }
                     }
                     else
@@ -260,28 +260,28 @@ private void stepSimulation()
                     break;
 
                 case cycle.tracker_B:
-                    taskBackgroundColors[2] = Colors.LightGray;
+                    taskBackgroundColors[2] = Colors.Black;
                     taskBackgroundColors[3] = Colors.Red;
 
                     if (j != 0)
                     {
                         if(j > M)
                         {
-                            ColorB[(j - 1)] = Colors.White;
+                            ColorB[(j - 1)] = "White";
                         }
                         else
                         {
-                            ColorB[j] = Colors.White;
+                            ColorB[j] = "White";
                         }
                     }
                     j = 0;
-                    ColorB[(0)] = Colors.LightBlue;
+                    ColorB[(0)] = "LightBlue";
                     current_cycle = cycle.start_cycle_B;
                     break;
 
                 case cycle.start_cycle_B:
-                    taskBackgroundColors[6] = Colors.LightGray;
-                    taskBackgroundColors[3] = Colors.LightGray;
+                    taskBackgroundColors[6] = Colors.Black;
+                    taskBackgroundColors[3] = Colors.Black;
                     taskBackgroundColors[4] = Colors.Red;
 
                     if(j <= M && A[i] != B[j])
@@ -295,31 +295,31 @@ private void stepSimulation()
                     break;
 
                 case cycle.add_tracker_B:
-                    taskBackgroundColors[4] = Colors.LightGray;
+                    taskBackgroundColors[4] = Colors.Black;
                     taskBackgroundColors[5] = Colors.Red;
 
                     if (j < M)
                     {
-                        ColorB[j] = Colors.White;
+                        ColorB[j] = "White";
                     }
                     j++;
                     if(j <= M)
                     {
-                        ColorB[j] = Colors.LightBlue;
+                        ColorB[j] = "LightBlue";
                     }
                     current_cycle = cycle.end_cycle_B;
                     break;
 
                 case cycle.end_cycle_B:
-                    taskBackgroundColors[5] = Colors.LightGray;
+                    taskBackgroundColors[5] = Colors.Black;
                     taskBackgroundColors[6] = Colors.Red;
 
                     current_cycle = cycle.start_cycle_B;
                     break;
 
                 case cycle.start_if:
-                    taskBackgroundColors[4] = Colors.LightGray;
-                    taskBackgroundColors[6] = Colors.LightGray;
+                    taskBackgroundColors[4] = Colors.Black;
+                    taskBackgroundColors[6] = Colors.Black;
                     taskBackgroundColors[7] = Colors.Red;
 
                     if(j <= M)
@@ -333,26 +333,26 @@ private void stepSimulation()
                     break;
 
                 case cycle.add_tracker_Intersection:
-                    taskBackgroundColors[7] = Colors.LightGray;
+                    taskBackgroundColors[7] = Colors.Black;
                     taskBackgroundColors[8] = Colors.Red;
 
                     if (DB < 9)
                     {
                         if(DB != -1)
                         {
-                            ColorI[DB] = Colors.LightGray;
+                            ColorI[DB] = "LightGray";
                         }
                     }
                     DB++;
                     if (DB <= 9)
                     {
-                        ColorI[DB] = Colors.LightBlue;
+                        ColorI[DB] = "LightBlue";
                     }
                     current_cycle = cycle.add_result_Intersection;
                     break;
 
                 case cycle.add_result_Intersection:
-                    taskBackgroundColors[8] = Colors.LightGray;
+                    taskBackgroundColors[8] = Colors.Black;
                     taskBackgroundColors[9] = Colors.Red;
 
                     I[DB] = A[i];
@@ -360,32 +360,32 @@ private void stepSimulation()
                     break;
 
                 case cycle.end_if:
-                    taskBackgroundColors[7] = Colors.LightGray;
-                    taskBackgroundColors[9] = Colors.LightGray;
+                    taskBackgroundColors[7] = Colors.Black;
+                    taskBackgroundColors[9] = Colors.Black;
                     taskBackgroundColors[10] = Colors.Red;
 
                     current_cycle = cycle.end_cycle_A;
                     break;
 
                 case cycle.end_cycle_A:
-                    taskBackgroundColors[2] = Colors.LightGray;
-                    taskBackgroundColors[10] = Colors.LightGray;
+                    taskBackgroundColors[2] = Colors.Black;
+                    taskBackgroundColors[10] = Colors.Black;
                     taskBackgroundColors[11] = Colors.Red;
 
                     if (i < N)
                     {
-                        ColorA[i] = Colors.White;
+                        ColorA[i] = "White";
                     }
                     i++;
                     if(i <= N)
                     {
-                        ColorA[i] = Colors.LightBlue;
+                        ColorA[i] = "LightBlue";
                     }
                     current_cycle = cycle.start_cycle_A;
                     break;
 
                 case cycle.end_Intersection:
-                    taskBackgroundColors[2] = Colors.LightGray;
+                    taskBackgroundColors[2] = Colors.Black;
                     taskBackgroundColors[12] = Colors.Red;
 
                     isSimulationRunning = false;

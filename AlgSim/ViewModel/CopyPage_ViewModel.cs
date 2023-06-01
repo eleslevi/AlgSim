@@ -15,7 +15,7 @@ namespace AlgSim.ViewModel
 
         private Boolean isSimulationRunning = false;
 
-        public bool Function = false;
+        public static bool Function = false;
 
         private int sim_cycle_iterator = 0;
 
@@ -88,8 +88,9 @@ namespace AlgSim.ViewModel
         {
             fillWithRandomNumbers = new DelegateCommand(parameter => randomNumbersToFields());
             resetNumbers = new DelegateCommand(parameter => resetSimulation());
-            stepSim = new DelegateCommand(parametr => stepSimulation());
+            stepSim = new DelegateCommand(parameter => stepSimulation());
         }
+
         private void stepSimulation()
         {
             if (!isSimulationRunning)

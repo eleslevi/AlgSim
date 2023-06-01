@@ -1,3 +1,4 @@
+using AlgSim.ViewModel;
 using System.Xml;
 
 namespace AlgSim.View;
@@ -23,6 +24,29 @@ public partial class SelectionPage : ContentPage
         task_line_7.Text = sumDoc.SelectSingleNode("Task/TaskLines/Line7").InnerText;
         task_line_8.Text = sumDoc.SelectSingleNode("Task/TaskLines/Line8").InnerText;
         task_line_9.Text = sumDoc.SelectSingleNode("Task/TaskLines/Line9").InnerText;
+        picker_SelectedIndexChanged(picker, EventArgs.Empty);
+    }
 
+    private void picker_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if ( picker.SelectedIndex == -1)
+        {
+            picker.SelectedIndex = 0;
+        }
+        SelectionPage_ViewModel.selectedStatement = picker.SelectedIndex;
+        picker.SelectedItem = picker.Items[SelectionPage_ViewModel.selectedStatement];
+        SelectionPage_ViewModel.Statement = picker.SelectedItem.ToString();
+    }
+
+    private void userValue_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        try
+        {
+            SelectionPage_ViewModel.userValue = Convert.ToInt32(userValue.Text);
+        }
+        catch (Exception ex)
+        {
+            //suppress
+        }
     }
 }

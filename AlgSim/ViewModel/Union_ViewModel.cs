@@ -51,76 +51,76 @@ public class Union_ViewModel : ContentPage
         null,
     };
 
-    public ObservableCollection<Color> ColorA { get; set; } = new ObservableCollection<Color>()
+    public ObservableCollection<String> ColorA { get; set; } = new ObservableCollection<String>()
     {
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
     };
 
     public ObservableCollection<Color> ColorU { get; set; } = new ObservableCollection<Color>()
     {
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
+        Colors.White,
+        Colors.White,
+        Colors.White,
+        Colors.White,
+        Colors.White,
+        Colors.White,
+        Colors.White,
+        Colors.White,
+        Colors.White,
+        Colors.White,
     };
 
-    public ObservableCollection<Color> ColorB { get; set; } = new ObservableCollection<Color>()
+    public ObservableCollection<String> ColorB { get; set; } = new ObservableCollection<String>()
     {
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
     };
 
     public ObservableCollection<Color> taskBackgroundColors { get; set; } = new ObservableCollection<Color>()
     {
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
     };
 
     private void resetSimulation()
     {
         for (int i = 0; i < A.Count; i++)
         {
-            ColorA[i] = Colors.White;
+            ColorA[i] = "White";
             A[i] = null;
         }
         for (int i = 0; i < U.Count; i++)
         {
-            ColorU[i] = Colors.LightGray;
+            ColorU[i] = Colors.White;
             U[i] = null;
         }
         for (int i = 0; i < B.Count; i++)
         {
-            ColorB[i] = Colors.White;
+            ColorB[i] = "White";
             B[i] = null;
         }
         for (int i = 0; i < taskBackgroundColors.Count; i++)
         {
-            taskBackgroundColors[i] = Colors.LightGray;
+            taskBackgroundColors[i] = Colors.Black;
         }
         OnPropertyChanged(nameof(ColorA));
         OnPropertyChanged(nameof(A));
@@ -215,26 +215,26 @@ public class Union_ViewModel : ContentPage
                     break;
 
                 case cycle.result_Union:
-                    taskBackgroundColors[0] = Colors.LightGray;
+                    taskBackgroundColors[0] = Colors.Black;
                     taskBackgroundColors[1] = Colors.Red;
 
                     for (int copy = 0;copy < (N + 1); copy++)
                     {
                         U[copy] = A[copy];
-                        ColorA[copy] = Colors.LightBlue;
+                        ColorA[copy] = "LightBlue";
                         ColorU[copy] = Colors.LightBlue;
                     }
                     current_cycle = cycle.tracker_Union;
                     break;
 
                 case cycle.tracker_Union:
-                    taskBackgroundColors[1] = Colors.LightGray;
+                    taskBackgroundColors[1] = Colors.Black;
                     taskBackgroundColors[2] = Colors.Red;
 
                     for (int copy = 0; copy < (N + 1); copy++)
                     {
-                        ColorA[copy] = Colors.White;
-                        ColorU[copy] = Colors.LightGray;
+                        ColorA[copy] = "White";
+                        ColorU[copy] = Colors.White;
                     }
                     DB = N;
                     ColorU[N] = Colors.LightBlue;
@@ -242,8 +242,8 @@ public class Union_ViewModel : ContentPage
                     break;
 
                 case cycle.start_cycle_B:
-                    taskBackgroundColors[2] = Colors.LightGray;
-                    taskBackgroundColors[12] = Colors.LightGray;
+                    taskBackgroundColors[2] = Colors.Black;
+                    taskBackgroundColors[12] = Colors.Black;
                     taskBackgroundColors[3] = Colors.Red;
 
                     if (j <= M)
@@ -251,7 +251,7 @@ public class Union_ViewModel : ContentPage
                         current_cycle = cycle.tracker_A;
                         if (j == 0)
                         {
-                            ColorB[(0)] = Colors.LightBlue;
+                            ColorB[(0)] = "LightBlue";
                         }
                     }
                     else
@@ -261,28 +261,28 @@ public class Union_ViewModel : ContentPage
                     break;
 
                 case cycle.tracker_A:
-                    taskBackgroundColors[3] = Colors.LightGray;
+                    taskBackgroundColors[3] = Colors.Black;
                     taskBackgroundColors[4] = Colors.Red;
 
                     if (i != 0)
                     {
                         if (i > N)
                         {
-                            ColorA[(i - 1)] = Colors.White;
+                            ColorA[(i - 1)] = "White";
                         }
                         else
                         {
-                            ColorA[i] = Colors.White;
+                            ColorA[i] = "White";
                         }
                     }
                     i = 0;
-                    ColorA[(0)] = Colors.LightBlue;
+                    ColorA[(0)] = "LightBlue";
                     current_cycle = cycle.start_cycle_A;
                     break;
 
                 case cycle.start_cycle_A:
-                    taskBackgroundColors[4] = Colors.LightGray;
-                    taskBackgroundColors[7] = Colors.LightGray;
+                    taskBackgroundColors[4] = Colors.Black;
+                    taskBackgroundColors[7] = Colors.Black;
                     taskBackgroundColors[5] = Colors.Red;
 
                     if (i <= N && A[i] != B[j])
@@ -296,31 +296,31 @@ public class Union_ViewModel : ContentPage
                     break;
 
                 case cycle.add_tracker_A:
-                    taskBackgroundColors[5] = Colors.LightGray;
+                    taskBackgroundColors[5] = Colors.Black;
                     taskBackgroundColors[6] = Colors.Red;
 
                     if (i < N)
                     {
-                        ColorA[i] = Colors.White;
+                        ColorA[i] = "White";
                     }
                     i++;
                     if (i <= N)
                     {
-                        ColorA[i] = Colors.LightBlue;
+                        ColorA[i] = "LightBlue";
                     }
                     current_cycle = cycle.end_cycle_A;
                     break;
 
                 case cycle.end_cycle_A:
-                    taskBackgroundColors[6] = Colors.LightGray;
+                    taskBackgroundColors[6] = Colors.Black;
                     taskBackgroundColors[7] = Colors.Red;
 
                     current_cycle = cycle.start_cycle_A;
                     break;
 
                 case cycle.start_if:
-                    taskBackgroundColors[5] = Colors.LightGray;
-                    taskBackgroundColors[7] = Colors.LightGray;
+                    taskBackgroundColors[5] = Colors.Black;
+                    taskBackgroundColors[7] = Colors.Black;
                     taskBackgroundColors[8] = Colors.Red;
 
                     if (i > N)
@@ -334,14 +334,14 @@ public class Union_ViewModel : ContentPage
                     break;
 
                 case cycle.add_tracker_Union:
-                    taskBackgroundColors[8] = Colors.LightGray;
+                    taskBackgroundColors[8] = Colors.Black;
                     taskBackgroundColors[9] = Colors.Red;
 
                     if (DB < 9)
                     {
                         if (DB != -1)
                         {
-                            ColorU[DB] = Colors.LightGray;
+                            ColorU[DB] = Colors.White;
                         }
                     }
                     DB++;
@@ -353,7 +353,7 @@ public class Union_ViewModel : ContentPage
                     break;
 
                 case cycle.add_result_Union:
-                    taskBackgroundColors[9] = Colors.LightGray;
+                    taskBackgroundColors[9] = Colors.Black;
                     taskBackgroundColors[10] = Colors.Red;
 
                     U[DB] = B[j];
@@ -361,32 +361,32 @@ public class Union_ViewModel : ContentPage
                     break;
 
                 case cycle.end_if:
-                    taskBackgroundColors[10] = Colors.LightGray;
-                    taskBackgroundColors[8] = Colors.LightGray;
+                    taskBackgroundColors[10] = Colors.Black;
+                    taskBackgroundColors[8] = Colors.Black;
                     taskBackgroundColors[11] = Colors.Red;
 
                     current_cycle = cycle.end_cycle_B;
                     break;
 
                 case cycle.end_cycle_B:
-                    taskBackgroundColors[11] = Colors.LightGray;
-                    taskBackgroundColors[3] = Colors.LightGray;
+                    taskBackgroundColors[11] = Colors.Black;
+                    taskBackgroundColors[3] = Colors.Black;
                     taskBackgroundColors[12] = Colors.Red;
 
                     if (j < M)
                     {
-                        ColorB[j] = Colors.White;
+                        ColorB[j] = "White";
                     }
                     j++;
                     if (j <= M)
                     {
-                        ColorB[j] = Colors.LightBlue;
+                        ColorB[j] = "LightBlue";
                     }
                     current_cycle = cycle.start_cycle_B;
                     break;
 
                 case cycle.end_Union:
-                    taskBackgroundColors[3] = Colors.LightGray;
+                    taskBackgroundColors[3] = Colors.Black;
                     taskBackgroundColors[13] = Colors.Red;
 
                     isSimulationRunning = false;

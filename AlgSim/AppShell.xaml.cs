@@ -92,14 +92,14 @@ public partial class AppShell : Shell
     {
         Navigation.PushAsync(new SplittingPage
         {
-            BindingContext = _copyPageViewModel,
+            BindingContext = _SplittingPageViewModel,
         });
     }
     private void Bubble_Clicked()
     {
         Navigation.PushAsync(new BubbleOrderPage
         {
-            BindingContext = _copyPageViewModel,
+            BindingContext = _BubblePageViewModel,
         });
     }
     private void Decision_Clicked()

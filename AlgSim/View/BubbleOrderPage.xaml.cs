@@ -8,7 +8,7 @@ public partial class BubbleOrderPage : ContentPage
 	{
 		InitializeComponent();
         XmlDocument sumDoc = new XmlDocument();
-        sumDoc.Load(this.GetType().Assembly.GetManifestResourceStream("AlgSim.Resources.ContentXMLs.Copy_Content.xml"));
+        sumDoc.Load(this.GetType().Assembly.GetManifestResourceStream("AlgSim.Resources.ContentXMLs.BubbleOrder_Content.xml"));
 
         explanation_label.Text = sumDoc.SelectSingleNode("Task/Explanation").InnerText;
 

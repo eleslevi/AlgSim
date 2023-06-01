@@ -18,6 +18,8 @@ public partial class App : Application
 			BindingContext = _mainViewModel
 		};
 
+		UserAppTheme = AppTheme.Dark;
+
 		MainPage = _appShell;
 	}
 }

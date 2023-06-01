@@ -58,6 +58,21 @@ namespace AlgSim.ViewModel
         "White",
         "White",
     };
+
+        public ObservableCollection<String> resultBackgroundColors { get; set; } = new ObservableCollection<String>()
+    {
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+    };
+
         public ObservableCollection<Color> taskBackgroundColors { get; set; } = new ObservableCollection<Color>()
     {
         Colors.Black,
@@ -87,16 +102,22 @@ namespace AlgSim.ViewModel
             End_Task
         }
 
-        public int value = 0;
+        public static int selectedStatement = 0;
+        private bool shouldCopy = false;
+
+        public static int userValue = 0;
+
         public int count = -1;
 
-        //private enum Statement
-        //{
-        //    kisebb,nagyobb,páratlan,páros
-        //}
-        //private Statement statement = Statement.kisebb;
-        public string Statement = "kisebb";
-        public string[] Statements = {"kisebb", "nagyobb", "páratlan", "páros"};
+        public static String Statement = "";
+
+        public ObservableCollection<String> Statements { get; set; } = new ObservableCollection<String>()
+        {
+            "Kisebb",
+            "Nagyobb",
+            "Páratlan",
+            "Páros"
+        };
         private Cycle current_cycle = Cycle.Start_Task;
 
         public SelectionPage_ViewModel()
@@ -136,14 +157,17 @@ namespace AlgSim.ViewModel
                         break;
                     case Cycle.StartIf:
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
+                        backgroundColors[sim_cycle_iterator] = selectedBC;
+                        resultBackgroundColors[count + 1] = selectedBC;
                         if (sim_cycle_iterator < numbers.Count)
                         {
-                            var item = result[sim_cycle_iterator];
+                            int item = Convert.ToInt32(numbers[sim_cycle_iterator]);
                             if (Statement == Statements[0])
                             {
-                                if (item < value)
+                                if (item < userValue)
                                 {
                                     current_cycle = Cycle.Increment;
+                                    shouldCopy = true;
                                 }
                                 else
                                 {
@@ -152,9 +176,10 @@ namespace AlgSim.ViewModel
                             }
                             else if (Statement == Statements[1])
                             {
-                                if (item > value)
+                                if (item > userValue)
                                 {
                                     current_cycle = Cycle.Increment;
+                                    shouldCopy = true;
                                 }
                                 else
                                 {
@@ -166,6 +191,7 @@ namespace AlgSim.ViewModel
                                 if (item % 2 == 1)
                                 {
                                     current_cycle = Cycle.Increment;
+                                    shouldCopy = true;
                                 }
                                 else
                                 {
@@ -177,6 +203,7 @@ namespace AlgSim.ViewModel
                                 if (item % 2 == 0)
                                 {
                                     current_cycle = Cycle.Increment;
+                                    shouldCopy = true;
                                 }
                                 else
                                 {
@@ -191,18 +218,32 @@ namespace AlgSim.ViewModel
                         break;
                     case Cycle.Increment:
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
-                        current_cycle = Cycle.Copy;
-                        count++;
+                        if (shouldCopy)
+                        {
+                            current_cycle = Cycle.Copy;
+                            count++;
+                        }
+                        else
+                        {
+                            current_cycle = Cycle.EndIf;
+                        }
                         break;
                     case Cycle.Copy:
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
                         current_cycle = Cycle.EndIf;
-                        backgroundColors[sim_cycle_iterator] = selectedBC;
-                        result[count] = numbers[sim_cycle_iterator];
+                        if (shouldCopy)
+                        {
+                            result[count] = numbers[sim_cycle_iterator];
+                        }
                         break;
                     case Cycle.EndIf:
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
                         current_cycle = Cycle.EndCycle;
+                        if (shouldCopy)
+                        {
+                            shouldCopy = false;
+                            resultBackgroundColors[count] = whiteBC;
+                        }
                         break;
                     case Cycle.EndCycle:
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
@@ -218,6 +259,7 @@ namespace AlgSim.ViewModel
             taskBackgroundColors[(int)current_cycle] = Colors.Red;
             OnPropertyChanged(nameof(taskBackgroundColors));
             OnPropertyChanged(nameof(backgroundColors));
+            OnPropertyChanged(nameof(resultBackgroundColors));
             OnPropertyChanged(nameof(result));
         }
         private void randomNumbersToFields()
@@ -248,7 +290,7 @@ namespace AlgSim.ViewModel
                     result[i] = 0;
                 }
                 sim_cycle_iterator = 0;
-                value = 0;
+                userValue = 0;
                 count = 0;
                 OnPropertyChanged(nameof(backgroundColors));
                 OnPropertyChanged(nameof(taskBackgroundColors));

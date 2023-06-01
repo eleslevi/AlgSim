@@ -52,73 +52,73 @@ public class MinSelection_ViewModel : ContentPage
         null,
     };
 
-    public ObservableCollection<Color> ColorA { get; set; } = new ObservableCollection<Color>()
+    public ObservableCollection<String> ColorA { get; set; } = new ObservableCollection<String>()
     {
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+    };
+    
+    public ObservableCollection<String> ColorMI { get; set; } = new ObservableCollection<String>()
+    {
+        "LightGray"
     };
 
-    public ObservableCollection<Color> ColorMI { get; set; } = new ObservableCollection<Color>()
+    public ObservableCollection<String> ColorM { get; set; } = new ObservableCollection<String>()
     {
-        Colors.LightGray
-    };
-
-    public ObservableCollection<Color> ColorM { get; set; } = new ObservableCollection<Color>()
-    {
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
     };
 
     public ObservableCollection<Color> taskBackgroundColors { get; set; } = new ObservableCollection<Color>()
     {
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
-        Colors.LightGray,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
+        Colors.Black,
     };
 
     private void resetSimulation()
     {
         for (int i = 0; i < A.Count; i++)
         {
-            ColorA[i] = Colors.White;
+            ColorA[i] = "White";
             A[i] = null;
         }
         for (int i = 0; i < M.Count; i++)
         {
-            ColorM[i] = Colors.LightGray;
+            ColorM[i] = "White";
             M[i] = null;
         }
         for (int i = 0; i < taskBackgroundColors.Count; i++)
         {
-            taskBackgroundColors[i] = Colors.LightGray;
+            taskBackgroundColors[i] = Colors.Black;
         }
-        ColorMI[0] = Colors.LightGray;
+        ColorMI[0] = "White";
         MI[0] = null;
 
         OnPropertyChanged(nameof(ColorA));
@@ -199,24 +199,24 @@ public class MinSelection_ViewModel : ContentPage
                     for (int copy = 0; copy < (N + 1); copy++)
                     {
                         M[copy] = A[copy];
-                        ColorA[copy] = Colors.LightBlue;
-                        ColorM[copy] = Colors.LightBlue;
+                        ColorA[copy] = "LightBlue";
+                        ColorM[copy] = "LightBlue";
                     }
 
                     current_cycle = cycle.start_cycle_A;
                     break;
 
                 case cycle.start_cycle_A:
-                    taskBackgroundColors[0] = Colors.LightGray;
-                    taskBackgroundColors[9] = Colors.LightGray;
+                    taskBackgroundColors[0] = Colors.Black;
+                    taskBackgroundColors[9] = Colors.Black;
                     taskBackgroundColors[1] = Colors.Red;
 
                     if (i == 0)
                     {
                         for (int copy = 0; copy < (N + 1); copy++)
                         {
-                            ColorA[copy] = Colors.White;
-                            ColorM[copy] = Colors.LightGray;
+                            ColorA[copy] = "White";
+                            ColorM[copy] = "White";
                         }
                     }
 
@@ -234,51 +234,51 @@ public class MinSelection_ViewModel : ContentPage
                     break;
 
                 case cycle.tracker_Min:
-                    taskBackgroundColors[1] = Colors.LightGray;
+                    taskBackgroundColors[1] = Colors.Black;
                     taskBackgroundColors[2] = Colors.Red;
 
                     if (Min < N && i != 0)
                     {
-                        ColorM[Min] = Colors.LightGrey;
+                        ColorM[Min] = "White";
                     }
                     Min = i;
                     MI[0] = Min + 1;
                     if (Min <= N)
                     {
-                        ColorM[Min] = Colors.LightBlue;
+                        ColorM[Min] = "LightBlue";
                     }
 
                     if (Min == 0)
                     {
-                        ColorM[0] = Colors.LightBlue;
-                        ColorMI[0] = Colors.LightBlue;
+                        ColorM[0] = "LightBlue";
+                        ColorMI[0] = "LightBlue";
                         MI[0] = 1;
                     }
                     current_cycle = cycle.start_cycle_B;
                     break;
 
                 case cycle.start_cycle_B:
-                    taskBackgroundColors[2] = Colors.LightGray;
-                    taskBackgroundColors[7] = Colors.LightGray;
+                    taskBackgroundColors[2] = Colors.Black;
+                    taskBackgroundColors[7] = Colors.Black;
                     taskBackgroundColors[3] = Colors.Red;
 
                     if (j_temp != 0 && i != N)
                     {
                         if (j_temp > N)
                         {
-                            ColorM[(j_temp - 1)] = Colors.LightGrey;
+                            ColorM[(j_temp - 1)] = "White";
                             j_temp = 0;
                         }
                         else
                         {
-                            ColorM[j_temp] = Colors.LightGrey;
+                            ColorM[j_temp] = "White";
                             j_temp = 0;
                         }
                     }
 
                     if (j <= N)
                     {
-                        ColorM[j] = Colors.LightGreen;
+                        ColorM[j] = "LightGreen";
                         current_cycle = cycle.start_if;
                     }
                     else
@@ -288,7 +288,7 @@ public class MinSelection_ViewModel : ContentPage
                     break;
 
                 case cycle.start_if:
-                    taskBackgroundColors[3] = Colors.LightGray;
+                    taskBackgroundColors[3] = Colors.Black;
                     taskBackgroundColors[4] = Colors.Red;
 
                     if (M[Min] > M[j])
@@ -302,49 +302,49 @@ public class MinSelection_ViewModel : ContentPage
                     break;
 
                 case cycle.add_tracker_Min:
-                    taskBackgroundColors[4] = Colors.LightGray;
+                    taskBackgroundColors[4] = Colors.Black;
                     taskBackgroundColors[5] = Colors.Red;
 
 
                     if (Min < N)
                     {
-                        ColorM[Min] = Colors.LightGrey;
+                        ColorM[Min] = "White";
                     }
                     Min = j;
                     if (Min <= N)
                     {
-                        ColorM[Min] = Colors.LightBlue;
+                        ColorM[Min] = "LightBlue";
                     }
                     MI[0] = Min + 1;
                     current_cycle = cycle.end_if;
                     break;
 
                 case cycle.end_if:
-                    taskBackgroundColors[4] = Colors.LightGray;
-                    taskBackgroundColors[5] = Colors.LightGray;
+                    taskBackgroundColors[4] = Colors.Black;
+                    taskBackgroundColors[5] = Colors.Black;
                     taskBackgroundColors[6] = Colors.Red;
 
                     current_cycle = cycle.end_cycle_B;
                     break;
 
                 case cycle.end_cycle_B:
-                    taskBackgroundColors[6] = Colors.LightGray;
+                    taskBackgroundColors[6] = Colors.Black;
                     taskBackgroundColors[7] = Colors.Red;
 
                     if (j < N && j != Min)
                     {
-                        ColorM[j] = Colors.LightGray;
+                        ColorM[j] = "White";
                     }
                     j++;
                     if (j <= N)
                     {
-                        ColorM[j] = Colors.LightGreen;
+                        ColorM[j] = "LightGreen";
                     }
                     current_cycle = cycle.start_cycle_B;
                     break;
 
                 case cycle.result_swap:
-                    taskBackgroundColors[3] = Colors.LightGray;
+                    taskBackgroundColors[3] = Colors.Black;
                     taskBackgroundColors[8] = Colors.Red;
 
                     int? swap_i = M[i];
@@ -356,7 +356,7 @@ public class MinSelection_ViewModel : ContentPage
                     break;
 
                 case cycle.end_cycle_A:
-                    taskBackgroundColors[8] = Colors.LightGray;
+                    taskBackgroundColors[8] = Colors.Black;
                     taskBackgroundColors[9] = Colors.Red;
 
                     i++;
@@ -364,7 +364,7 @@ public class MinSelection_ViewModel : ContentPage
                     break;
 
                 case cycle.end_MinSelection:
-                    taskBackgroundColors[1] = Colors.LightGray;
+                    taskBackgroundColors[1] = Colors.Black;
                     taskBackgroundColors[10] = Colors.Red;
 
                     isSimulationRunning = false;

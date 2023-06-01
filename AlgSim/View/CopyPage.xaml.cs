@@ -1,3 +1,4 @@
+using AlgSim.ViewModel;
 using System.Xml;
 
 namespace AlgSim.View;
@@ -19,5 +20,10 @@ public partial class CopyPage : ContentPage
         task_line_3.Text = copyDoc.SelectSingleNode("Task/TaskLines/Line3").InnerText;
         task_line_4.Text = copyDoc.SelectSingleNode("Task/TaskLines/Line4").InnerText;
         task_line_5.Text = copyDoc.SelectSingleNode("Task/TaskLines/Line5").InnerText;
+    }
+
+    private void CheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+        CopyPage_ViewModel.Function = !CopyPage_ViewModel.Function;
     }
 }

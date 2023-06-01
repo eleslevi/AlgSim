@@ -1,3 +1,4 @@
+using AlgSim.ViewModel;
 using System.Xml;
 
 namespace AlgSim.View;
@@ -26,5 +27,29 @@ public partial class SplittingPage : ContentPage
         task_line_10.Text = sumDoc.SelectSingleNode("Task/TaskLines/Line9").InnerText;
         task_line_11.Text = sumDoc.SelectSingleNode("Task/TaskLines/Line9").InnerText;
         task_line_12.Text = sumDoc.SelectSingleNode("Task/TaskLines/Line9").InnerText;
+        picker_SelectedIndexChanged(picker, EventArgs.Empty);
+    }
+
+    private void picker_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (picker.SelectedIndex == -1)
+        {
+            picker.SelectedIndex = 0;
+        }
+        SplittingPage_ViewModel.selectedStatement = picker.SelectedIndex;
+        picker.SelectedItem = picker.Items[SplittingPage_ViewModel.selectedStatement];
+        SplittingPage_ViewModel.Statement = picker.SelectedItem.ToString();
+    }
+
+    private void userValue_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        try
+        {
+            SplittingPage_ViewModel.userValue = Convert.ToInt32(userValue.Text);
+        }
+        catch (Exception ex)
+        {
+            //suppress
+        }
     }
 }

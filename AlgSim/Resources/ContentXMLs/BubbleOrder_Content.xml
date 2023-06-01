@@ -49,7 +49,7 @@
 	<TaskLines>
 		<Line1>Eljárás Rendezés(N,A)</Line1>
 		<Line2>Ciklus I := N-től 2-ig - 1-esével</Line2>
-		<Line3>	 Ciklus J=1-től I-ig</Line3>
+		<Line3>	 Ciklus J=1-től I-1-ig</Line3>
 		<Line4>		Ha A[J]>A[J+1] akkor</Line4>
 		<Line5>		   Csere(A[J], A[J+1])</Line5>
 		<Line6>		Elágazás vége</Line6>

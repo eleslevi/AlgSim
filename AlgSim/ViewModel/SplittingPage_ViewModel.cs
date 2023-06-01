@@ -71,6 +71,32 @@ namespace AlgSim.ViewModel
         "White",
         "White",
     };
+        public ObservableCollection<String> backgroundColorsX { get; set; } = new ObservableCollection<String>()
+    {
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+    };
+        public ObservableCollection<String> backgroundColorsY { get; set; } = new ObservableCollection<String>()
+    {
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+        "White",
+    };
         public ObservableCollection<Color> taskBackgroundColors { get; set; } = new ObservableCollection<Color>()
     {
         Colors.Black,
@@ -107,12 +133,19 @@ namespace AlgSim.ViewModel
             End_Task
         }
 
-        public int value = 0;
         public int countX = -1;
         public int countY = -1;
 
-        public string Statement = "kisebb";
-        public string[] Statements = { "kisebb", "nagyobb", "páratlan", "páros" };
+        public static int selectedStatement = 0;
+        public static int userValue = 0;
+        public static String Statement = "Kisebb";
+        public ObservableCollection<String> Statements { get; set; } = new ObservableCollection<String>()
+        {
+            "Kisebb",
+            "Nagyobb",
+            "Páratlan",
+            "Páros"
+        };
         private Cycle current_cycle = Cycle.Start_Task;
 
         public SplittingPage_ViewModel()
@@ -154,10 +187,10 @@ namespace AlgSim.ViewModel
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
                         if (sim_cycle_iterator < numbers.Count)
                         {
-                            var item = numbers[sim_cycle_iterator];
+                            int item = Convert.ToInt32(numbers[sim_cycle_iterator]);
                             if (Statement == Statements[0])
                             {
-                                if (item < value)
+                                if (item < userValue)
                                 {
                                     current_cycle = Cycle.IncrementX;
                                 }
@@ -168,7 +201,7 @@ namespace AlgSim.ViewModel
                             }
                             else if (Statement == Statements[1])
                             {
-                                if (item > value)
+                                if (item > userValue)
                                 {
                                     current_cycle = Cycle.IncrementX;
                                 }
@@ -214,6 +247,7 @@ namespace AlgSim.ViewModel
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
                         current_cycle = Cycle.EndIf;
                         backgroundColors[sim_cycle_iterator] = selectedBC;
+                        backgroundColorsX[countX] = selectedBC;
                         resultX[countX] = numbers[sim_cycle_iterator];
                         break;
                     case Cycle.Else:
@@ -229,6 +263,7 @@ namespace AlgSim.ViewModel
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
                         current_cycle = Cycle.EndIf;
                         backgroundColors[sim_cycle_iterator] = selectedBC;
+                        backgroundColorsY[countY] = selectedBC;
                         resultY[countY] = numbers[sim_cycle_iterator];
                         break;
                     case Cycle.EndIf:
@@ -239,6 +274,14 @@ namespace AlgSim.ViewModel
                         taskBackgroundColors[(int)current_cycle] = Colors.Black;
                         current_cycle = Cycle.StepCycle;
                         backgroundColors[sim_cycle_iterator] = whiteBC;
+                        if (countX >= 0)
+                        {
+                            backgroundColorsX[countX] = whiteBC;
+                        }
+                        if (countY >= 0)
+                        {
+                            backgroundColorsY[countY] = whiteBC;
+                        }
                         sim_cycle_iterator++;
                         break;
                     case Cycle.End_Task:
@@ -249,6 +292,8 @@ namespace AlgSim.ViewModel
             taskBackgroundColors[(int)current_cycle] = Colors.Red;
             OnPropertyChanged(nameof(taskBackgroundColors));
             OnPropertyChanged(nameof(backgroundColors));
+            OnPropertyChanged(nameof(backgroundColorsX));
+            OnPropertyChanged(nameof(backgroundColorsY));
             OnPropertyChanged(nameof(resultX));
             OnPropertyChanged(nameof(resultY));
         }
@@ -287,7 +332,7 @@ namespace AlgSim.ViewModel
                     resultY[i] = 0;
                 }
                 sim_cycle_iterator = 0;
-                value = 0;
+                userValue = 0;
                 countX = -1;
                 countX = -1;
                 OnPropertyChanged(nameof(backgroundColors));

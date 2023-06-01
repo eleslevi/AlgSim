@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AlgSim.Classes"
              x:Class="AlgSim.View.MinSelection_Page"
-             Title="Minimumkiválasztásos"
-             BackgroundColor="LightGray">
-
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Resources>
+        <local:StringToColor x:Key="StringToColor" />
+    </ContentPage.Resources>
     <Grid ColumnDefinitions="*,*,*,Auto" RowDefinitions="Auto,*,*,*,*,*,*,*,*,*,*,*,*" ColumnSpacing="0" RowSpacing="0" Padding="0">
         <VerticalStackLayout VerticalOptions="Center" 
                              Padding="{OnPlatform iOS=0, Android=0, WinUI=20, MacCatalyst=20}" 
@@ -27,33 +29,33 @@
         </VerticalStackLayout>
 
         <Label Text="A Sorozat" Grid.Column="0" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"/>
-        <Entry Text="{Binding A[0]}" Grid.Column="0" Grid.Row="2" BackgroundColor="{Binding ColorA[0]}" x:Name="A0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Entry Text="{Binding A[1]}" Grid.Column="0" Grid.Row="3" BackgroundColor="{Binding ColorA[1]}" x:Name="A1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Entry Text="{Binding A[2]}" Grid.Column="0" Grid.Row="4" BackgroundColor="{Binding ColorA[2]}" x:Name="A2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Entry Text="{Binding A[3]}" Grid.Column="0" Grid.Row="5" BackgroundColor="{Binding ColorA[3]}" x:Name="A3" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Entry Text="{Binding A[4]}" Grid.Column="0" Grid.Row="6" BackgroundColor="{Binding ColorA[4]}" x:Name="A4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Entry Text="{Binding A[5]}" Grid.Column="0" Grid.Row="7" BackgroundColor="{Binding ColorA[5]}" x:Name="A5" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Entry Text="{Binding A[6]}" Grid.Column="0" Grid.Row="8" BackgroundColor="{Binding ColorA[6]}" x:Name="A6" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Entry Text="{Binding A[7]}" Grid.Column="0" Grid.Row="9" BackgroundColor="{Binding ColorA[7]}" x:Name="A7" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Entry Text="{Binding A[8]}" Grid.Column="0" Grid.Row="10" BackgroundColor="{Binding ColorA[8]}" x:Name="A8" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Entry Text="{Binding A[9]}" Grid.Column="0" Grid.Row="11" BackgroundColor="{Binding ColorA[9]}" x:Name="A9" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Button Text="{Binding A[0]}" Grid.Column="0" Grid.Row="2" BackgroundColor="{Binding ColorA[0], Converter={StaticResource StringToColor}, ConverterParameter=ColorA[0]}" x:Name="A0"/>
+        <Button Text="{Binding A[1]}" Grid.Column="0" Grid.Row="3" BackgroundColor="{Binding ColorA[1], Converter={StaticResource StringToColor}, ConverterParameter=ColorA[1]}" x:Name="A1"/>
+        <Button Text="{Binding A[2]}" Grid.Column="0" Grid.Row="4" BackgroundColor="{Binding ColorA[2], Converter={StaticResource StringToColor}, ConverterParameter=ColorA[2]}" x:Name="A2"/>
+        <Button Text="{Binding A[3]}" Grid.Column="0" Grid.Row="5" BackgroundColor="{Binding ColorA[3], Converter={StaticResource StringToColor}, ConverterParameter=ColorA[3]}" x:Name="A3"/>
+        <Button Text="{Binding A[4]}" Grid.Column="0" Grid.Row="6" BackgroundColor="{Binding ColorA[4], Converter={StaticResource StringToColor}, ConverterParameter=ColorA[4]}" x:Name="A4"/>
+        <Button Text="{Binding A[5]}" Grid.Column="0" Grid.Row="7" BackgroundColor="{Binding ColorA[5], Converter={StaticResource StringToColor}, ConverterParameter=ColorA[5]}" x:Name="A5"/>
+        <Button Text="{Binding A[6]}" Grid.Column="0" Grid.Row="8" BackgroundColor="{Binding ColorA[6], Converter={StaticResource StringToColor}, ConverterParameter=ColorA[6]}" x:Name="A6"/>
+        <Button Text="{Binding A[7]}" Grid.Column="0" Grid.Row="9" BackgroundColor="{Binding ColorA[7], Converter={StaticResource StringToColor}, ConverterParameter=ColorA[7]}" x:Name="A7"/>
+        <Button Text="{Binding A[8]}" Grid.Column="0" Grid.Row="10" BackgroundColor="{Binding ColorA[8], Converter={StaticResource StringToColor}, ConverterParameter=ColorA[8]}" x:Name="A8"/>
+        <Button Text="{Binding A[9]}" Grid.Column="0" Grid.Row="11" BackgroundColor="{Binding ColorA[9], Converter={StaticResource StringToColor}, ConverterParameter=ColorA[9]}" x:Name="A9"/>
         <Button Text="Véletlen számok" Grid.Column="0" Grid.Row="12" Command="{Binding fillWithRandomNumbers}"/>
 
         <Label Text="Aktuális Állapot" Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"/>
-        <Label Text="{Binding M[0]}" Grid.Column="1" Grid.Row="2" BackgroundColor="{Binding ColorM[0]}" x:Name="M0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding M[1]}" Grid.Column="1" Grid.Row="3" BackgroundColor="{Binding ColorM[1]}" x:Name="M1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding M[2]}" Grid.Column="1" Grid.Row="4" BackgroundColor="{Binding ColorM[2]}" x:Name="M2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding M[3]}" Grid.Column="1" Grid.Row="5" BackgroundColor="{Binding ColorM[3]}" x:Name="M3" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding M[4]}" Grid.Column="1" Grid.Row="6" BackgroundColor="{Binding ColorM[4]}" x:Name="M4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding M[5]}" Grid.Column="1" Grid.Row="7" BackgroundColor="{Binding ColorM[5]}" x:Name="M5" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding M[6]}" Grid.Column="1" Grid.Row="8" BackgroundColor="{Binding ColorM[6]}" x:Name="M6" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding M[7]}" Grid.Column="1" Grid.Row="9" BackgroundColor="{Binding ColorM[7]}" x:Name="M7" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding M[8]}" Grid.Column="1" Grid.Row="10" BackgroundColor="{Binding ColorM[8]}" x:Name="M8" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding M[9]}" Grid.Column="1" Grid.Row="11" BackgroundColor="{Binding ColorM[9]}" x:Name="M9" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Button Text="{Binding M[0]}" Grid.Column="1" Grid.Row="2" BackgroundColor="{Binding ColorM[0], Converter={StaticResource StringToColor}, ConverterParameter=ColorM[0]}" x:Name="M0"/>
+        <Button Text="{Binding M[1]}" Grid.Column="1" Grid.Row="3" BackgroundColor="{Binding ColorM[1], Converter={StaticResource StringToColor}, ConverterParameter=ColorM[1]}" x:Name="M1"/>
+        <Button Text="{Binding M[2]}" Grid.Column="1" Grid.Row="4" BackgroundColor="{Binding ColorM[2], Converter={StaticResource StringToColor}, ConverterParameter=ColorM[2]}" x:Name="M2"/>
+        <Button Text="{Binding M[3]}" Grid.Column="1" Grid.Row="5" BackgroundColor="{Binding ColorM[3], Converter={StaticResource StringToColor}, ConverterParameter=ColorM[3]}" x:Name="M3"/>
+        <Button Text="{Binding M[4]}" Grid.Column="1" Grid.Row="6" BackgroundColor="{Binding ColorM[4], Converter={StaticResource StringToColor}, ConverterParameter=ColorM[4]}" x:Name="M4"/>
+        <Button Text="{Binding M[5]}" Grid.Column="1" Grid.Row="7" BackgroundColor="{Binding ColorM[5], Converter={StaticResource StringToColor}, ConverterParameter=ColorM[5]}" x:Name="M5"/>
+        <Button Text="{Binding M[6]}" Grid.Column="1" Grid.Row="8" BackgroundColor="{Binding ColorM[6], Converter={StaticResource StringToColor}, ConverterParameter=ColorM[6]}" x:Name="M6"/>
+        <Button Text="{Binding M[7]}" Grid.Column="1" Grid.Row="9" BackgroundColor="{Binding ColorM[7], Converter={StaticResource StringToColor}, ConverterParameter=ColorM[7]}" x:Name="M7"/>
+        <Button Text="{Binding M[8]}" Grid.Column="1" Grid.Row="10" BackgroundColor="{Binding ColorM[8], Converter={StaticResource StringToColor}, ConverterParameter=ColorM[8]}" x:Name="M8"/>
+        <Button Text="{Binding M[9]}" Grid.Column="1" Grid.Row="11" BackgroundColor="{Binding ColorM[9], Converter={StaticResource StringToColor}, ConverterParameter=ColorM[9]}" x:Name="M9"/>
         <Button Text="Visszaállítás" Grid.Column="1" Grid.Row="12" Command="{Binding resetNumbers}"/>
         
-        <Label Text="Minimum" Grid.Column="2" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"/>
-        <Label Text="{Binding MI[0]}" Grid.Column="2" Grid.Row="2" BackgroundColor="{Binding ColorMI[0]}" x:Name="MI" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Label Text="Minimum indexe" Grid.Column="2" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Button Text="{Binding MI[0]}" Grid.Column="2" Grid.Row="2" BackgroundColor="{Binding ColorMI[0], Converter={StaticResource StringToColor}, ConverterParameter=ColorMI[0]}" x:Name="MI"/>
         <Button Text="Szimulálás" Grid.Column="2" Grid.Row="12" Command="{Binding stepSim}"/>
     </Grid>
 </ContentPage>
