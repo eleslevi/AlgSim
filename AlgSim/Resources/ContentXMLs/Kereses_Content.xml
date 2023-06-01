@@ -58,16 +58,12 @@
 		A ciklus végrehajtása itt befejeződik, mivel végignéztük a sorozat minden elemét és nem találtunk T tulajdonsággal rendelkezőt.
 	</Explanation>
 	<TaskLines>
-		<Line01>Metódus Keresés(N,A,van,s)</Line01>
-		<Line02>	i=1</Line02>
-		<Line03>	Ciklus amíg (i&lt;=n) és (nem(T(A(i))))</Line03>
-		<Line04>		i=i+1</Line04>
-		<Line05>	Ha i&lt;=n akkor</Line05>
-		<Line06>		van=igaz</Line06>
-		<Line07>	különben</Line07>
-		<Line08>		van=hamis</Line08>
-		<Line09>	Ha van akkor s=i</Line09>
-		<Line10>Metódus vége</Line10>
+		<Line01>Eljárás Keresés(N,A,van,s)</Line01>
+		<Line02>	I:=1</Line02>
+		<Line03>	Ciklus I:=1-től N-ig</Line03>
+		<Line04>		Ha N(I) == S akkor van = igen</Line04>
+    <Line05>	Ciklus vége</Line05>
+		<Line06>Eljárás vége</Line06>
 	</TaskLines>
 	<Tasks>
 		1.	Rendelkezésünkre áll egy preferencia lista azokról a CD-kről, amiket szeretnénk megvenni (előadó, cím, ár) és egy adott összeg, amit erre fordíthatunk. Meg tudjuk venni valamelyik CD-t? Ha igen, akkor hányadik volt a listánkon?

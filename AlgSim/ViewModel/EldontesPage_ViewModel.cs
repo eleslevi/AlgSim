@@ -6,46 +6,28 @@ namespace AlgSim.ViewModel
 {
     public class EldontesPage_ViewModel : ViewModelBase
     {
-        public DelegateCommand FillWithRandomNumbersCommand { get; }
-        public DelegateCommand ResetNumbersCommand { get; }
-        public DelegateCommand StepSimulationCommand { get; }
-        public DelegateCommand legorduloCommand { get; }
-        public List<string> PickerItems { get; } = new List<string>
+        public DelegateCommand FillWithRandomNumbersCommand { get; private set; }
+        public DelegateCommand ResetNumbersCommand { get; private set; }
+        public DelegateCommand StepSimulationCommand { get; private set; }
+
+        public static int userValue = 0;
+        public static int selectedStatement = 0;
+        public static String Statement = "";
+
+        public ObservableCollection<String> Statements { get; set; } = new ObservableCollection<String>()
         {
             "Páros szám",
             "Páratlan szám",
-            "konkrét érték",
+            "Konkrét érték",
         };
-
-        private string entryValue;
-        public string EntryValue
-        {
-            get { return entryValue; }
-            set
-            {
-                entryValue = value;
-                OnPropertyChanged(nameof(EntryValue));
-            }
-        }
-
-        private string selectedPickerItem;
-        public string SelectedPickerItem
-        {
-            get { return selectedPickerItem; }
-            set
-            {
-                selectedPickerItem = value;
-                OnPropertyChanged(nameof(SelectedPickerItem));
-            }
-        }
 
         private bool isSimulationRunning = false;
         private int simulationCycleIterator = 0;
 
-        private Color whiteBC = Colors.White;
-        private Color selectedBC = Colors.LightBlue;
+        private String whiteBC = "White";
+        private String selectedBC = "LightBlue";
 
-        public ObservableCollection<int> currentEldontes { get; } = new ObservableCollection<int> { 0 };
+        public ObservableCollection<String> currentEldontes { get; } = new ObservableCollection<String> { "" };
         public ObservableCollection<int> numbers { get; } = new ObservableCollection<int>()
         {
             0,
@@ -60,32 +42,29 @@ namespace AlgSim.ViewModel
             0,
             0,
         };
-        public ObservableCollection<Color> backgroundColors { get; } = new ObservableCollection<Color>()
+        public ObservableCollection<String> backgroundColors { get; } = new ObservableCollection<String>()
         {
-            Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
         };
+
         public ObservableCollection<Color> TaskbackgroundColors { get; } = new ObservableCollection<Color>()
         {
-            Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
+            Colors.Black,
+            Colors.Black,
+            Colors.Black,
+            Colors.Black,
+            Colors.Black,
+            Colors.Black,
+            Colors.Black,
         };
 
         private enum Cycle
@@ -93,13 +72,9 @@ namespace AlgSim.ViewModel
             StartTask,
             InitSum,
             StepCycle,
-            AddNumbers,
+            CheckNum,
             EndCycle,
-            ha,
-            i_van,
-            azonban,
-            i_nincs,
-            elagazas,
+            Check,
             EndTask
         }
 
@@ -110,7 +85,6 @@ namespace AlgSim.ViewModel
             FillWithRandomNumbersCommand = new DelegateCommand(parameter => FillWithRandomNumbers());
             ResetNumbersCommand = new DelegateCommand(parameter => ResetSimulation());
             StepSimulationCommand = new DelegateCommand(parameter => StepSimulation());
-            legorduloCommand = new DelegateCommand(parameter => legordulo());
         }
 
         private void StepSimulation()
@@ -124,62 +98,57 @@ namespace AlgSim.ViewModel
                 switch (currentCycle)
                 {
                     case Cycle.StartTask:
-                        TaskbackgroundColors[(int)currentCycle] = whiteBC;
+                        TaskbackgroundColors[(int)currentCycle] = Colors.Black;
                         currentCycle = Cycle.InitSum;
-                        if (SelectedPickerItem == "Páros szám") ;
-                        else if (SelectedPickerItem == "Páratlan szám") ;
-                        else if (SelectedPickerItem == "Konkrét érték") ;
-
                         break;
                     case Cycle.InitSum:
-                        TaskbackgroundColors[(int)currentCycle] = whiteBC;
+                        TaskbackgroundColors[(int)currentCycle] = Colors.Black;
                         currentCycle = Cycle.StepCycle;
                         break;
                     case Cycle.StepCycle:
-                        TaskbackgroundColors[(int)currentCycle] = whiteBC;
+                        TaskbackgroundColors[(int)currentCycle] = Colors.Black;
+                        backgroundColors[simulationCycleIterator] = selectedBC;
                         if (simulationCycleIterator < numbers.Count)
                         {
-                            currentCycle = Cycle.AddNumbers;
+                            currentCycle = Cycle.CheckNum;
                         }
                         else
                         {
-                            currentCycle = Cycle.ha;
+                            currentCycle = Cycle.Check;
                         }
                         break;
-                    case Cycle.AddNumbers:
-                        TaskbackgroundColors[(int)currentCycle] = whiteBC;
-                        currentCycle = Cycle.EndCycle;
-                        backgroundColors[simulationCycleIterator] = selectedBC;
+                    case Cycle.CheckNum:
+                        TaskbackgroundColors[(int)currentCycle] = Colors.Black;
+                        if (Statement == "Páros szám" && numbers[simulationCycleIterator] % 2 == 0 || Statement == "Páratlan szám" && numbers[simulationCycleIterator] % 2 == 1 || Statement == "Konkrét érték" && numbers[simulationCycleIterator] == userValue)
+                        {
+                            currentCycle = Cycle.Check;
+                        }
+                        else
+                        {
+                            currentCycle = Cycle.EndCycle;
+                        }
                         break;
                     case Cycle.EndCycle:
-                        TaskbackgroundColors[(int)currentCycle] = whiteBC;
+                        TaskbackgroundColors[(int)currentCycle] = Colors.Black;
                         currentCycle = Cycle.StepCycle;
                         currentEldontes[0] += numbers[simulationCycleIterator];
                         backgroundColors[simulationCycleIterator] = whiteBC;
                         simulationCycleIterator++;
                         break;
-                    case Cycle.ha:
-                        TaskbackgroundColors[(int)currentCycle] = whiteBC;
-                        currentCycle = Cycle.i_van;
-                        break;
-                    case Cycle.i_van:
-                        TaskbackgroundColors[(int)currentCycle] = whiteBC;
-                        currentCycle = Cycle.azonban;
-                        break;
-                    case Cycle.azonban:
-                        TaskbackgroundColors[(int)currentCycle] = whiteBC;
-                        currentCycle = Cycle.i_nincs;
-                        break;
-                    case Cycle.i_nincs:
-                        TaskbackgroundColors[(int)currentCycle] = whiteBC;
-                        currentCycle = Cycle.elagazas;
-                        break;
-                    case Cycle.elagazas:
-                        TaskbackgroundColors[(int)currentCycle] = whiteBC;
+                    case Cycle.Check:
+                        TaskbackgroundColors[(int)currentCycle] = Colors.Black;
+                        if (simulationCycleIterator < numbers.Count)
+                        {
+                            currentEldontes[0] = "Igen";
+                        }
+                        else
+                        {
+                            currentEldontes[0] = "Nem";
+                        }
                         currentCycle = Cycle.EndTask;
                         break;
                     case Cycle.EndTask:
-                        TaskbackgroundColors[(int)currentCycle] = whiteBC;
+                        TaskbackgroundColors[(int)currentCycle] = Colors.Black;
                         break;
                 }
             }
@@ -195,9 +164,20 @@ namespace AlgSim.ViewModel
             {
                 for (int i = 0; i < backgroundColors.Count; i++)
                 {
+                    numbers[i] = 0;
                     backgroundColors[i] = whiteBC;
                 }
+                for (int i = 0;i < TaskbackgroundColors.Count; i++)
+                {
+                    TaskbackgroundColors[i] = Colors.Black;
+                }
+                currentCycle = Cycle.StartTask;
+                simulationCycleIterator = 0;
+                currentEldontes[0] = "";
+                OnPropertyChanged(nameof(currentEldontes));
+                OnPropertyChanged(nameof(TaskbackgroundColors));
                 OnPropertyChanged(nameof(backgroundColors));
+                OnPropertyChanged(nameof(currentEldontes));
                 isSimulationRunning = false;
             }
         }
@@ -213,10 +193,6 @@ namespace AlgSim.ViewModel
                 }
                 OnPropertyChanged(nameof(numbers));
             }
-        }
-        private void legordulo()
-        {
-
         }
     }
 }

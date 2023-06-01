@@ -5,18 +5,29 @@ namespace AlgSim.ViewModel
 {
     public class MegszamolasPage_ViewModel : ViewModelBase
     {
-        public DelegateCommand FillWithRandomNumbersCommand { get; }
-        public DelegateCommand ResetNumbersCommand { get; }
-        public DelegateCommand StepSimulationCommand { get; }
+        public DelegateCommand FillWithRandomNumbersCommand { get; private set; }
+        public DelegateCommand ResetSimulationCommand { get; private set; }
+        public DelegateCommand StepSimulationCommand { get; private set; }
+
+        public static int userValue = 0;
+        public static int selectedStatement = 0;
+        public static String Statement = "";
+
+        public ObservableCollection<String> Statements { get; set; } = new ObservableCollection<String>()
+        {
+            "Páros szám",
+            "Páratlan szám",
+            "Kisebb",
+            "Nagyobb",
+        };
 
         private bool isSimulationRunning = false;
         private int simulationCycleIterator = 0;
 
-        private Color whiteBC = Colors.White;
-        private Color selectedBC = Colors.LightBlue;
+        private String whiteBC = "White";
+        private String selectedBC = "LightBlue";
 
-        public ObservableCollection<int> Occurrences { get; } = new ObservableCollection<int>();
-        public ObservableCollection<int> numbers { get; } = new ObservableCollection<int>()
+        public ObservableCollection<int> numbers { get; set; } = new ObservableCollection<int>()
         {
             0,
             0,
@@ -30,27 +41,32 @@ namespace AlgSim.ViewModel
             0,
             0,
         };
-        public ObservableCollection<Color> BackgroundColors { get; } = new ObservableCollection<Color>()
+        public ObservableCollection<String> BackgroundColors { get; set; } = new ObservableCollection<String>()
         {
-            Colors.White,
-            Colors.White,
-            Colors.White,
-            Colors.White,
-            Colors.White,
-            Colors.White,
-            Colors.White,
-            Colors.White,
-            Colors.White,
-            Colors.White,
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
         };
-        public ObservableCollection<Color> TaskBackgroundColors { get; } = new ObservableCollection<Color>()
+        public ObservableCollection<Color> TaskBackgroundColors { get; set; } = new ObservableCollection<Color>()
         {
-            Colors.White,
-            Colors.White,
-            Colors.White,
-            Colors.White,
-            Colors.White,
-            Colors.White,
+            Colors.Black,
+            Colors.Black,
+            Colors.Black,
+            Colors.Black,
+            Colors.Black,
+            Colors.Black,
+        };
+
+        public ObservableCollection<int> result { get; set; } = new ObservableCollection<int>()
+        {
+            0,
         };
 
         private enum Cycle
@@ -68,7 +84,7 @@ namespace AlgSim.ViewModel
         public MegszamolasPage_ViewModel()
         {
             FillWithRandomNumbersCommand = new DelegateCommand(parameter => FillWithRandomNumbers());
-            ResetNumbersCommand = new DelegateCommand(parameter => ResetSimulation());
+            ResetSimulationCommand = new DelegateCommand(parameter => ResetSimulation());
             StepSimulationCommand = new DelegateCommand(parameter => StepSimulation());
         }
 
@@ -83,45 +99,48 @@ namespace AlgSim.ViewModel
                 switch (currentCycle)
                 {
                     case Cycle.StartTask:
-                        TaskBackgroundColors[(int)currentCycle] = whiteBC;
+                        TaskBackgroundColors[(int)currentCycle] = Colors.Black;
                         currentCycle = Cycle.InitOccurrences;
                         break;
                     case Cycle.InitOccurrences:
-                        TaskBackgroundColors[(int)currentCycle] = whiteBC;
+                        TaskBackgroundColors[(int)currentCycle] = Colors.Black;
                         currentCycle = Cycle.StepCycle;
                         break;
                     case Cycle.StepCycle:
-                        TaskBackgroundColors[(int)currentCycle] = whiteBC;
+                        TaskBackgroundColors[(int)currentCycle] = Colors.Black;
+                        BackgroundColors[simulationCycleIterator] = selectedBC;
+                        currentCycle = Cycle.CountOccurrences;
+                        break;
+                    case Cycle.CountOccurrences:
+                        TaskBackgroundColors[(int)currentCycle] = Colors.Black;
+                        currentCycle = Cycle.EndCycle;
+                        if(Statement == "Páros szám" && numbers[simulationCycleIterator] % 2 == 0 || Statement == "Páratlan szám" && numbers[simulationCycleIterator] % 2 == 1 || Statement == "Kisebb" && numbers[simulationCycleIterator] < userValue || Statement == "Nagyobb" && numbers[simulationCycleIterator] > userValue)
+                        {
+                            result[0]++;
+                        }
+                        break;
+                    case Cycle.EndCycle:
+                        TaskBackgroundColors[(int)currentCycle] = Colors.Black;
+                        simulationCycleIterator++;
                         if (simulationCycleIterator < numbers.Count)
                         {
-                            currentCycle = Cycle.CountOccurrences;
+                            currentCycle = Cycle.StepCycle;
                         }
                         else
                         {
                             currentCycle = Cycle.EndTask;
                         }
-                        break;
-                    case Cycle.CountOccurrences:
-                        TaskBackgroundColors[(int)currentCycle] = whiteBC;
-                        currentCycle = Cycle.EndCycle;
-                        BackgroundColors[simulationCycleIterator] = selectedBC;
-                        break;
-                    case Cycle.EndCycle:
-                        TaskBackgroundColors[(int)currentCycle] = whiteBC;
-                        currentCycle = Cycle.StepCycle;
-                        Occurrences[numbers[simulationCycleIterator]]++;
-                        BackgroundColors[simulationCycleIterator] = whiteBC;
-                        simulationCycleIterator++;
+                        BackgroundColors[simulationCycleIterator - 1] = whiteBC;
                         break;
                     case Cycle.EndTask:
-                        TaskBackgroundColors[(int)currentCycle] = whiteBC;
+                        TaskBackgroundColors[(int)currentCycle] = Colors.Black;
                         break;
                 }
             }
             TaskBackgroundColors[(int)currentCycle] = Colors.Red;
             OnPropertyChanged(nameof(TaskBackgroundColors));
             OnPropertyChanged(nameof(BackgroundColors));
-            OnPropertyChanged(nameof(Occurrences));
+            OnPropertyChanged(nameof(result));
         }
 
         private void ResetSimulation()
@@ -130,9 +149,19 @@ namespace AlgSim.ViewModel
             {
                 for (int i = 0; i < BackgroundColors.Count; i++)
                 {
+                    numbers[i] = 0;
                     BackgroundColors[i] = whiteBC;
                 }
+                for (int i = 0; i < TaskBackgroundColors.Count; i++)
+                {
+                    TaskBackgroundColors[i] = Colors.Black;
+                }
+                simulationCycleIterator = 0;
+                currentCycle = Cycle.StartTask;
+                result[0] = 0;
+                OnPropertyChanged(nameof(result));
                 OnPropertyChanged(nameof(BackgroundColors));
+                OnPropertyChanged(nameof(TaskBackgroundColors));
                 isSimulationRunning = false;
             }
         }
@@ -146,13 +175,7 @@ namespace AlgSim.ViewModel
                 {
                     numbers.Add(new Random().Next(0, 15));
                 }
-                Occurrences.Clear();
-                for (int i = 0; i < 15; i++)
-                {
-                    Occurrences.Add(0);
-                }
                 OnPropertyChanged(nameof(numbers));
-                OnPropertyChanged(nameof(Occurrences));
             }
         }
     }

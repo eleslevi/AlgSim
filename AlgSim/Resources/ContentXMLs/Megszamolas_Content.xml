@@ -41,13 +41,11 @@
 	</Explanation>
 	<TaskLines>
 		<Line01>Metódus Megszámolás(N,A,db)</Line01>
-		<Line02>	db=0</Line02>
-		<Line03>	Ciklus i=1-től N-ig</Line03>
-		<Line04>		Ha T(A(i)) akkor</Line04>
-		<Line05>			db=db+1</Line05>
-		<Line06>		Elágazás vége</Line06>
-		<Line07>	Ciklus vége</Line07>
-		<Line08>Metódus vége</Line08>
+		<Line02>	Ciklus i=1-től N-ig</Line02>
+		<Line03>		Ha T(A(i)) akkor db=db+1</Line03>
+		<Line04>		Elágazás vége</Line04>
+		<Line05>	Ciklus vége</Line05>
+		<Line06>Metódus vége</Line06>
 	</TaskLines>
 	<Tasks>
 		1.	Ismerjük egy évfolyam órarendjét, számoljuk meg, hány informatika órájuk van egy héten!

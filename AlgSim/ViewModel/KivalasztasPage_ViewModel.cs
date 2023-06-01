@@ -6,16 +6,17 @@ namespace AlgSim.ViewModel
     public class KivalasztasPage_ViewModel : ViewModelBase
     {
         public DelegateCommand FillWithRandomNumbersCommand { get; }
-        public DelegateCommand ResetNumbersCommand { get; }
+        public DelegateCommand ResetSimulationCommand { get; }
         public DelegateCommand StepSimulationCommand { get; }
 
         private bool isSimulationRunning = false;
         private int simulationCycleIterator = 0;
+        public static int userValue = -1;
 
-        private Color whiteBC = Colors.White;
-        private Color selectedBC = Colors.LightBlue;
+        private String whiteBC = "White";
+        private String selectedBC = "LightBlue";
 
-        public ObservableCollection<int> numbers { get; } = new ObservableCollection<int>()
+        public ObservableCollection<int> numbers { get; set; } = new ObservableCollection<int>()
         {
             0,
             0,
@@ -29,33 +30,34 @@ namespace AlgSim.ViewModel
             0,
             0,
         };
-        public ObservableCollection<Color> BackgroundColors { get; } = new ObservableCollection<Color>()
+        public ObservableCollection<String> BackgroundColors { get; set; } = new ObservableCollection<String>()
         {
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
+            "White",
         };
-        public ObservableCollection<Color> TaskBackgroundColors { get; } = new ObservableCollection<Color>()
+        public ObservableCollection<Color> TaskBackgroundColors { get; set; } = new ObservableCollection<Color>()
         {
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
-        Colors.White,
+            Colors.Black,
+            Colors.Black,
+            Colors.Black,
+            Colors.Black,
+            Colors.Black,
+            Colors.Black,
+            Colors.Black,
         };
-        public int SelectedNumber { get; private set; } = -1;
+
+        public ObservableCollection<int> results { get; set; } = new ObservableCollection<int>()
+        {
+            -1,
+        };
 
         private enum Cycle
         {
@@ -73,7 +75,7 @@ namespace AlgSim.ViewModel
         public KivalasztasPage_ViewModel()
         {
             FillWithRandomNumbersCommand = new DelegateCommand(parameter => FillWithRandomNumbers());
-            ResetNumbersCommand = new DelegateCommand(parameter => ResetSimulation());
+            ResetSimulationCommand = new DelegateCommand(parameter => ResetSimulation());
             StepSimulationCommand = new DelegateCommand(parameter => StepSimulation());
         }
 
@@ -88,50 +90,56 @@ namespace AlgSim.ViewModel
                 switch (currentCycle)
                 {
                     case Cycle.StartTask:
-                        TaskBackgroundColors[(int)currentCycle] = whiteBC;
+                        TaskBackgroundColors[(int)currentCycle] = Colors.Black;
                         currentCycle = Cycle.InitSelection;
-                        SelectedNumber = -1;
                         break;
                     case Cycle.InitSelection:
-                        TaskBackgroundColors[(int)currentCycle] = whiteBC;
+                        TaskBackgroundColors[(int)currentCycle] = Colors.Black;
                         currentCycle = Cycle.StepCycle;
                         break;
                     case Cycle.StepCycle:
-                        TaskBackgroundColors[(int)currentCycle] = whiteBC;
+                        TaskBackgroundColors[(int)currentCycle] = Colors.Black;
+                        BackgroundColors[simulationCycleIterator] = selectedBC;
                         if (simulationCycleIterator < numbers.Count)
                         {
                             currentCycle = Cycle.SelectNumber;
                         }
                         else
                         {
-                            currentCycle = Cycle.S_i;
+                            currentCycle = Cycle.EndTask;
                         }
                         break;
                     case Cycle.SelectNumber:
-                        TaskBackgroundColors[(int)currentCycle] = whiteBC;
-                        SelectedNumber = numbers[simulationCycleIterator];
-                        currentCycle = Cycle.EndCycle;
-                        BackgroundColors[simulationCycleIterator] = selectedBC;
+                        TaskBackgroundColors[(int)currentCycle] = Colors.Black;
+                        if (numbers[simulationCycleIterator] == userValue)
+                        {
+                            currentCycle = Cycle.S_i;
+                        }
+                        else
+                        {
+                            currentCycle = Cycle.EndCycle;
+                        }
                         break;
                     case Cycle.EndCycle:
-                        TaskBackgroundColors[(int)currentCycle] = whiteBC;
+                        TaskBackgroundColors[(int)currentCycle] = Colors.Black;
                         currentCycle = Cycle.StepCycle;
                         BackgroundColors[simulationCycleIterator] = whiteBC;
                         simulationCycleIterator++;
                         break;
                     case Cycle.S_i:
-                        TaskBackgroundColors[(int)currentCycle] = whiteBC;
+                        TaskBackgroundColors[(int)currentCycle] = Colors.Black;
+                        results[0] = simulationCycleIterator + 1;
                         currentCycle = Cycle.EndTask;
                         break;
                     case Cycle.EndTask:
-                        TaskBackgroundColors[(int)currentCycle] = whiteBC;
+                        TaskBackgroundColors[(int)currentCycle] = Colors.Black;
                         break;
                 }
             }
             TaskBackgroundColors[(int)currentCycle] = Colors.Red;
             OnPropertyChanged(nameof(TaskBackgroundColors));
             OnPropertyChanged(nameof(BackgroundColors));
-            OnPropertyChanged(nameof(SelectedNumber));
+            OnPropertyChanged(nameof(results));
         }
 
         private void ResetSimulation()
@@ -140,10 +148,19 @@ namespace AlgSim.ViewModel
             {
                 for (int i = 0; i < BackgroundColors.Count; i++)
                 {
+                    numbers[i] = 0;
                     BackgroundColors[i] = whiteBC;
                 }
+                for (int i = 0; i < TaskBackgroundColors.Count; i++)
+                {
+                    TaskBackgroundColors[i] = Colors.Black;
+                }
+                simulationCycleIterator = 0;
+                results[0] = -1;
+                currentCycle = Cycle.StartTask;
+                OnPropertyChanged(nameof(numbers));
                 OnPropertyChanged(nameof(BackgroundColors));
-                SelectedNumber = -1;
+                OnPropertyChanged(nameof(TaskBackgroundColors));
                 isSimulationRunning = false;
             }
         }

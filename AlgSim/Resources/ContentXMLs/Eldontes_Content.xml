@@ -52,17 +52,13 @@
 			VAN:=(5&lt;=4); → VAN:=hamis
 	</Explanation>
 	<TaskLines>
-		<Line01>Metódus Eldöntés(N,A,van)</Line01>
-		<Line02>	i=1</Line02>
-		<Line03>	Ciklus amíg (&lt;=n) és nem(T(A(i))))</Line03>
-		<Line04>		i=i+1</Line04>
+		<Line01>Eljárás Eldöntés(N,A,van)</Line01>
+		<Line02>	I:=1</Line02>
+		<Line03>	Ciklus amíg (I&lt;=n) és (nem(T(A(i)))</Line03>
+		<Line04>		I:=I+1</Line04>
 		<Line05>	Ciklus vége</Line05>
-		<Line06>	Ha i &lt;=n akkor</Line06>
-		<Line07>		van=igaz</Line07>
-		<Line08>	különben</Line08>
-		<Line09>		van=hamis</Line09>
-		<Line10>	Elágazás vége</Line10>
-		<Line11>Metódus vége</Line11>
+    <Line06>  VAN:=I&lt;N;</Line06>
+		<Line07>Eljárás vége</Line07>
 	</TaskLines>
 	<Tasks>
 		1.	Egy munkahelyen mindenki lottózik és a nyerőszámok kihúzása után összeírják, kinek hány találata volt. Volt-e valakinek ötöse?

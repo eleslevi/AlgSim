@@ -4,6 +4,7 @@ using System.Xml.Linq;
 using System.Collections;
 using AlgSim;
 using System.Collections.ObjectModel;
+using AlgSim.ViewModel;
 
 namespace AlgSim.View;
 
@@ -17,10 +18,8 @@ public partial class Kivalasztas_Page : ContentPage
         kivalasztasDoc.Load(this.GetType().Assembly.GetManifestResourceStream("AlgSim.Resources.ContentXMLs.Kivalasztas_Content.xml"));
 
         explanation_label.Text = kivalasztasDoc.SelectSingleNode("Task/Explanation").InnerText;
-        explanation_label.TextColor = Colors.Black;
 
         tasks_label.Text = kivalasztasDoc.SelectSingleNode("Task/Tasks").InnerText;
-        tasks_label.TextColor = Colors.Black;
 
         task_line_1.Text = kivalasztasDoc.SelectSingleNode("Task/Tasklines/Line01").InnerText;
         task_line_2.Text = kivalasztasDoc.SelectSingleNode("Task/Tasklines/Line02").InnerText;
@@ -29,13 +28,17 @@ public partial class Kivalasztas_Page : ContentPage
         task_line_5.Text = kivalasztasDoc.SelectSingleNode("Task/Tasklines/Line05").InnerText;
         task_line_6.Text = kivalasztasDoc.SelectSingleNode("Task/Tasklines/Line06").InnerText;
         task_line_7.Text = kivalasztasDoc.SelectSingleNode("Task/Tasklines/Line07").InnerText;
+    }
 
-        task_line_1.TextColor = Colors.Black;
-        task_line_2.TextColor = Colors.Black;
-        task_line_3.TextColor = Colors.Black;
-        task_line_4.TextColor = Colors.Black;
-        task_line_5.TextColor = Colors.Black;
-        task_line_6.TextColor = Colors.Black;
-        task_line_7.TextColor = Colors.Black;
+    private void Entry_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        try
+        {
+            KivalasztasPage_ViewModel.userValue = Convert.ToInt32(userValue.Text);
+        }
+        catch (Exception ex)
+        {
+            //suppress
+        }
     }
 }
