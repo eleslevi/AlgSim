@@ -15,10 +15,10 @@
 		<PublishTrimmed>False</PublishTrimmed>
 
 		<!-- Display name -->
-		<ApplicationTitle>AlgSim</ApplicationTitle>
+		<ApplicationTitle>OE-Algoritmus szimuláció</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.algsim</ApplicationId>
+		<ApplicationId>com.OE.algsim</ApplicationId>
 		<ApplicationIdGuid>994003d1-8c17-4ded-946d-36fdf2ceeb9e</ApplicationIdGuid>
 
 		<!-- Versions -->

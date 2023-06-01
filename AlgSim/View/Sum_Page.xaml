@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AlgSim.Classes"
              x:Class="AlgSim.View.Sum_Page"
-             Title="Összegzés"
-             BackgroundColor="Black">
+             Shell.NavBarIsVisible="False">
     <ContentPage.Resources>
         <local:StringToColor x:Key="StringToColor" />
     </ContentPage.Resources>
@@ -27,7 +26,7 @@
 
                 <!-- Első sor tartalma -->
                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Grid.Row="0" Padding="5,5,5,5">
-                    <Label HorizontalOptions="CenterAndExpand" Text="Szimuláció" FontSize="Large"></Label>
+                    <Label HorizontalOptions="CenterAndExpand" Text="Összegzés" FontSize="Large"></Label>
                     <Grid Padding="5,5,5,5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"></RowDefinition>
