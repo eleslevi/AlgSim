@@ -162,12 +162,12 @@ public class Intersection_ViewModel : ContentPage
         {
             for (int i = 0; i < A.Count; i++)
             {
-                A[i] = new Random().Next(0, 20);
+                A[i] = new Random().Next(0, 10);
             }
 
             for (int i = 0; i < B.Count; i++)
             {
-                B[i] = new Random().Next(0, 20);
+                B[i] = new Random().Next(0, 13);
             }
 
             OnPropertyChanged(nameof(A));

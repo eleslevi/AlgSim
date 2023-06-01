@@ -26,11 +26,6 @@ namespace AlgSim.ViewModel
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
     };
 
         public ObservableCollection<double> result { get; set; } = new ObservableCollection<double>()
@@ -40,20 +35,10 @@ namespace AlgSim.ViewModel
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
     };
 
         public ObservableCollection<String> backgroundColors { get; set; } = new ObservableCollection<String>()
     {
-        "White",
-        "White",
-        "White",
-        "White",
-        "White",
         "White",
         "White",
         "White",

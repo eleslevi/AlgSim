@@ -26,20 +26,10 @@ public class MaxSelection_ViewModel : ContentPage
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
     };
 
     public ObservableCollection<String> backgroundColors { get; set; } = new ObservableCollection<String>()
     {
-        "White",
-        "White",
-        "White",
-        "White",
-        "White",
         "White",
         "White",
         "White",

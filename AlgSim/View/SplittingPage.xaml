@@ -45,11 +45,6 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
 
                             <Button Text="{Binding numbers[0]}" Grid.Column="0" BackgroundColor="{Binding backgroundColors[0], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[0]}"></Button>
@@ -57,21 +52,11 @@
                             <Button Text="{Binding numbers[2]}" Grid.Column="2" BackgroundColor="{Binding backgroundColors[2], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[2]}"></Button>
                             <Button Text="{Binding numbers[3]}" Grid.Column="3" BackgroundColor="{Binding backgroundColors[3], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[3]}"></Button>
                             <Button Text="{Binding numbers[4]}" Grid.Column="4" BackgroundColor="{Binding backgroundColors[4], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[4]}"></Button>
-                            <Button Text="{Binding numbers[5]}" Grid.Column="5" BackgroundColor="{Binding backgroundColors[5], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[5]}"></Button>
-                            <Button Text="{Binding numbers[6]}" Grid.Column="6" BackgroundColor="{Binding backgroundColors[6], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[6]}"></Button>
-                            <Button Text="{Binding numbers[7]}" Grid.Column="7" BackgroundColor="{Binding backgroundColors[7], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[7]}"></Button>
-                            <Button Text="{Binding numbers[8]}" Grid.Column="8" BackgroundColor="{Binding backgroundColors[8], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[8]}"></Button>
-                            <Button Text="{Binding numbers[9]}" Grid.Column="9" BackgroundColor="{Binding backgroundColors[9], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[9]}"></Button>
                         </Grid>
 
                         <Label Grid.Row="2" FontSize="Medium" HorizontalTextAlignment="Center">Feltételnek nem megfelelők</Label>
                         <Grid Grid.Row="3">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -84,21 +69,11 @@
                             <Button Text="{Binding resultX[2]}" Grid.Column="2" BackgroundColor="{Binding backgroundColorsX[2], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColorsX[2]}"></Button>
                             <Button Text="{Binding resultX[3]}" Grid.Column="3" BackgroundColor="{Binding backgroundColorsX[3], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColorsX[3]}"></Button>
                             <Button Text="{Binding resultX[4]}" Grid.Column="4" BackgroundColor="{Binding backgroundColorsX[4], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColorsX[4]}"></Button>
-                            <Button Text="{Binding resultX[5]}" Grid.Column="5" BackgroundColor="{Binding backgroundColorsX[5], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColorsX[5]}"></Button>
-                            <Button Text="{Binding resultX[6]}" Grid.Column="6" BackgroundColor="{Binding backgroundColorsX[6], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColorsX[6]}"></Button>
-                            <Button Text="{Binding resultX[7]}" Grid.Column="7" BackgroundColor="{Binding backgroundColorsX[7], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColorsX[7]}"></Button>
-                            <Button Text="{Binding resultX[8]}" Grid.Column="8" BackgroundColor="{Binding backgroundColorsX[8], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColorsX[8]}"></Button>
-                            <Button Text="{Binding resultX[9]}" Grid.Column="9" BackgroundColor="{Binding backgroundColorsX[9], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColorsX[9]}"></Button>
                         </Grid>
                         
                         <Label Grid.Row="4" FontSize="Medium" HorizontalTextAlignment="Center">Feltételnek nem megfelelők</Label>
                         <Grid Grid.Row="5">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -111,11 +86,6 @@
                             <Button Text="{Binding resultY[2]}" Grid.Column="2" BackgroundColor="{Binding backgroundColorsY[2], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColorsY[2]}"></Button>
                             <Button Text="{Binding resultY[3]}" Grid.Column="3" BackgroundColor="{Binding backgroundColorsY[3], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColorsY[3]}"></Button>
                             <Button Text="{Binding resultY[4]}" Grid.Column="4" BackgroundColor="{Binding backgroundColorsY[4], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColorsY[4]}"></Button>
-                            <Button Text="{Binding resultY[5]}" Grid.Column="5" BackgroundColor="{Binding backgroundColorsY[5], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColorsY[5]}"></Button>
-                            <Button Text="{Binding resultY[6]}" Grid.Column="6" BackgroundColor="{Binding backgroundColorsY[6], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColorsY[6]}"></Button>
-                            <Button Text="{Binding resultY[7]}" Grid.Column="7" BackgroundColor="{Binding backgroundColorsY[7], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColorsY[7]}"></Button>
-                            <Button Text="{Binding resultY[8]}" Grid.Column="8" BackgroundColor="{Binding backgroundColorsY[8], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColorsY[8]}"></Button>
-                            <Button Text="{Binding resultY[9]}" Grid.Column="9" BackgroundColor="{Binding backgroundColorsY[9], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColorsY[9]}"></Button>
                         </Grid>
 
                         <Grid Grid.Row="1">
@@ -130,7 +100,7 @@
                             <Button Grid.Column="0" Text="Véletlen számok"  Command="{Binding fillWithRandomNumbers}"></Button>
                             <Button Grid.Column="1" Text="Visszaállítás"  Command="{Binding resetNumbers}"></Button>
                             <Button Grid.Column="2" Text="Szimulálás"  Command="{Binding stepSim}"></Button>
-                            <Entry Grid.Column="3" x:Name="userValue" BackgroundColor="White" TextColor="Black" TextChanged="userValue_TextChanged"></Entry>
+                            <Entry Grid.Column="3" x:Name="userValue" TextChanged="userValue_TextChanged"></Entry>
                             <Picker Grid.Column="4" SelectedIndex="0" SelectedIndexChanged="picker_SelectedIndexChanged" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Small" x:Name="picker">
                                 <Picker.ItemsSource>
                                     <x:Array Type="{x:Type x:String}">

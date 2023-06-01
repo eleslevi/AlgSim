@@ -25,19 +25,9 @@ public class SumPage_ViewModel : ViewModelBase
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
     };
     public ObservableCollection<String> backgroundColors { get; set; } = new ObservableCollection<String>()
     {
-        "White",
-        "White",
-        "White",
-        "White",
-        "White",
         "White",
         "White",
         "White",

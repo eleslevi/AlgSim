@@ -23,20 +23,9 @@ namespace AlgSim.ViewModel
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
         };
         public ObservableCollection<String> BackgroundColors { get; set; } = new ObservableCollection<String>()
         {
-            "White",
-            "White",
-            "White",
-            "White",
-            "White",
             "White",
             "White",
             "White",
@@ -99,9 +88,9 @@ namespace AlgSim.ViewModel
                         break;
                     case Cycle.StepCycle:
                         TaskBackgroundColors[(int)currentCycle] = Colors.Black;
-                        BackgroundColors[simulationCycleIterator] = selectedBC;
                         if (simulationCycleIterator < numbers.Count)
                         {
+                            BackgroundColors[simulationCycleIterator] = selectedBC;
                             currentCycle = Cycle.SelectNumber;
                         }
                         else
@@ -169,10 +158,9 @@ namespace AlgSim.ViewModel
         {
             if (!isSimulationRunning)
             {
-                numbers.Clear();
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < numbers.Count; i++)
                 {
-                    numbers.Add(new Random().Next(0, 15));
+                    numbers[i] = new Random().Next(1, 15);
                 }
                 OnPropertyChanged(nameof(numbers));
             }

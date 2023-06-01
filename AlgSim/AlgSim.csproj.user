@@ -2,9 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <IsFirstTimeProjectOpen>False</IsFirstTimeProjectOpen>
-    <ActiveDebugFramework>net7.0-windows10.0.19041.0</ActiveDebugFramework>
-    <ActiveDebugProfile>Windows Machine</ActiveDebugProfile>
-    <SelectedPlatformGroup>Emulator</SelectedPlatformGroup>
+    <ActiveDebugFramework>net7.0-android</ActiveDebugFramework>
+    <ActiveDebugProfile>Xiaomi M2012K11AG (Android 13.0 - API 33)</ActiveDebugProfile>
+    <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
     <DefaultDevice>pixel_5_-_api_31</DefaultDevice>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-android|AnyCPU'">
@@ -19,8 +19,8 @@
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="View\CopyPage.xaml">
-		<SubType>Designer</SubType>
-	</MauiXaml>
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="View\Intersection_Page.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
@@ -31,8 +31,8 @@
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="View\SplittingPage.xaml">
-		<SubType>Designer</SubType>
-	</MauiXaml>
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="View\MinSelection_Page.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

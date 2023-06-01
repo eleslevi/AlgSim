@@ -16,16 +16,11 @@ namespace AlgSim.ViewModel
 
         private Boolean isSimulationRunning = false;
 
-        private int sim_cycle_iterator_out = 9;
+        private int sim_cycle_iterator_out = 4;
         private int sim_cycle_iterator_in = 0;
 
         public ObservableCollection<int> numbers { get; set; } = new ObservableCollection<int>()
         {
-            0,
-            0,
-            0,
-            0,
-            0,
             0,
             0,
             0,
@@ -40,20 +35,10 @@ namespace AlgSim.ViewModel
             0,
             0,
             0,
-            0,
-            0,
-            0,
-            0,
-            0,
         };
 
         public ObservableCollection<String> backgroundColors { get; set; } = new ObservableCollection<String>()
         {
-            "White",
-            "White",
-            "White",
-            "White",
-            "White",
             "White",
             "White",
             "White",

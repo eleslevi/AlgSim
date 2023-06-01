@@ -50,11 +50,6 @@
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
                                 <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
 
                             <Button Text="{Binding numbers[0]}" Grid.Column="0" BackgroundColor="{Binding backgroundColors[0], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[0]}"></Button>
@@ -62,11 +57,6 @@
                             <Button Text="{Binding numbers[2]}" Grid.Column="2" BackgroundColor="{Binding backgroundColors[2], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[2]}"></Button>
                             <Button Text="{Binding numbers[3]}" Grid.Column="3" BackgroundColor="{Binding backgroundColors[3], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[3]}"></Button>
                             <Button Text="{Binding numbers[4]}" Grid.Column="4" BackgroundColor="{Binding backgroundColors[4], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[4]}"></Button>
-                            <Button Text="{Binding numbers[5]}" Grid.Column="5" BackgroundColor="{Binding backgroundColors[5], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[5]}"></Button>
-                            <Button Text="{Binding numbers[6]}" Grid.Column="6" BackgroundColor="{Binding backgroundColors[6], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[6]}"></Button>
-                            <Button Text="{Binding numbers[7]}" Grid.Column="7" BackgroundColor="{Binding backgroundColors[7], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[7]}"></Button>
-                            <Button Text="{Binding numbers[8]}" Grid.Column="8" BackgroundColor="{Binding backgroundColors[8], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[8]}"></Button>
-                            <Button Text="{Binding numbers[9]}" Grid.Column="9" BackgroundColor="{Binding backgroundColors[9], Converter={StaticResource StringToColor}, ConverterParameter=backgroundColors[9]}"></Button>
                         </Grid>
 
                         <Grid Grid.Row="1">
