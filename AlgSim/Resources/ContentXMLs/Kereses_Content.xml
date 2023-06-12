@@ -1,77 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Task>
-	<Explanation>
-		Feladat: Adott egy N elemből álló sorozat (A) és egy rajtuk értelmezhető tulajdonság (T). Döntsük el, hogy van-e a sorozat elemei között olyan elem, amelyik rendelkezik ezzel a tulajdonsággal és ha van, akkor adjuk meg a sorszámát is!
+<Explanation>
+Feladat: Adott egy N elemből álló sorozat (A) és egy rajtuk értelmezhető tulajdonság (T). Döntsük el, hogy van-e a sorozat elemei között olyan elem, amelyik rendelkezik ezzel a tulajdonsággal és ha van, akkor adjuk meg a sorszámát is!
 
-		Megoldás: A sorszámot egyre állítjuk (I:=1), hogy majd az első elemmel kezdhessük a vizsgálódást. Egy ciklussal mindig a következő elemre lépünk, amíg a sorozat végére nem érünk és az az elem, amin állunk, nem rendelkezik a megadott tulajdonsággal (T). A ciklus kétféleképpen érhet véget. Vagy elértünk a sorozat végére (I>N), ez azt jelenti, hogy nem találtunk a megadott tulajdonsággal rendelkező elemet, vagy találtunk T tulajdonságú elemet, vagyis a sorszám kisebb, mint az elemszám. Ezt egy feltételvizsgálattal döntjük el és ettől függően a VAN változó igaz, vagy hamis értéket kap. Ha VAN T tulajdonságú elem, akkor ennek sorszáma az az I érték, amivel a ciklusból kiléptünk.
+Megoldás: A sorszámot egyre állítjuk (I:=1), hogy majd az első elemmel kezdhessük a vizsgálódást. Egy ciklussal mindig a következő elemre lépünk, amíg a sorozat végére nem érünk és az az elem, amin állunk, nem rendelkezik a megadott tulajdonsággal (T). A ciklus kétféleképpen érhet véget. Vagy elértünk a sorozat végére (I>N), ez azt jelenti, hogy nem találtunk a megadott tulajdonsággal rendelkező elemet, vagy találtunk T tulajdonságú elemet, vagyis a sorszám kisebb, mint az elemszám. Ezt egy feltételvizsgálattal döntjük el és ettől függően a VAN változó igaz, vagy hamis értéket kap. Ha VAN T tulajdonságú elem, akkor ennek sorszáma az az I érték, amivel a ciklusból kiléptünk.
 		
-		1.Példa: A sorozat (A): 5, 4, 2, 7
+1.Példa: A sorozat (A): 5, 4, 2, 7
 
-		Elemszám (N): 4
-		T: páros szám
+Elemszám (N): 4
+T: páros szám
 
-		Ciklus amíg I&lt;=N és nem T(A(I))
-		I:=I+1;
-		Ciklus vége
+Ciklus amíg I&lt;=N és nem T(A(I))
+I:=I+1;
+Ciklus vége
 
-		A ciklus első végrehajtásakor:
-		i=1,  A[1]=5
-		1&lt;4 és páros(5)=hamis → csak továbblépünk
+A ciklus első végrehajtásakor:
+i=1,  A[1]=5
+1&lt;4 és páros(5)=hamis → csak továbblépünk
 
-		A ciklus második végrehajtásakor
-		i=2, A[2]=4
-		i&lt;4 és páros(4)=igaz → második feltétel hamis, ezért kilépünk a cilusból
-		VAN:=(2&lt;=4); → VAN:=igaz → sorszám:=i → sorszám:=2
+A ciklus második végrehajtásakor
+i=2, A[2]=4
+i&lt;4 és páros(4)=igaz → második feltétel hamis, ezért kilépünk a cilusból
+VAN:=(2&lt;=4); → VAN:=igaz → sorszám:=i → sorszám:=2
 		
-		A cilus végrehajtása itt befejeződik, mivel találtunk egy T tulajdonsággal rendelkező elemet
+A cilus végrehajtása itt befejeződik, mivel találtunk egy T tulajdonsággal rendelkező elemet
 		
-		2. Példa A sorozat (A):5, 4, 2, 7
+2. Példa A sorozat (A):5, 4, 2, 7
 		
-		Elemszám(N): 4
-		T: 8-nál nagyobb
+Elemszám(N): 4
+T: 8-nál nagyobb
 		
-		Ciklus amíg I&lt;=N és nem T(A(I))
-		I:=I+1
-		Ciklus vége
+Ciklus amíg I&lt;=N és nem T(A(I))
+I:=I+1
+Ciklus vége
 		
-		A ciklus első végrehajtásakor:
-		i=1, A[1]=5
-		1&lt;4 és (5&gt;8)=hamis → csak továbblépünk
+A ciklus első végrehajtásakor:
+i=1, A[1]=5
+1&lt;4 és (5&gt;8)=hamis → csak továbblépünk
 		
-		A ciklus második végrehajtásakor:
-		i=2, A[1]=4
-		2&lt;4 és (4&gt;8)=hamis → csak továbblépünk
+A ciklus második végrehajtásakor:
+i=2, A[1]=4
+2&lt;4 és (4&gt;8)=hamis → csak továbblépünk
 		
-		A ciklus harmadik végrehajtásakor:
-		i=3, A[1]=2
-		3&lt;4 és (2&gt;8)=hamis → csak továbblépünk
+A ciklus harmadik végrehajtásakor:
+i=3, A[1]=2
+3&lt;4 és (2&gt;8)=hamis → csak továbblépünk
 		
-		A ciklus negyedik végrehajtásakor:
-		i=4, A[1]=7
-		4=4 és (7&gt;8)=hamis → csak továbblépünk
+A ciklus negyedik végrehajtásakor:
+i=4, A[1]=7
+4=4 és (7&gt;8)=hamis → csak továbblépünk
 		
-		A cilus ötödik végrehajtásakor:
-		i=5, A[5]=()
-		(5&lt;4)=hamis → az első feltétel hamis, ezért kilépünk a ciklusból
-		VAN:=(5&lt;=4); → VAN:=hamis
+A cilus ötödik végrehajtásakor:
+i=5, A[5]=()
+(5&lt;4)=hamis → az első feltétel hamis, ezért kilépünk a ciklusból
+VAN:=(5&lt;=4); → VAN:=hamis
 		
-		A ciklus végrehajtása itt befejeződik, mivel végignéztük a sorozat minden elemét és nem találtunk T tulajdonsággal rendelkezőt.
-	</Explanation>
-	<TaskLines>
-		<Line01>Eljárás Keresés(N,A,van,s)</Line01>
-		<Line02>	I:=1</Line02>
-		<Line03>	Ciklus I:=1-től N-ig</Line03>
-		<Line04>		Ha N(I) == S akkor van = igen</Line04>
-    <Line05>	Ciklus vége</Line05>
-		<Line06>Eljárás vége</Line06>
-	</TaskLines>
-	<Tasks>
-		1.	Rendelkezésünkre áll egy preferencia lista azokról a CD-kről, amiket szeretnénk megvenni (előadó, cím, ár) és egy adott összeg, amit erre fordíthatunk. Meg tudjuk venni valamelyik CD-t? Ha igen, akkor hányadik volt a listánkon?
+A ciklus végrehajtása itt befejeződik, mivel végignéztük a sorozat minden elemét és nem találtunk T tulajdonsággal rendelkezőt.
+</Explanation>
+<TaskLines>
+<Line01>     Eljárás Keresés(N,A,van,S)</Line01>
+<Line02>     I:=1</Line02>
+<Line03>     Ciklus I:=1-től N-ig</Line03>
+<Line04>     Ha N(I) == S akkor van = igen</Line04>
+<Line05>     Ciklus vége</Line05>
+<Line06>     Eljárás vége</Line06>
+</TaskLines>
+<Tasks>
+1.	
+Rendelkezésünkre áll egy preferencia lista azokról a CD-kről, amiket szeretnénk megvenni (előadó, cím, ár) és egy adott összeg, amit erre fordíthatunk. Meg tudjuk venni valamelyik CD-t? Ha igen, akkor hányadik volt a listánkon?
 
-		2.	Van egy táblázatunk, amiben TV műsorok címei és azok kezdési időpontja szerepel. Azt szeretnénk tudni, hogy kedvenc műsorunk mikor kezdődik.
+2.	
+Van egy táblázatunk, amiben TV műsorok címei és azok kezdési időpontja szerepel. Azt szeretnénk tudni, hogy kedvenc műsorunk mikor kezdődik.
 
-		3.	A telefonos nyilvántartásunkban barátaink nevét és telefonszámát tároljuk. Fel szeretnénk hívni egyik barátunkat, keressük meg a telefonszámát.
+3.	
+A telefonos nyilvántartásunkban barátaink nevét és telefonszámát tároljuk. Fel szeretnénk hívni egyik barátunkat, keressük meg a telefonszámát.
 
-		4.	Egy évfolyam hallgatóinak ismerjük a korát. Szeretnénk megtudni, hogy van-e köztük olyan, aki betöltött egy bizonyos életkort és ha igen, akkor ő hányadik a névsorban! Ha többen is vannak, akkor a névsorban az első ilyen embert kell megadnunk.
-	</Tasks>
+4.	
+Egy évfolyam hallgatóinak ismerjük a korát. Szeretnénk megtudni, hogy van-e köztük olyan, aki betöltött egy bizonyos életkort és ha igen, akkor ő hányadik a névsorban! Ha többen is vannak, akkor a névsorban az első ilyen embert kell megadnunk.
+</Tasks>
 </Task>

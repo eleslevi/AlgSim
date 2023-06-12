@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AlgSim.Classes"
+             x:Class="AlgSim.View.Task.Intersection_Task"
+             Title="Metszet Feladatok"
+             Shell.NavBarIsVisible="{OnPlatform iOS=false, Android=false, MacCatalyst=true, WinUI=true}">
+    
+    <ContentPage.Resources>
+        <local:StringToColor x:Key="StringToColor" />
+    </ContentPage.Resources>
+
+    <ScrollView Padding="10">
+        <Label x:Name="tasks_label"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+    </ScrollView>
+</ContentPage>

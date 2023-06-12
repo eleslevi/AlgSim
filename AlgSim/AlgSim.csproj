@@ -44,7 +44,7 @@
 		<MauiIcon Include="Resources\Images\oe_pecsetlogo.png" ForegroundFile="Resources\Images\oe_pecsetlogo.png" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\banner.jpg"/>
+		<MauiSplashScreen Include="Resources\Splash\banner.jpg" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -124,6 +124,87 @@
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>Resources.resx</DependentUpon>
 	  </Compile>
+	  <Compile Update="View\Explanation\BubbleOrder_Explanation.xaml.cs">
+	    <DependentUpon>BubbleOrder_Explanation.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Explanation\MinSelection_Explanation.xaml.cs">
+	    <DependentUpon>MinSelection_Explanation.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Explanation\Swap_Explanation.xaml.cs">
+	    <DependentUpon>Swap_Explanation.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Explanation\Union_Explanation.xaml.cs">
+	    <DependentUpon>Union_Explanation.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Explanation\Splitting_Explanation.xaml.cs">
+	    <DependentUpon>Splitting_Explanation.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Explanation\Selection_Explanation.xaml.cs">
+	    <DependentUpon>Selection_Explanation.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Explanation\Copy_Explanation.xaml.cs">
+	    <DependentUpon>Copy_Explanation.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Explanation\MaxSelection_Explanation.xaml.cs">
+	    <DependentUpon>MaxSelection_Explanation.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Explanation\Megszamolas_Explanation.xaml.cs">
+	    <DependentUpon>Megszamolas_Explanation.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Explanation\Kereses_Explanation.xaml.cs">
+	    <DependentUpon>Kereses_Explanation.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Explanation\Kivalasztas_Explanation.xaml.cs">
+	    <DependentUpon>Kivalasztas_Explanation.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Explanation\Eldontes_Explanation.xaml.cs">
+	    <DependentUpon>Eldontes_Explanation.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Explanation\Sum_Explanation.xaml.cs">
+	    <DependentUpon>Sum_Explanation.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Task\Copy_Task.xaml.cs">
+	    <DependentUpon>Copy_Task.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Task\BubbleOrder_Task.xaml.cs">
+	    <DependentUpon>BubbleOrder_Task.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Task\MinSelection_Task.xaml.cs">
+	    <DependentUpon>MinSelection_Task.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Task\Swap_Task.xaml.cs">
+	    <DependentUpon>Swap_Task.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Task\Union_Task.xaml.cs">
+	    <DependentUpon>Union_Task.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Task\Splitting_Task.xaml.cs">
+	    <DependentUpon>Splitting_Task.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Task\Selection_Task.xaml.cs">
+	    <DependentUpon>Selection_Task.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Task\Intersection_Task.xaml.cs">
+	    <DependentUpon>Intersection_Task.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Task\MaxSelection_Task.xaml.cs">
+	    <DependentUpon>MaxSelection_Task.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Task\Megszamolas_Task.xaml.cs">
+	    <DependentUpon>Megszamolas_Task.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Task\Kereses_Task.xaml.cs">
+	    <DependentUpon>Kereses_Task.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Task\Kivalasztas_Task.xaml.cs">
+	    <DependentUpon>Kivalasztas_Task.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Task\Eldontes_Task.xaml.cs">
+	    <DependentUpon>Eldontes_Task.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\Task\Sum_Task.xaml.cs">
+	    <DependentUpon>Sum_Task.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -134,6 +215,45 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="View\Explanation\BubbleOrder_Explanation.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Explanation\MinSelection_Explanation.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Explanation\Swap_Explanation.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Explanation\Union_Explanation.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Explanation\Splitting_Explanation.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Explanation\Selection_Explanation.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Explanation\Copy_Explanation.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Explanation\MaxSelection_Explanation.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Explanation\Megszamolas_Explanation.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Explanation\Kereses_Explanation.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Explanation\Kivalasztas_Explanation.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Explanation\Eldontes_Explanation.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Explanation\Sum_Explanation.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\Intersection_Page.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -159,6 +279,45 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\Swap_Page.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Task\Copy_Task.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Task\BubbleOrder_Task.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Task\MinSelection_Task.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Task\Swap_Task.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Task\Union_Task.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Task\Splitting_Task.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Task\Selection_Task.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Task\MaxSelection_Task.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Task\Megszamolas_Task.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Task\Kereses_Task.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Task\Kivalasztas_Task.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Task\Eldontes_Task.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\Task\Sum_Task.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\Union_Page.xaml">

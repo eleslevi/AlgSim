@@ -3,10 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AlgSim.Classes"
              x:Class="AlgSim.View.Intersection_Page"
-             Shell.NavBarIsVisible="False">
+             Title="Metszet Szimuláció"
+             Shell.NavBarIsVisible="{OnPlatform iOS=false, Android=false, MacCatalyst=true, WinUI=true}">
+
     <ContentPage.Resources>
         <local:StringToColor x:Key="StringToColor" />
     </ContentPage.Resources>
+    
     <Grid ColumnDefinitions="*,*,*,Auto" RowDefinitions="Auto,*,*,*,*,*,*,*,*,*,*,*,*" ColumnSpacing="0" RowSpacing="0" Padding="0">
         <VerticalStackLayout VerticalOptions="Center" 
                              Padding="{OnPlatform iOS=0, Android=0, WinUI=20, MacCatalyst=20}" 
@@ -44,16 +47,16 @@
         <Button Text="Véletlen számok" Grid.Column="0" Grid.Row="12" Command="{Binding fillWithRandomNumbers}"/>
 
         <Label Text="Metszet" Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"/>
-        <Label Text="{Binding I[0]}" Grid.Column="1" Grid.Row="2" BackgroundColor="{Binding ColorI[0], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[0]}" x:Name="I0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding I[1]}" Grid.Column="1" Grid.Row="3" BackgroundColor="{Binding ColorI[1], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[1]}" x:Name="I1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding I[2]}" Grid.Column="1" Grid.Row="4" BackgroundColor="{Binding ColorI[2], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[2]}" x:Name="I2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding I[3]}" Grid.Column="1" Grid.Row="5" BackgroundColor="{Binding ColorI[3], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[3]}" x:Name="I3" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding I[4]}" Grid.Column="1" Grid.Row="6" BackgroundColor="{Binding ColorI[4], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[4]}" x:Name="I4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding I[5]}" Grid.Column="1" Grid.Row="7" BackgroundColor="{Binding ColorI[5], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[5]}" x:Name="I5" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding I[6]}" Grid.Column="1" Grid.Row="8" BackgroundColor="{Binding ColorI[6], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[6]}" x:Name="I6" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding I[7]}" Grid.Column="1" Grid.Row="9" BackgroundColor="{Binding ColorI[7], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[7]}" x:Name="I7" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding I[8]}" Grid.Column="1" Grid.Row="10" BackgroundColor="{Binding ColorI[8], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[8]}" x:Name="I8" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-        <Label Text="{Binding I[9]}" Grid.Column="1" Grid.Row="11" BackgroundColor="{Binding ColorI[9], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[9]}" x:Name="I9" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        <Button Text="{Binding I[0]}" Grid.Column="1" Grid.Row="2" BackgroundColor="{Binding ColorI[0], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[0]}" x:Name="I0"/>
+        <Button Text="{Binding I[1]}" Grid.Column="1" Grid.Row="3" BackgroundColor="{Binding ColorI[1], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[1]}" x:Name="I1"/>
+        <Button Text="{Binding I[2]}" Grid.Column="1" Grid.Row="4" BackgroundColor="{Binding ColorI[2], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[2]}" x:Name="I2"/>
+        <Button Text="{Binding I[3]}" Grid.Column="1" Grid.Row="5" BackgroundColor="{Binding ColorI[3], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[3]}" x:Name="I3"/>
+        <Button Text="{Binding I[4]}" Grid.Column="1" Grid.Row="6" BackgroundColor="{Binding ColorI[4], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[4]}" x:Name="I4"/>
+        <Button Text="{Binding I[5]}" Grid.Column="1" Grid.Row="7" BackgroundColor="{Binding ColorI[5], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[5]}" x:Name="I5"/>
+        <Button Text="{Binding I[6]}" Grid.Column="1" Grid.Row="8" BackgroundColor="{Binding ColorI[6], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[6]}" x:Name="I6"/>
+        <Button Text="{Binding I[7]}" Grid.Column="1" Grid.Row="9" BackgroundColor="{Binding ColorI[7], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[7]}" x:Name="I7"/>
+        <Button Text="{Binding I[8]}" Grid.Column="1" Grid.Row="10" BackgroundColor="{Binding ColorI[8], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[8]}" x:Name="I8"/>
+        <Button Text="{Binding I[9]}" Grid.Column="1" Grid.Row="11" BackgroundColor="{Binding ColorI[9], Converter={StaticResource StringToColor}, ConverterParameter=ColorI[9]}" x:Name="I9"/>
         <Button Text="Visszaállítás" Grid.Column="1" Grid.Row="12" Command="{Binding resetNumbers}"/>
 
         <Label Text="B Sorozat" Grid.Column="2" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"/>

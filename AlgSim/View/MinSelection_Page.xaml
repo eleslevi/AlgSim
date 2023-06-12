@@ -3,10 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AlgSim.Classes"
              x:Class="AlgSim.View.MinSelection_Page"
-             Shell.NavBarIsVisible="False">
+             Title="Minimumkiválasztásos Szimuláció"
+             Shell.NavBarIsVisible="{OnPlatform iOS=false, Android=false, MacCatalyst=true, WinUI=true}">
+    
     <ContentPage.Resources>
         <local:StringToColor x:Key="StringToColor" />
     </ContentPage.Resources>
+    
     <Grid ColumnDefinitions="*,*,*,Auto" RowDefinitions="Auto,*,*,*,*,*,*,*,*,*,*,*,*" ColumnSpacing="0" RowSpacing="0" Padding="0">
         <VerticalStackLayout VerticalOptions="Center" 
                              Padding="{OnPlatform iOS=0, Android=0, WinUI=20, MacCatalyst=20}" 

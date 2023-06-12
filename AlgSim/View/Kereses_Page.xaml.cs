@@ -14,19 +14,15 @@ public partial class Kereses_Page : ContentPage
     {
         InitializeComponent();
 
-        XmlDocument keresesDoc = new XmlDocument();
-        keresesDoc.Load(this.GetType().Assembly.GetManifestResourceStream("AlgSim.Resources.ContentXMLs.Kereses_Content.xml"));
+        XmlDocument KeresesDoc = new XmlDocument();
+        KeresesDoc.Load(this.GetType().Assembly.GetManifestResourceStream("AlgSim.Resources.ContentXMLs.Kereses_Content.xml"));
 
-        explanation_label.Text = keresesDoc.SelectSingleNode("Task/Explanation").InnerText;
-
-        tasks_label.Text = keresesDoc.SelectSingleNode("Task/Tasks").InnerText;
-
-        task_line_1.Text = keresesDoc.SelectSingleNode("Task/TaskLines/Line01").InnerText;
-        task_line_2.Text = keresesDoc.SelectSingleNode("Task/TaskLines/Line02").InnerText;
-        task_line_3.Text = keresesDoc.SelectSingleNode("Task/TaskLines/Line03").InnerText;
-        task_line_4.Text = keresesDoc.SelectSingleNode("Task/TaskLines/Line04").InnerText;
-        task_line_5.Text = keresesDoc.SelectSingleNode("Task/TaskLines/Line05").InnerText;
-        task_line_6.Text = keresesDoc.SelectSingleNode("Task/TaskLines/Line06").InnerText;
+        task_line_1.Text = KeresesDoc.SelectSingleNode("Task/TaskLines/Line01").InnerText;
+        task_line_2.Text = KeresesDoc.SelectSingleNode("Task/TaskLines/Line02").InnerText;
+        task_line_3.Text = KeresesDoc.SelectSingleNode("Task/TaskLines/Line03").InnerText;
+        task_line_4.Text = KeresesDoc.SelectSingleNode("Task/TaskLines/Line04").InnerText;
+        task_line_5.Text = KeresesDoc.SelectSingleNode("Task/TaskLines/Line05").InnerText;
+        task_line_6.Text = KeresesDoc.SelectSingleNode("Task/TaskLines/Line06").InnerText;
     }
 
     private void Entry_TextChanged(object sender, TextChangedEventArgs e)

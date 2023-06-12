@@ -3,126 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AlgSim.Classes"
              x:Class="AlgSim.View.Kereses_Page"
-             Shell.NavBarIsVisible="False">
+             Title="Keresés Szimuláció"
+             Shell.NavBarIsVisible="{OnPlatform iOS=false, Android=false, MacCatalyst=true, WinUI=true}">
 
     <ContentPage.Resources>
         <local:StringToColor x:Key="StringToColor" />
     </ContentPage.Resources>
-    <ScrollView>
-        <Grid>
-            <!-- 3 oszlop definiálása -->
-            <Grid.RowDefinitions>
-                <RowDefinition Height="650"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
+    
+    <Grid ColumnDefinitions="*,*,*,Auto" RowDefinitions="Auto,*,*,*,*,*,*,*" ColumnSpacing="0" RowSpacing="0" Padding="0">
+        <VerticalStackLayout VerticalOptions="Center" 
+                             Padding="{OnPlatform iOS=0, Android=0, WinUI=20, MacCatalyst=20}" 
+                             Spacing="{OnPlatform iOS=0, Android=0, WinUI=20, MacCatalyst=20}" 
+                             Grid.ColumnSpan="{OnPlatform iOS=3, Android=3, WinUI=0, MacCatalyst=0}" 
+                             Grid.RowSpan="{OnPlatform iOS=0, Android=0, MacCatalyst=12, WinUI=12}" 
+                             Grid.Column="{OnPlatform iOS=0, Android=0, MacCatalyst=3, WinUI=3}" 
+                             Grid.Row="{OnPlatform iOS=0, Android=0, MacCatalyst=1, WinUI=1}">
+                    <Label x:Name="task_line_1" BackgroundColor="{Binding TaskBackgroundColors[0]}"/>
+                    <Label x:Name="task_line_2" BackgroundColor="{Binding TaskBackgroundColors[1]}"/>
+                    <Label x:Name="task_line_3" BackgroundColor="{Binding TaskBackgroundColors[2]}"/>
+                    <Label x:Name="task_line_4" BackgroundColor="{Binding TaskBackgroundColors[3]}"/>
+                    <Label x:Name="task_line_5" BackgroundColor="{Binding TaskBackgroundColors[4]}"/>
+                    <Label x:Name="task_line_6" BackgroundColor="{Binding TaskBackgroundColors[5]}"/>
+                    <Label x:Name="task_line_7" BackgroundColor="{Binding TaskBackgroundColors[6]}"/>
+                    <Label x:Name="task_line_8" BackgroundColor="{Binding TaskBackgroundColors[7]}"/>
+                    <Label x:Name="task_line_9" BackgroundColor="{Binding TaskBackgroundColors[8]}"/>
+                    <Label x:Name="task_line_10" BackgroundColor="{Binding TaskBackgroundColors[9]}"/>
+        </VerticalStackLayout>
 
-            <!-- Első oszlop tartalma -->
-            <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center">
-                <Label HorizontalOptions="Center" Text="Magyarázat" FontSize="Large"></Label>
-                <Label x:Name="explanation_label" HorizontalOptions="CenterAndExpand"></Label>
-            </StackLayout>
+        <Label Text="A Sorozat" Grid.Column="0" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Button Text="{Binding numbers[0]}" Grid.Column="0" Grid.Row="2" BackgroundColor="{Binding BackgroundColors[0], Converter={StaticResource StringToColor}, ConverterParameter=BackgroundColors[0]}" x:Name="Button0"/>
+        <Button Text="{Binding numbers[1]}" Grid.Column="0" Grid.Row="3" BackgroundColor="{Binding BackgroundColors[1], Converter={StaticResource StringToColor}, ConverterParameter=BackgroundColors[1]}" x:Name="Button1"/>
+        <Button Text="{Binding numbers[2]}" Grid.Column="0" Grid.Row="4" BackgroundColor="{Binding BackgroundColors[2], Converter={StaticResource StringToColor}, ConverterParameter=BackgroundColors[2]}" x:Name="Button2"/>
+        <Button Text="{Binding numbers[3]}" Grid.Column="0" Grid.Row="5" BackgroundColor="{Binding BackgroundColors[3], Converter={StaticResource StringToColor}, ConverterParameter=BackgroundColors[3]}" x:Name="Button3"/>
+        <Button Text="{Binding numbers[4]}" Grid.Column="0" Grid.Row="6" BackgroundColor="{Binding BackgroundColors[4], Converter={StaticResource StringToColor}, ConverterParameter=BackgroundColors[4]}" x:Name="Button4"/>
+        <Button Text="Véletlen számok" Grid.Column="0" Grid.Row="7" Command="{Binding FillWithRandomNumbersCommand}"/>
 
-            <!-- Második oszlop tartalma -->
-            <Grid Grid.Row="0">
-                <!-- Középső oszlopban 2 sor definiálása -->
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="*"></RowDefinition>
-                </Grid.RowDefinitions>
+        <Label Text="Keresett elem : " Grid.Column="1" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Label Text="Benne van : " Grid.Column="1" Grid.Row="4" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Label Text="Hanyadik elem:" Grid.Column="1" Grid.Row="6" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Button Text="Visszaállítás" Grid.Column="1" Grid.Row="7" Command="{Binding ResetSimulationCommand}"/>
 
-                <!-- Első sor tartalma -->
-                <StackLayout Orientation="Vertical" HorizontalOptions="Center" Grid.Row="0" Padding="5,5,5,5">
-                    <Label HorizontalOptions="CenterAndExpand" Text="Keresés" FontSize="Large"></Label>
-                    <Grid Padding="5,5,5,5">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
-                            <RowDefinition Height="*"></RowDefinition>
-                        </Grid.RowDefinitions>
-
-                        <Grid Grid.Row="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-
-                            <Button Text="{Binding numbers[0]}" Grid.Column="0" BackgroundColor="{Binding BackgroundColors[0], Converter={StaticResource StringToColor}, ConverterParameter=BackgroundColors[0]}" x:Name="Button0"></Button>
-                            <Button Text="{Binding numbers[1]}" Grid.Column="1" BackgroundColor="{Binding BackgroundColors[1], Converter={StaticResource StringToColor}, ConverterParameter=BackgroundColors[1]}" x:Name="Button1"></Button>
-                            <Button Text="{Binding numbers[2]}" Grid.Column="2" BackgroundColor="{Binding BackgroundColors[2], Converter={StaticResource StringToColor}, ConverterParameter=BackgroundColors[2]}" x:Name="Button2"></Button>
-                            <Button Text="{Binding numbers[3]}" Grid.Column="3" BackgroundColor="{Binding BackgroundColors[3], Converter={StaticResource StringToColor}, ConverterParameter=BackgroundColors[3]}" x:Name="Button3"></Button>
-                            <Button Text="{Binding numbers[4]}" Grid.Column="4" BackgroundColor="{Binding BackgroundColors[4], Converter={StaticResource StringToColor}, ConverterParameter=BackgroundColors[4]}" x:Name="Button4"></Button>
-                        </Grid>
-
-                        <Grid Grid.Row="1">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-
-                            <Button Grid.Column="0" Text="Véletlen számok" Command="{Binding FillWithRandomNumbersCommand}"></Button>
-                            <Button Grid.Column="1" Text="Visszaállítás" Command="{Binding ResetSimulationCommand}"></Button>
-                            <Button Grid.Column="2" Text="Szimulálás" Command="{Binding StepSimulationCommand}"></Button>
-                        </Grid>
-
-                        <Grid Grid.Row="2">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-
-                            <Label Grid.Column="0" Text="Keresett elem:" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
-                            <Entry Grid.Column="1" x:Name="userValue" TextChanged="Entry_TextChanged" FontSize="Medium"></Entry>
-                        </Grid>
-
-                        <Grid Grid.Row="3">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-
-                            <Label Grid.Column="0" Text="Benne van:" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
-                            <Button Grid.Column="1" Text="{Binding results[0]}" FontSize="Medium"></Button>
-                        </Grid>
-
-                        <Grid Grid.Row="4">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-
-                            <Label Grid.Column="0" Text="Hanyadik elem:" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
-                            <Button Grid.Column="1" Text="{Binding results[1]}" FontSize="Medium"></Button>
-                        </Grid>
-                    </Grid>
-                </StackLayout>
-
-                <!-- Második sor tartalma -->
-                <StackLayout Orientation="Vertical" HorizontalOptions="Center" Grid.Row="1">
-                    <Label x:Name="task_line_1" BackgroundColor="{Binding TaskBackgroundColors[0]}"></Label>
-                    <Label x:Name="task_line_2" BackgroundColor="{Binding TaskBackgroundColors[1]}"></Label>
-                    <Label x:Name="task_line_3" BackgroundColor="{Binding TaskBackgroundColors[2]}"></Label>
-                    <Label x:Name="task_line_4" BackgroundColor="{Binding TaskBackgroundColors[3]}"></Label>
-                    <Label x:Name="task_line_5" BackgroundColor="{Binding TaskBackgroundColors[4]}"></Label>
-                    <Label x:Name="task_line_6" BackgroundColor="{Binding TaskBackgroundColors[5]}"></Label>
-                    <Label x:Name="task_line_7" BackgroundColor="{Binding TaskBackgroundColors[6]}"></Label>
-                    <Label x:Name="task_line_8" BackgroundColor="{Binding TaskBackgroundColors[7]}"></Label>
-                    <Label x:Name="task_line_9" BackgroundColor="{Binding TaskBackgroundColors[8]}"></Label>
-                    <Label x:Name="task_line_10" BackgroundColor="{Binding TaskBackgroundColors[9]}"></Label>
-                </StackLayout>
-            </Grid>
-
-            <!-- Harmadik oszlop tartalma -->
-            <StackLayout Grid.Row="2" Orientation="Vertical" HorizontalOptions="Center">
-                <Label HorizontalOptions="Center" Text="Feladatok" FontSize="Large"></Label>
-                <Label x:Name="tasks_label"></Label>
-            </StackLayout>
-        </Grid>
-    </ScrollView>
+        <Label Text="Beállítások" Grid.Column="2" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Entry TextChanged="Entry_TextChanged" Grid.Column="2" Grid.Row="2" x:Name="userValue"/>
+        <Button Text="{Binding results[0]}" Grid.Column="2" Grid.Row="4"/>
+        <Button Text="{Binding results[1]}" Grid.Column="2" Grid.Row="6"/>
+        <Button Text="Szimulálás" Grid.Column="2" Grid.Row="7" Command="{Binding StepSimulationCommand}"/>
+     </Grid>
 </ContentPage>

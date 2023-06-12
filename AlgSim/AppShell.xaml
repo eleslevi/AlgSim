@@ -4,10 +4,170 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AlgSim"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:View="clr-namespace:AlgSim.View"
+    xmlns:Explanation="clr-namespace:AlgSim.View.Explanation"
+    xmlns:Task="clr-namespace:AlgSim.View.Task"
+    Shell.FlyoutBehavior="{OnPlatform iOS=Flyout, Android=Flyout, WinUI=Locked, MacCatalyst=Locked}"
+    Shell.FlyoutItemIsVisible="False"
+    FlyoutBackgroundColor="Black">
 
-    <ShellContent
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <FlyoutItem Title="Kezdőlap">
+        <ShellContent Title="Kezdőlap"
+        ContentTemplate="{DataTemplate local:MainPage}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Összegzés">
+        <ShellContent Title="Magyarázat"
+        ContentTemplate="{DataTemplate Explanation:Sum_Explanation}"/>
+
+        <ShellContent Title="Szimuláció"
+        ContentTemplate="{DataTemplate View:Sum_Page}"/>
+
+        <ShellContent Title="Feladatok"
+        ContentTemplate="{DataTemplate Task:Sum_Task}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Eldöntés">
+        <ShellContent Title="Magyarázat"
+        ContentTemplate="{DataTemplate Explanation:Eldontes_Explanation}"/>
+
+        <ShellContent Title="Szimuláció"
+        ContentTemplate="{DataTemplate View:Eldontes_Page}"/>
+
+        <ShellContent Title="Feladatok"
+        ContentTemplate="{DataTemplate Task:Eldontes_Task}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Kiválasztás">
+        <ShellContent Title="Magyarázat"
+        ContentTemplate="{DataTemplate Explanation:Kivalasztas_Explanation}"/>
+
+        <ShellContent Title="Szimuláció"
+        ContentTemplate="{DataTemplate View:Kivalasztas_Page}"/>
+
+        <ShellContent Title="Feladatok"
+        ContentTemplate="{DataTemplate Task:Kivalasztas_Task}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Keresés">
+        <ShellContent Title="Magyarázat"
+        ContentTemplate="{DataTemplate Explanation:Kereses_Explanation}"/>
+
+        <ShellContent Title="Szimuláció"
+        ContentTemplate="{DataTemplate View:Kereses_Page}"/>
+
+        <ShellContent Title="Feladatok"
+        ContentTemplate="{DataTemplate Task:Kereses_Task}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Megszámolás">
+        <ShellContent Title="Magyarázat"
+        ContentTemplate="{DataTemplate Explanation:Megszamolas_Explanation}"/>
+
+        <ShellContent Title="Szimuláció"
+        ContentTemplate="{DataTemplate View:Megszamolas_Page}"/>
+
+        <ShellContent Title="Feladatok"
+        ContentTemplate="{DataTemplate Task:Megszamolas_Task}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Maximumkiválasztás">
+        <ShellContent Title="Magyarázat"
+        ContentTemplate="{DataTemplate Explanation:MaxSelection_Explanation}"/>
+
+        <ShellContent Title="Szimuláció"
+        ContentTemplate="{DataTemplate View:MaxSelection_Page}"/>
+
+        <ShellContent Title="Feladatok"
+        ContentTemplate="{DataTemplate Task:MaxSelection_Task}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Másolás">
+        <ShellContent Title="Magyarázat"
+        ContentTemplate="{DataTemplate Explanation:Copy_Explanation}"/>
+
+        <ShellContent Title="Szimuláció"
+        ContentTemplate="{DataTemplate View:CopyPage}"/>
+
+        <ShellContent Title="Feladatok"
+        ContentTemplate="{DataTemplate Task:Copy_Task}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Kiválogatás">
+        <ShellContent Title="Magyarázat"
+        ContentTemplate="{DataTemplate Explanation:Selection_Explanation}"/>
+
+        <ShellContent Title="Szimuláció"
+        ContentTemplate="{DataTemplate View:SelectionPage}"/>
+
+        <ShellContent Title="Feladatok"
+        ContentTemplate="{DataTemplate Task:Selection_Task}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Szétválogatás">
+        <ShellContent Title="Magyarázat"
+        ContentTemplate="{DataTemplate Explanation:Splitting_Explanation}"/>
+
+        <ShellContent Title="Szimuláció"
+        ContentTemplate="{DataTemplate View:SplittingPage}"/>
+
+        <ShellContent Title="Feladatok"
+        ContentTemplate="{DataTemplate Task:Splitting_Task}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Metszet">
+        <ShellContent Title="Magyarázat"
+        ContentTemplate="{DataTemplate Explanation:Intersection_Explanation}"/>
+        
+        <ShellContent Title="Szimuláció"
+        ContentTemplate="{DataTemplate View:Intersection_Page}"/>
+
+        <ShellContent Title="Feladatok"
+        ContentTemplate="{DataTemplate Task:Intersection_Task}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Egyesítés">
+        <ShellContent Title="Magyarázat"
+        ContentTemplate="{DataTemplate Explanation:Union_Explanation}"/>
+
+        <ShellContent Title="Szimuláció"
+        ContentTemplate="{DataTemplate View:Union_Page}"/>
+
+        <ShellContent Title="Feladatok"
+        ContentTemplate="{DataTemplate Task:Union_Task}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Egyszerű cserés">
+        <ShellContent Title="Magyarázat"
+        ContentTemplate="{DataTemplate Explanation:Swap_Explanation}"/>
+
+        <ShellContent Title="Szimuláció"
+        ContentTemplate="{DataTemplate View:Swap_Page}"/>
+
+        <ShellContent Title="Feladatok"
+        ContentTemplate="{DataTemplate Task:Swap_Task}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Minimumkiválasztásos">
+        <ShellContent Title="Magyarázat"
+        ContentTemplate="{DataTemplate Explanation:MinSelection_Explanation}"/>
+
+        <ShellContent Title="Szimuláció"
+        ContentTemplate="{DataTemplate View:MinSelection_Page}"/>
+
+        <ShellContent Title="Feladatok"
+        ContentTemplate="{DataTemplate Task:MinSelection_Task}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Buborékos">
+        <ShellContent Title="Magyarázat"
+        ContentTemplate="{DataTemplate Explanation:BubbleOrder_Explanation}"/>
+
+        <ShellContent Title="Szimuláció"
+        ContentTemplate="{DataTemplate View:BubbleOrderPage}"/>
+
+        <ShellContent Title="Feladatok"
+        ContentTemplate="{DataTemplate Task:BubbleOrder_Task}"/>
+    </FlyoutItem>
 
 </Shell>
