@@ -1,52 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Task>
-  <Explanation>
-    Feladat: Adott egy N elemből álló sorozat (A) és egy rajtuk értelmezhető tulajdonság (T). Adjuk meg a sorozat legnagyobb elemét!
+<Explanation>
+Feladat: Adott egy N elemből álló sorozat (A) és egy rajtuk értelmezhető tulajdonság (T). Adjuk meg a sorozat legnagyobb elemét!
 
-    Megoldás: Kezdetben a maximális elem sorszáma=1, vagyis abból indulunk ki, hogy az első elem a legnagyobb. Ezután egy ciklussal a sorozat második elemétől kezdve mindegyiket megvizsgáljuk és összehasonlítjuk az aktuális maximum indexű elemmel. Ha az i-edik elem nagyobb, mint a max-adik, akkor az ő sorszáma lesz az új max érték. A ciklus lefutása után a max változó annak az elemnek a sorszámát fogja tartalmazni, aki ténylegesen a sorozat legnagyobb eleme.
+Megoldás: Kezdetben a maximális elem sorszáma=1, vagyis abból indulunk ki, hogy az első elem a legnagyobb. Ezután egy ciklussal a sorozat második elemétől kezdve mindegyiket megvizsgáljuk és összehasonlítjuk az aktuális maximum indexű elemmel. Ha az i-edik elem nagyobb, mint a max-adik, akkor az ő sorszáma lesz az új max érték. A ciklus lefutása után a max változó annak az elemnek a sorszámát fogja tartalmazni, aki ténylegesen a sorozat legnagyobb eleme.
 
-    Példa: A sorozat (A): 5, 4, 2, 7
+Példa: A sorozat (A): 5, 4, 2, 7
 
-    Max értéke kezdetben: 1
-    Elemszám (N): 4
+Max értéke kezdetben: 1
+Elemszám (N): 4
 
-    Ciklus I:=2-től 4-ig
-    Ha A(I)>A(MAX) akkor MAX:=I;
-    Ciklus vége
+Ciklus I:=2-től 4-ig
+Ha A(I)>A(MAX) akkor MAX:=I;
+Ciklus vége
 
-    A ciklus első végrehajtásakor:
-    i=2,  A[2]=4
-    (4>5)=hamis  -&gt; csak továbblépünk, max értéke nem változik
-    max=1
+A ciklus első végrehajtásakor:
+i=2,  A[2]=4
+(4>5)=hamis  -&gt; csak továbblépünk, max értéke nem változik
+max=1
 
-    A ciklus második végrehajtásakor:
-    i=3,  A[3]=2
-    (2>5)=hamis  -&gt; csak továbblépünk, max értéke nem változik
-    max=1
+A ciklus második végrehajtásakor:
+i=3,  A[3]=2
+(2>5)=hamis  -&gt; csak továbblépünk, max értéke nem változik
+max=1
 
-    A ciklus harmadik végrehajtásakor:
-    i=4,  A[4]=7
-    (7>5)=igaz -&gt; max értéke az aktuális elem sorszámára változik
-    max:=i -&gt; max:=4
+A ciklus harmadik végrehajtásakor:
+i=4,  A[4]=7
+(7>5)=igaz -&gt; max értéke az aktuális elem sorszámára változik
+max:=i -&gt; max:=4
 
-    A ciklus végrehajtása itt befejeződik, mivel i értéke elérte a 4-et. Megkaptuk az A sorozat legnagyobb elemének sorszámát a max változóban.
-  </Explanation>
-  <TaskLines>
-    <Line1>Eljárás Maximum(N, A, Max)</Line1>
-    <Line2>Max := 1;</Line2>
-    <Line3>Ciklus i := 2-től n-ig</Line3>
-    <Line4>     HA A(i) &gt; A(Max) akkor</Line4>
-    <Line5>     Max := i;</Line5>
-    <Line6>Ciklus vége</Line6>
-    <Line7>Eljárás vége</Line7>
-  </TaskLines>
-  <Tasks>
-    1.	Egy héten keresztül mérjük a napi csapadékmennyiséget. A hét hányadik napján esett a legtöbb eső?
+A ciklus végrehajtása itt befejeződik, mivel i értéke elérte a 4-et. Megkaptuk az A sorozat legnagyobb elemének sorszámát a max változóban.
+</Explanation>
+<TaskLines>
+<Line1>     Eljárás Maximum(N, A, Max)</Line1>
+<Line2>     Max := 1;</Line2>
+<Line3>     Ciklus i := 2-től n-ig</Line3>
+<Line4>             HA A(i) &gt; A(Max) akkor</Line4>
+<Line5>             Max := i;</Line5>
+<Line6>     Ciklus vége</Line6>
+<Line7>     Eljárás vége</Line7>
+</TaskLines>
+<Tasks>
+1.	
+Egy héten keresztül mérjük a napi csapadékmennyiséget. A hét hányadik napján esett a legtöbb eső?
 
-    2.	Ismerjük az évfolyam ZH eredményeit. Ki érte el a legmagasabb pontszámot?
+2.	
+Ismerjük az évfolyam ZH eredményeit. Ki érte el a legmagasabb pontszámot?
 
-    3.	Az iskolában atlétikai versenyt szerveznek és a pontszámok összesítése után meg kell mondaniuk, hogy hányas sorszámú ember lett a legjobb.
+3.	
+Az iskolában atlétikai versenyt szerveznek és a pontszámok összesítése után meg kell mondaniuk, hogy hányas sorszámú ember lett a legjobb.
 
-    4.	Egy évfolyam minden hallgatójának megmérjük a magasságát. Mekkora a legmagasabb hallgató?
-  </Tasks>
+4.	
+Egy évfolyam minden hallgatójának megmérjük a magasságát. Mekkora a legmagasabb hallgató?
+</Tasks>
 </Task>

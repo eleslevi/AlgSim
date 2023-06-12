@@ -1,49 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Task>
-	<Explanation>
-		Feladat: Adott egy N elemből álló sorozat (A) és egy rajtuk értelmezhető tulajdonság (T). Tudjuk, hogy a sorozatban van T tulajdonságú elem, adjuk meg az ő sorszámát!
+<Explanation>
+Feladat: Adott egy N elemből álló sorozat (A) és egy rajtuk értelmezhető tulajdonság (T). Tudjuk, hogy a sorozatban van T tulajdonságú elem, adjuk meg az ő sorszámát!
 
-		Megoldás: A sorszámot egyre állítjuk (I:=1), hogy majd az első elemmel kezdhessük a vizsgálódást. Egy ciklussal mindig a következő elemre lépünk, amíg az az elem, amin állunk nem rendelkezik a megadott tulajdonsággal (T). A ciklusból akkor lépünk ki, amikor olyan elemhez érünk, aki rendelkezik a T tulajdonsággal, így a ciklus lefutása után megkapjuk a sorszámát.
+Megoldás: A sorszámot egyre állítjuk (I:=1), hogy majd az első elemmel kezdhessük a vizsgálódást. Egy ciklussal mindig a következő elemre lépünk, amíg az az elem, amin állunk nem rendelkezik a megadott tulajdonsággal (T). A ciklusból akkor lépünk ki, amikor olyan elemhez érünk, aki rendelkezik a T tulajdonsággal, így a ciklus lefutása után megkapjuk a sorszámát.
 
-		Példa: A sorozat (A): 5, 4, 2, 7
+Példa: A sorozat (A): 5, 4, 2, 7
 
-		Elemszám (N): 4
-		T: A(I)=2
+Elemszám (N): 4
+T: A(I)=2
 
-		Ciklus amíg nem T(A(I))
-		I:=I+1;
-		Ciklus vége
+Ciklus amíg nem T(A(I))
+I:=I+1;
+Ciklus vége
 
-		A ciklus első végrehajtásakor:
-		i=1,  A[1]=5
-		(5=2)=hamis   csak továbblépünk
+A ciklus első végrehajtásakor:
+i=1,  A[1]=5
+(5=2)=hamis   csak továbblépünk
 
-		A ciklus első végrehajtásakor:
-		i=2,  A[2]=4
-		(4=2)=hamis   csak továbblépünk
+A ciklus első végrehajtásakor:
+i=2,  A[2]=4
+(4=2)=hamis   csak továbblépünk
 
-		A ciklus második végrehajtásakor:
-		i=3,  A[3]=2
-		(2=2)=igaz  a feltétel nem hamis, ezért kilépünk a ciklusból
+A ciklus második végrehajtásakor:
+i=3,  A[3]=2
+(2=2)=igaz  a feltétel nem hamis, ezért kilépünk a ciklusból
 
-		A ciklus végrehajtása itt befejeződik, mivel megtaláltunk a T tulajdonságal rendelkező elemet, sorszáma=i értékével.
-	</Explanation>
-	<Tasklines>
-		<Line01>Metódus Kiválasztás(N,A,s)</Line01>
-		<Line02>	i=1</Line02>
-		<Line03>	Ciklus amíg nem(T(A(i)))</Line03>
-		<Line04>		i=i+1</Line04>
-		<Line05>	Ciklus vége</Line05>
-		<Line06>	S=i</Line06>
-		<Line07>Metódus vége</Line07>	
-	</Tasklines>
-	<Tasks>
-		1.	Egy héten keresztül mérjük a napi csapadékmennyiséget milliméterben. A hét hányadik napján nem esett az eső?
+A ciklus végrehajtása itt befejeződik, mivel megtaláltunk a T tulajdonságal rendelkező elemet, sorszáma=i értékével.
+</Explanation>
+<Tasklines>
+<Line01>     Eljárás Kiválasztás(N,A,S)</Line01>
+<Line02>     i=1</Line02>
+<Line03>     Ciklus amíg nem(T(A(i)))</Line03>
+<Line04>             i=i+1</Line04>
+<Line05>     Ciklus vége</Line05>
+<Line06>     S=i</Line06>
+<Line07>     Eljárás vége</Line07>	
+</Tasklines>
+<Tasks>
+1.	
+Egy héten keresztül mérjük a napi csapadékmennyiséget milliméterben. A hét hányadik napján nem esett az eső?
 
-		2.	Egy emberről tudjuk, hogy nem mindig mond igazat, ezért kérdéseket teszünk fel neki és válaszadás közben mérjük a pulzusát. Amikor nem mond igazat, a pulzusa K fölé emelkedik. Hányadik kérdésnél hazudott először?
+2.	
+Egy emberről tudjuk, hogy nem mindig mond igazat, ezért kérdéseket teszünk fel neki és válaszadás közben mérjük a pulzusát. Amikor nem mond igazat, a pulzusa K fölé emelkedik. Hányadik kérdésnél hazudott először?
 
-		3.	Ismerjük egy évfolyam ZH eredményeit és tudjuk, hogy valaki elérte a maximális pontszámot (100). Ő hányadik a névsorban? (Az eredmények ABC sorrendben vannak tárolva)
+3.	
+Ismerjük egy évfolyam ZH eredményeit és tudjuk, hogy valaki elérte a maximális pontszámot (100). Ő hányadik a névsorban? (Az eredmények ABC sorrendben vannak tárolva)
 
-		4.	Moziba szeretnénk menni, amire K forintunk van. Készítettünk egy listát, hogy melyik moziban mennyibe kerülnek a jegyek. A listán első helyen áll ahova legjobban szeretnénk menni, utolsó helyén pedig az, ahova legkevésbé. Válasszuk ki az első olyat, amire elegendő a pénzünk! Hányadik mozi volt ez?
-	</Tasks>
+4.	
+Moziba szeretnénk menni, amire K forintunk van. Készítettünk egy listát, hogy melyik moziban mennyibe kerülnek a jegyek. A listán első helyen áll ahova legjobban szeretnénk menni, utolsó helyén pedig az, ahova legkevésbé. Válasszuk ki az első olyat, amire elegendő a pénzünk! Hányadik mozi volt ez?
+</Tasks>
 </Task>

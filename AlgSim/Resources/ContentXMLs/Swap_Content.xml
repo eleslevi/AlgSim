@@ -1,57 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Task>
-	<Explanation>
-		Feladat: Adott egy N elemből álló sorozat (A). Rendezzük az elemeket növekvő sorrendbe!
+<Explanation>
+Feladat: Adott egy N elemből álló sorozat (A). Rendezzük az elemeket növekvő sorrendbe!
 
-		Megoldás: Végigmegyünk a sorozaton egy ciklussal úgy, hogy minden egyes eleméhez megnézzük az összes mögötte levőt. Ha azok között találunk olyat, ami nála kisebb, akkor megcseréljük vele.
+Megoldás: Végigmegyünk a sorozaton egy ciklussal úgy, hogy minden egyes eleméhez megnézzük az összes mögötte levőt. Ha azok között találunk olyat, ami nála kisebb, akkor megcseréljük vele.
 
-		Példa: 
-		A sorozat (A): 4, 5, 7, 2
-		A sorozat elemszáma (N): 4
+Példa: 
+A sorozat (A): 4, 5, 7, 2
+A sorozat elemszáma (N): 4
 
-		Ciklus I:=1-től N-1-ig
-		Ciklus J:=I+1-től N-ig
-		Ha A(I)>A(J) akkor Csere(A(I),A(J));
-		Ciklus vége
-		Ciklus vége
+Ciklus I:=1-től N-1-ig
+Ciklus J:=I+1-től N-ig
+Ha A(I)>A(J) akkor Csere(A(I),A(J));
+Ciklus vége
+Ciklus vége
 
-		A külső ciklus első végrehajtása:
-		i=1
-		Belső ciklus első végrehajtása: j=2 &#x2192; A(1)=4, A(2)=5 &#x2192; (A(I)>A(J))=hamis &#x2192; A sorozat nem változik &#x2192; A=4, 5, 7, 2
-		Belső ciklus második végrehajtása: j=3 &#x2192; A(1)=4, A(3)=7 &#x2192; (A(I)>A(J))=hamis &#x2192; A sorozat nem változik &#x2192; A=4, 5, 7, 2
-		Belső ciklus harmadik végrehajtása: j=4 &#x2192; A(1)=4, A(4)=2 &#x2192; A(I)>A(J) &#x2192; Csere(A(I),A(J)) &#x2192; A=2, 5, 7, 4
-		A belső ciklus végrehajtása itt befejeződik, mivel J=N, a külső ciklussal lépünk tovább.
+A külső ciklus első végrehajtása:
+i=1
+Belső ciklus első végrehajtása: j=2 &#x2192; A(1)=4, A(2)=5 &#x2192; (A(I)>A(J))=hamis &#x2192; A sorozat nem változik &#x2192; A=4, 5, 7, 2
+Belső ciklus második végrehajtása: j=3 &#x2192; A(1)=4, A(3)=7 &#x2192; (A(I)>A(J))=hamis &#x2192; A sorozat nem változik &#x2192; A=4, 5, 7, 2
+Belső ciklus harmadik végrehajtása: j=4 &#x2192; A(1)=4, A(4)=2 &#x2192; A(I)>A(J) &#x2192; Csere(A(I),A(J)) &#x2192; A=2, 5, 7, 4
+A belső ciklus végrehajtása itt befejeződik, mivel J=N, a külső ciklussal lépünk tovább.
 
-		A külső ciklus második végrehajtása:
-		i=2
-		Belső ciklus első végrehajtása: j=3 &#x2192; A(2)=5, A(3)=7 &#x2192; (A(I)>A(J)) &#x2192; A sorozat nem változik &#x2192; A=2, 5, 7, 4
-		Belső ciklus második végrehajtása: j=4 &#x2192; A(2)=5, A(4)=4 &#x2192; A(I)>A(J) &#x2192; Csere(A(I),A(J)) &#x2192; A=2, 4, 7, 5
-		A belső ciklus végrehajtása itt befejeződik, mert J=N, a külső ciklussal lépünk tovább.
+A külső ciklus második végrehajtása:
+i=2
+Belső ciklus első végrehajtása: j=3 &#x2192; A(2)=5, A(3)=7 &#x2192; (A(I)>A(J)) &#x2192; A sorozat nem változik &#x2192; A=2, 5, 7, 4
+Belső ciklus második végrehajtása: j=4 &#x2192; A(2)=5, A(4)=4 &#x2192; A(I)>A(J) &#x2192; Csere(A(I),A(J)) &#x2192; A=2, 4, 7, 5
+A belső ciklus végrehajtása itt befejeződik, mert J=N, a külső ciklussal lépünk tovább.
 
 
-		A külső ciklus harmadik végrehajtása:
-		i=3
-		Belső ciklus első végrehajtása: j=4 &#x2192; A(3)=7, A(4)=5 &#x2192; A(I)>A(J) &#x2192; Csere(A(I),A(J)) &#x2192; A=2, 4, 5, 7
-		A belső ciklus végrehajtása itt befejeződik, mivel J=N.
+A külső ciklus harmadik végrehajtása:
+i=3
+Belső ciklus első végrehajtása: j=4 &#x2192; A(3)=7, A(4)=5 &#x2192; A(I)>A(J) &#x2192; Csere(A(I),A(J)) &#x2192; A=2, 4, 5, 7
+A belső ciklus végrehajtása itt befejeződik, mivel J=N.
 
-		A külső ciklus végrehajtása is befejeződik, mivel I=N-1.
-	</Explanation>
-	<TaskLines>
-		<Line1>     Eljárás Rendezés(N,A)</Line1>
-		<Line2>             Ciklus I:=1 -től N -ig</Line2>
-		<Line3>                     Ciklus J=I+1 -től N -ig</Line3>
-		<Line4>                             Ha A(I)>A(J) akkor</Line4>
-		<Line5>                                     Csere(A(I),A(J));</Line5>
-		<Line6>                             Elágazás vége</Line6>
-		<Line7>                     Ciklus vége</Line7>
-		<Line8>             Ciklus vége</Line8>
-		<Line9>     Eljárás vége</Line9>
-	</TaskLines>
-	<Tasks>
-		1.	Ismerjük egy évfolyam tanulóinak félévi átlagát, rendezzük őket növekvő sorrendbe az átlag szerint az ösztöndíj megállapításához!
+A külső ciklus végrehajtása is befejeződik, mivel I=N-1.
+</Explanation>
+<TaskLines>
+<Line1>     Eljárás Rendezés(N,A)</Line1>
+<Line2>             Ciklus I:=1 -től N -ig</Line2>
+<Line3>                     Ciklus J=I+1 -től N -ig</Line3>
+<Line4>                             Ha A(I)>A(J) akkor</Line4>
+<Line5>                                     Csere(A(I),A(J));</Line5>
+<Line6>                             Elágazás vége</Line6>
+<Line7>                     Ciklus vége</Line7>
+<Line8>             Ciklus vége</Line8>
+<Line9>     Eljárás vége</Line9>
+</TaskLines>
+<Tasks>
+1.	
+Ismerjük egy évfolyam tanulóinak félévi átlagát, rendezzük őket növekvő sorrendbe az átlag szerint az ösztöndíj megállapításához!
 
-		2.	Tudjuk, hogy egy iskolai versenyen hányas rajtszámú versenyzők hány pontot értek el, adjuk meg a verseny eredményét (ki hányadik helyen végzett)!
+2.	
+Tudjuk, hogy egy iskolai versenyen hányas rajtszámú versenyzők hány pontot értek el, adjuk meg a verseny eredményét (ki hányadik helyen végzett)!
 
-		3.	Pizzát szeretnénk venni, de a különböző éttermekben más az áruk, rendezzük növekvő sorrendbe az árakat!
-	</Tasks>
+3.	
+Pizzát szeretnénk venni, de a különböző éttermekben más az áruk, rendezzük növekvő sorrendbe az árakat!
+</Tasks>
 </Task>

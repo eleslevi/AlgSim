@@ -1,68 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Task>
-	<Explanation>
-		Feladat: Adott egy N elemből álló sorozat (A) és egy rajtuk értelmezhető tulajdonság (T). Döntsük el, hogy van-e a sorozat elemei között olyan elem, amelyik rendelkezik ezzel a tulajdonsággal!
+<Explanation>
+Feladat: Adott egy N elemből álló sorozat (A) és egy rajtuk értelmezhető tulajdonság (T). Döntsük el, hogy van-e a sorozat elemei között olyan elem, amelyik rendelkezik ezzel a tulajdonsággal!
 
-		Megoldás: A sorszámot egyre állítjuk (I:=1), hogy majd az első elemmel kezdhessük a vizsgálódást. Egy ciklussal mindig a következő elemre lépünk, amíg a sorozat végére nem érünk és az az elem, amin állunk, nem rendelkezik a megadott tulajdonsággal (T). A ciklus kétféleképpen érhet véget. Vagy elértünk a sorozat végére (I>N), ez azt jelenti, hogy nem találtunk a megadott tulajdonsággal rendelkező elemet, vagy találtunk T tulajdonságú elemet, vagyis a sorszám kisebb, mint az elemszám. Ezt egy feltételvizsgálattal döntjük el és ettől függően a VAN változó igaz, vagy hamis értéket kap.
+Megoldás: A sorszámot egyre állítjuk (I:=1), hogy majd az első elemmel kezdhessük a vizsgálódást. Egy ciklussal mindig a következő elemre lépünk, amíg a sorozat végére nem érünk és az az elem, amin állunk, nem rendelkezik a megadott tulajdonsággal (T). A ciklus kétféleképpen érhet véget. Vagy elértünk a sorozat végére (I>N), ez azt jelenti, hogy nem találtunk a megadott tulajdonsággal rendelkező elemet, vagy találtunk T tulajdonságú elemet, vagyis a sorszám kisebb, mint az elemszám. Ezt egy feltételvizsgálattal döntjük el és ettől függően a VAN változó igaz, vagy hamis értéket kap.
 
-		1.Példa: A sorozat (A): 5, 4, 2, 7
+1.Példa: A sorozat (A): 5, 4, 2, 7
 
-		Elemszám (N): 4
-		T: páros szám
+Elemszám (N): 4
+T: páros szám
 
-		Ciklus amíg I&lt;=N és nem T(A(I))
-		I:=I+1;
-		Ciklus vége
+Ciklus amíg I&lt;=N és nem T(A(I))
+I:=I+1;
+Ciklus vége
 
-		A ciklus első végrehajtásakor:
-		i=1,  A[1]=5
-		1&lt;4 és páros(5)=hamis → csak továbblépünk
+A ciklus első végrehajtásakor:
+i=1,  A[1]=5
+1&lt;4 és páros(5)=hamis → csak továbblépünk
 
-		A ciklus második végrehajtásakor:
-		i=2,  A[2]=4
-		i=&lt;4 és páros(4)=igaz → a második feltétel nem hamis, ezért kilépünk a ciklusból
-		VAN:=(2&lt;=4); → VAN:=igaz
+A ciklus második végrehajtásakor:
+i=2,  A[2]=4
+i=&lt;4 és páros(4)=igaz → a második feltétel nem hamis, ezért kilépünk a ciklusból
+VAN:=(2&lt;=4); → VAN:=igaz
 
-		A ciklus végrehajtása itt befejeződik, mivel találtunk egy T tulajdonsággal rendelkező elemet.
+A ciklus végrehajtása itt befejeződik, mivel találtunk egy T tulajdonsággal rendelkező elemet.
 		
-		2.Példa A sorozat(A): 5, 4, 2, 7
+2.Példa A sorozat(A): 5, 4, 2, 7
 
-		Elemszám (N): 4
-		T: 8-nál nagyobb
+Elemszám (N): 4
+T: 8-nál nagyobb
 
-		Ciklus amíg I&lt;=N és nem T(A(I))
-			I:=I+1;
-		Ciklus vége
+Ciklus amíg I&lt;=N és nem T(A(I))
+I:=I+1;
+Ciklus vége
 
-		A cillus első végrehajtásakor:
-			i=1, A[1]=5
-			1&lt;4 és (5&gt;8)=hamis → csak továbblépünk
+A cillus első végrehajtásakor:
+i=1, A[1]=5
+1&lt;4 és (5&gt;8)=hamis → csak továbblépünk
 
-		A ciklus második végrehajtásakor:
-			i=2, A[1]=4
-			2&lt;4 és (4&gt;8)=hamis → csak továbblépünk
+A ciklus második végrehajtásakor:
+i=2, A[1]=4
+2&lt;4 és (4&gt;8)=hamis → csak továbblépünk
 			
-		A ciklus harmadik végrehajtásakor:
-			i=3, A[1]=2
-			3&lt;4 és (2&gt;8)=hamis → csak továbblépünk
+A ciklus harmadik végrehajtásakor:
+i=3, A[1]=2
+3&lt;4 és (2&gt;8)=hamis → csak továbblépünk
 			
-		A ciklus negyedik végrehajtásakor?
-			i=5, A[5]=();
-			(5&lt;4)=hamis → az első felvétel hamis, ezért kilépünk a ciklusból
-			VAN:=(5&lt;=4); → VAN:=hamis
-	</Explanation>
-	<TaskLines>
-		<Line01>Eljárás Eldöntés(N,A,van)</Line01>
-		<Line02>	I:=1</Line02>
-		<Line03>	Ciklus amíg (I&lt;=n) és (nem(T(A(i)))</Line03>
-		<Line04>		I:=I+1</Line04>
-		<Line05>	Ciklus vége</Line05>
-    <Line06>  VAN:=I&lt;N;</Line06>
-		<Line07>Eljárás vége</Line07>
-	</TaskLines>
-	<Tasks>
-		1.	Egy munkahelyen mindenki lottózik és a nyerőszámok kihúzása után összeírják, kinek hány találata volt. Volt-e valakinek ötöse?
+A ciklus negyedik végrehajtásakor?
+i=5, A[5]=();
+(5&lt;4)=hamis → az első felvétel hamis, ezért kilépünk a ciklusból
+VAN:=(5&lt;=4); → VAN:=hamis
+</Explanation>
+<TaskLines>
+<Line01>     Eljárás Eldöntés(N,A,van)</Line01>
+<Line02>     I:=1</Line02>
+<Line03>     Ciklus amíg (I&lt;=n) és (nem(T(A(i)))</Line03>
+<Line04>             I:=I+1</Line04>
+<Line05>     Ciklus vége</Line05>
+<Line06>     VAN:=I&lt;N;</Line06>
+<Line07>     Eljárás vége</Line07>
+</TaskLines>
+<Tasks>
+1.	
+Egy munkahelyen mindenki lottózik és a nyerőszámok kihúzása után összeírják, kinek hány találata volt. Volt-e valakinek ötöse?
 
-		2.	Egy évfolyam hallgatóinak ismerjük az életkorát. Van-e köztük olyan, aki már betöltött egy megadott életkort?
-	</Tasks>
+2.	
+Egy évfolyam hallgatóinak ismerjük az életkorát. Van-e köztük olyan, aki már betöltött egy megadott életkort?
+</Tasks>
 </Task>

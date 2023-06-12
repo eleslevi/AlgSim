@@ -14,20 +14,16 @@ public partial class Eldontes_Page : ContentPage
     {
         InitializeComponent();
         
-        XmlDocument eldontesDoc = new XmlDocument();
-        eldontesDoc.Load(this.GetType().Assembly.GetManifestResourceStream("AlgSim.Resources.ContentXMLs.Eldontes_Content.xml"));
+        XmlDocument EldontesDoc = new XmlDocument();
+        EldontesDoc.Load(this.GetType().Assembly.GetManifestResourceStream("AlgSim.Resources.ContentXMLs.Eldontes_Content.xml"));
 
-        explanation_label.Text = eldontesDoc.SelectSingleNode("Task/Explanation").InnerText;
-
-        tasks_label.Text = eldontesDoc.SelectSingleNode("Task/Tasks").InnerText;
-
-        task_line_1.Text = eldontesDoc.SelectSingleNode("Task/TaskLines/Line01").InnerText;
-        task_line_2.Text = eldontesDoc.SelectSingleNode("Task/TaskLines/Line02").InnerText;
-        task_line_3.Text = eldontesDoc.SelectSingleNode("Task/TaskLines/Line03").InnerText;
-        task_line_4.Text = eldontesDoc.SelectSingleNode("Task/TaskLines/Line04").InnerText;
-        task_line_5.Text = eldontesDoc.SelectSingleNode("Task/TaskLines/Line05").InnerText;
-        task_line_6.Text = eldontesDoc.SelectSingleNode("Task/TaskLines/Line06").InnerText;
-        task_line_7.Text = eldontesDoc.SelectSingleNode("Task/TaskLines/Line07").InnerText;
+        task_line_1.Text = EldontesDoc.SelectSingleNode("Task/TaskLines/Line01").InnerText;
+        task_line_2.Text = EldontesDoc.SelectSingleNode("Task/TaskLines/Line02").InnerText;
+        task_line_3.Text = EldontesDoc.SelectSingleNode("Task/TaskLines/Line03").InnerText;
+        task_line_4.Text = EldontesDoc.SelectSingleNode("Task/TaskLines/Line04").InnerText;
+        task_line_5.Text = EldontesDoc.SelectSingleNode("Task/TaskLines/Line05").InnerText;
+        task_line_6.Text = EldontesDoc.SelectSingleNode("Task/TaskLines/Line06").InnerText;
+        task_line_7.Text = EldontesDoc.SelectSingleNode("Task/TaskLines/Line07").InnerText;
 
         picker_SelectedIndexChanged(picker, EventArgs.Empty);
     }

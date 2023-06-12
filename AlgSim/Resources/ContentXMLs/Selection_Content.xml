@@ -1,59 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Task>
-	<Explanation>
-		Feladat: Adott egy N elemből álló sorozat (A) és egy rajtuk értelmezhető tulajdonság (T). Adjuk meg azokat az elemeket, amelyek rendelkeznek ezzel a tulajdonsággal (B sorozat) és ezek darabszámát.
+<Explanation>
+Feladat: Adott egy N elemből álló sorozat (A) és egy rajtuk értelmezhető tulajdonság (T). Adjuk meg azokat az elemeket, amelyek rendelkeznek ezzel a tulajdonsággal (B sorozat) és ezek darabszámát.
 
-		Megoldás: Kezdetben a darabszám=0. A kiválogatás úgy történik, hogy egy számlálásos ciklussal végigmegyünk az összes elemen és mindegyiknél megvizsgáljuk, hogy ő rendelkezik-e a megadott tulajdonsággal, vagy nem. Ha rendelkezik vele, akkor növeljük egyel a darabszámot és egy másik sorozat (B) ennyiedik (darabszám) helyére tesszük. Ha nem rendelkezik vele, akkor nem csinálunk semmit, csak továbblépünk a ciklussal. A ciklus lefutása után a B sorozat tartalmazza az összes T tulajdonsággal rendelkező elemet.
+Megoldás: Kezdetben a darabszám=0. A kiválogatás úgy történik, hogy egy számlálásos ciklussal végigmegyünk az összes elemen és mindegyiknél megvizsgáljuk, hogy ő rendelkezik-e a megadott tulajdonsággal, vagy nem. Ha rendelkezik vele, akkor növeljük egyel a darabszámot és egy másik sorozat (B) ennyiedik (darabszám) helyére tesszük. Ha nem rendelkezik vele, akkor nem csinálunk semmit, csak továbblépünk a ciklussal. A ciklus lefutása után a B sorozat tartalmazza az összes T tulajdonsággal rendelkező elemet.
 
-		Példa: A sorozat (A): 5, 4, 2, 7
+Példa: A sorozat (A): 5, 4, 2, 7
 
-		Az darabszám kezdetben: 0
-		Elemszám (N): 4
-		T: páros szám
-		B sorozat üres
+Az darabszám kezdetben: 0
+Elemszám (N): 4
+T: páros szám
+B sorozat üres
 
-		Ciklus I:=1-től 4-ig
-		Ha T(A(I)) akkor DB:=DB+1; B(DB):=A(I);
-		Ciklus vége
+Ciklus I:=1-től 4-ig
+Ha T(A(I)) akkor DB:=DB+1; B(DB):=A(I);
+Ciklus vége
 
-		A ciklus első végrehajtásakor:
-		i=1,  A[1]=5
-		páros(5)=hamis   csak továbblépünk, db és a B sorozat nem változik
-		db=0;  B sorozat üres
+A ciklus első végrehajtásakor:
+i=1,  A[1]=5
+páros(5)=hamis   csak továbblépünk, db és a B sorozat nem változik
+db=0;  B sorozat üres
 
-		A ciklus második végrehajtásakor:
-		i=2,  A[2]=4
-		páros(4)=igaz
-		db:=db+1  db:=0+1  db=1
-		B(1):=4  B sorozat=4
+A ciklus második végrehajtásakor:
+i=2,  A[2]=4
+páros(4)=igaz
+db:=db+1  db:=0+1  db=1
+B(1):=4  B sorozat=4
 
-		A ciklus harmadik végrehajtásakor:
-		i=3,  A[3]=2
-		páros(2)=igaz
-		db:=db+1  db:=1+1  db=2
-		B(2):=2  B sorozat=4, 2
+A ciklus harmadik végrehajtásakor:
+i=3,  A[3]=2
+páros(2)=igaz
+db:=db+1  db:=1+1  db=2
+B(2):=2  B sorozat=4, 2
 
-		A ciklus negyedik végrehajtásakor:
-		i=4,  A[4]=7
-		páros(7)=hamis  csak továbblépünk, db és a B sorozat nem változik
-		db=2; B sorozat=4, 2
+A ciklus negyedik végrehajtásakor:
+i=4,  A[4]=7
+páros(7)=hamis  csak továbblépünk, db és a B sorozat nem változik
+db=2; B sorozat=4, 2
 
-		A ciklus végrehajtása itt befejeződik, mivel i értéke elérte a 4-et. Megkaptuk az A sorozat T tulajdonsággal rendelkező elemeit a B sorozatban és ezek darabszámát a db változóban. Ennek kiíratása, vagy vele valamilyen művelet végzése a ciklus után történhet.
-	</Explanation>
-	<TaskLines>
-		<Line1>Ciklus I:=1-től N-ig</Line1>
-		<Line2>DB:=0;</Line2>
-		<Line3>Ciklus I:=1-től N-ig</Line3>
-		<Line4>   Ha T(A[I])akkor</Line4>
-		<Line5>      DB:=DB+1;</Line5>
-		<Line6>      B[DB]=A[I]</Line6>
-		<Line7>     Elágazás vége</Line7>
-		<Line8>   Ciklus vége</Line8>
-		<Line9>Eljárás vége</Line9>
-	</TaskLines>
-	<Tasks>
-		1.	Adott egy számsorozat, válogassuk ki belőle a negatív számokat!
+A ciklus végrehajtása itt befejeződik, mivel i értéke elérte a 4-et. Megkaptuk az A sorozat T tulajdonsággal rendelkező elemeit a B sorozatban és ezek darabszámát a db változóban. Ennek kiíratása, vagy vele valamilyen művelet végzése a ciklus után történhet.
+</Explanation>
+<TaskLines>
+<Line1>     Eljárás Kiválogatás(N,A,DB,B)</Line1>
+<Line2>             DB:=0;</Line2>
+<Line3>             Ciklus I:=1-től N-ig</Line3>
+<Line4>                     Ha T(A[I])akkor</Line4>
+<Line5>                             DB:=DB+1;</Line5>
+<Line6>                             B[DB]=A[I]</Line6>
+<Line7>                     Elágazás vége</Line7>
+<Line8>             Ciklus vége</Line8>
+<Line9>     Eljárás vége</Line9>
+</TaskLines>
+<Tasks>
+1.	
+Adott egy számsorozat, válogassuk ki belőle a negatív számokat!
 
-		2.	Ismerjük a ZH eredményeket, ez alapján add meg, hogy kiknek sikerült teljesíteni a követelményeket!
-	</Tasks>
+2.	
+Ismerjük a ZH eredményeket, ez alapján add meg, hogy kiknek sikerült teljesíteni a követelményeket!
+</Tasks>
 </Task>

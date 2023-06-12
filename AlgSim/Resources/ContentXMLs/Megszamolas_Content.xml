@@ -1,59 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Task>
-	<Explanation>
-		Feladat: Adott egy N elemből álló sorozat (A) és egy rajtuk értelmezhető tulajdonság (T). Számoljuk meg, hogy hány darab T tulajdonsággal rendelkező eleme van a sorozatnak!
+<Explanation>
+Feladat: Adott egy N elemből álló sorozat (A) és egy rajtuk értelmezhető tulajdonság (T). Számoljuk meg, hogy hány darab T tulajdonsággal rendelkező eleme van a sorozatnak!
 
-		Megoldás: Kezdetben a darabszám=0. A megszámolás úgy történik, hogy egy számlálásos ciklussal végigmegyünk az összes elemen és mindegyiknél megvizsgáljuk, hogy ő rendelkezik-e a megadott tulajdonsággal, vagy nem. Ha rendelkezik vele, akkor növeljük egyel a darabszámot, ha nem rendelkezik vele, akkor nem csinálunk semmit, csak továbblépünk a ciklussal.
+Megoldás: Kezdetben a darabszám=0. A megszámolás úgy történik, hogy egy számlálásos ciklussal végigmegyünk az összes elemen és mindegyiknél megvizsgáljuk, hogy ő rendelkezik-e a megadott tulajdonsággal, vagy nem. Ha rendelkezik vele, akkor növeljük egyel a darabszámot, ha nem rendelkezik vele, akkor nem csinálunk semmit, csak továbblépünk a ciklussal.
 
-		Példa: A sorozat (A): 5, 4, 2, 7
+Példa: A sorozat (A): 5, 4, 2, 7
 
-		Példa: A sorozat (A): 5, 4, 2, 7
+Példa: A sorozat (A): 5, 4, 2, 7
 
-		Az darabszám kezdetben: 0
-		Elemszám (N): 4
-		T: páros szám
+Az darabszám kezdetben: 0
+Elemszám (N): 4
+T: páros szám
 
-		Ciklus I:=1-től 4-ig
-		Ha T(A(I)) akkor DB:=DB+1;
-		Ciklus vége
+Ciklus I:=1-től 4-ig
+Ha T(A(I)) akkor DB:=DB+1;
+Ciklus vége
 
-		A ciklus első végrehajtásakor:
-		i=1,  A[1]=5
-		páros(5)=hamis → csak továbblépünk, db értéke változik
-		db=0
+A ciklus első végrehajtásakor:
+i=1,  A[1]=5
+páros(5)=hamis → csak továbblépünk, db értéke változik
+db=0
 
-		A ciklus második végrehajtásakor:
-		i=2,  A[2]=4
-		páros(4)=igaz
-		db:=db+1 → db:=0+1  db=1
+A ciklus második végrehajtásakor:
+i=2,  A[2]=4
+páros(4)=igaz
+db:=db+1 → db:=0+1  db=1
 
-		A ciklus harmadik végrehajtásakor:
-		i=3,  A[3]=2
-		páros(2)=igaz
-		db:=db+1 → db:=1+1  db=2
+A ciklus harmadik végrehajtásakor:
+i=3,  A[3]=2
+páros(2)=igaz
+db:=db+1 → db:=1+1  db=2
 
-		A ciklus negyedik végrehajtásakor:
-		i=4,  A[4]=7
-		páros(7)=hamis → csak továbblépünk, db értéke nem változik
-		db=2
+A ciklus negyedik végrehajtásakor:
+i=4,  A[4]=7
+páros(7)=hamis → csak továbblépünk, db értéke nem változik
+db=2
 
-		A ciklus végrehajtása itt befejeződik, mivel i értéke elérte a 4-et. Megkaptuk az A sorozat T tulajdonsággal rendelkező elemeinek számát a db változóban.
-	</Explanation>
-	<TaskLines>
-		<Line01>Metódus Megszámolás(N,A,db)</Line01>
-		<Line02>	Ciklus i=1-től N-ig</Line02>
-		<Line03>		Ha T(A(i)) akkor db=db+1</Line03>
-		<Line04>		Elágazás vége</Line04>
-		<Line05>	Ciklus vége</Line05>
-		<Line06>Metódus vége</Line06>
-	</TaskLines>
-	<Tasks>
-		1.	Ismerjük egy évfolyam órarendjét, számoljuk meg, hány informatika órájuk van egy héten!
+A ciklus végrehajtása itt befejeződik, mivel i értéke elérte a 4-et. Megkaptuk az A sorozat T tulajdonsággal rendelkező elemeinek számát a db változóban.
+</Explanation>
+<TaskLines>
+<Line01>     Eljárás Megszámolás(N,A,db)</Line01>
+<Line02>     Ciklus i=1-től N-ig</Line02>
+<Line03>             Ha T(A(i)) akkor db=db+1</Line03>
+<Line04>     Elágazás vége</Line04>
+<Line05>     Ciklus vége</Line05>
+<Line06>     Eljárás vége</Line06>
+</TaskLines>
+<Tasks>
+1.	
+Ismerjük egy évfolyam órarendjét, számoljuk meg, hány informatika órájuk van egy héten!
 
-		2.	Adott egy évfolyam névsora, számoljuk meg, hogy hány lány jár oda!
+2.	
+Adott egy évfolyam névsora, számoljuk meg, hogy hány lány jár oda!
 
-		3.	Egy felmérést készítenek az iskolában arról, hogy hányan tanulnak angolul. Ehhez adott a hallgató neve és az, hogy az illető milyen nyelvet tanul.
+3.	
+Egy felmérést készítenek az iskolában arról, hogy hányan tanulnak angolul. Ehhez adott a hallgató neve és az, hogy az illető milyen nyelvet tanul.
 
-		4.	Májusban minden nap megmérjük a hőmérsékletet. Hány olyan nap volt, amikor 20 foknál többet mutatott a hőmérő?
-	</Tasks>
+4.	
+Májusban minden nap megmérjük a hőmérsékletet. Hány olyan nap volt, amikor 20 foknál többet mutatott a hőmérő?
+</Tasks>
 </Task>

@@ -1,60 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-              x:Class="AlgSim.MainPage">
+             x:Class="AlgSim.MainPage"
+             Shell.TabBarIsVisible="False">
     <!-- dotnet build -f net7.0-android  : for android apk build-->
-    <ScrollView>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
 
-            <Label Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Elemi tételek</Label>
-            <Button Grid.Row="1" Text="Összegzés" Command="{Binding Sum}"></Button>
-            <Button Grid.Row="2" Text="Eldöntés" Command="{Binding Decision}"></Button>
-            <Button Grid.Row="3" Text="Keresés" Command="{Binding Search}"></Button>
-            <Button Grid.Row="4" Text="Kiválasztás" Command="{Binding Selection}"></Button>
-            <Button Grid.Row="5" Text="Megszámlálás" Command="{Binding Count}"></Button>
-            <Button Grid.Row="6" Text="Maximumkiválasztás" Command="{Binding MaxSelection}"></Button>
-            
-            <Label Grid.Row="7" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Összetett tételek</Label>
-            <Button Grid.Row="8" Text="Másolás" Command="{Binding Copy}"></Button>
-            <Button Grid.Row="9" Text="Kiválogatás" Command="{Binding Picking}"></Button>
-            <Button Grid.Row="10" Text="Szétválogatás" Command="{Binding Splitting}"></Button>
-            <Button Grid.Row="11" Text="Egyesítés" Command="{Binding Union}"></Button>
-            
-            <Label Grid.Row="12" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Rendezések</Label>
-            <Button Grid.Row="13" Text="Egyszerű cserés" Command="{Binding Swap}"></Button>
-            <Button Grid.Row="14" Text="Minimumkiválasztásos" Command="{Binding MinSelection}"></Button>
-            <Button Grid.Row="15" Text="Buborék" Command="{Binding Bubble}"></Button>
-            <Button Grid.Row="16" Text="Metszet" Command="{Binding Intersection}"></Button>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
 
-            <Label Grid.Row="17" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Készítette</Label>
-            <Label Grid.Row="18" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Éles Levente</Label>
-            <Label Grid.Row="19" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Illyés Dávid</Label>
-            <Label Grid.Row="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Káldy József Álmos</Label>
-            <Label Grid.Row="21" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Kopasz-Bódi Tibor</Label>
-        </Grid>
-    </ScrollView>
+        <Label Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Elemi tételek</Label>
+        <Button Grid.Row="1" Text="Összegzés" Command="{Binding Sum}"/>
+        <Button Grid.Row="2" Text="Eldöntés" Command="{Binding Decision}"/>
+        <Button Grid.Row="3" Text="Kiválasztás" Command="{Binding Selection}"/>
+        <Button Grid.Row="4" Text="Keresés" Command="{Binding Search}"/>
+        <Button Grid.Row="5" Text="Megszámolás" Command="{Binding Count}"/>
+        <Button Grid.Row="6" Text="Maximumkiválasztás" Command="{Binding MaxSelection}"/>
+
+        <Label Grid.Row="7" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Összetett tételek</Label>
+        <Button Grid.Row="8" Text="Másolás" Command="{Binding Copy}"/>
+        <Button Grid.Row="9" Text="Kiválogatás" Command="{Binding Picking}"/>
+        <Button Grid.Row="10" Text="Szétválogatás" Command="{Binding Splitting}"/>
+        <Button Grid.Row="11" Text="Metszet" Command="{Binding Intersection}"/>
+        <Button Grid.Row="12" Text="Egyesítés" Command="{Binding Union}"/>
+
+        <Label Grid.Row="13" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large">Rendezések</Label>
+        <Button Grid.Row="14" Text="Egyszerű cserés" Command="{Binding Swap}"/>
+        <Button Grid.Row="15" Text="Minimumkiválasztásos" Command="{Binding MinSelection}"/>
+        <Button Grid.Row="16" Text="Buborékos" Command="{Binding Bubble}"/>
+
+        <HorizontalStackLayout Grid.Row="17" Padding="10" Spacing="10" HorizontalOptions="Center">
+            <Label Grid.Row="17" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Small">Készítette :</Label>
+            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Small">Éles Levente</Label>
+            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Small">Ilyés Dávid</Label>
+            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Small">Káldy József Álmos</Label>
+            <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Small">Kopasz-Bódi Tibor</Label>
+        </HorizontalStackLayout>
+    </Grid>
 </ContentPage>
