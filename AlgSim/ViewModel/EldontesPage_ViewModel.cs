@@ -1,8 +1,9 @@
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using System.Collections.Generic;
+using AlgSim.ViewModel;
 
-namespace AlgSim.ViewModel
+namespace AlgSim.View
 {
     public class EldontesPage_ViewModel : ViewModelBase
     {

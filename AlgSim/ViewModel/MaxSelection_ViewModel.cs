@@ -1,7 +1,8 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel.Design;
+using AlgSim.ViewModel;
 
-namespace AlgSim.ViewModel;
+namespace AlgSim.View;
 
 public class MaxSelection_ViewModel : ContentPage
 {

@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
+using AlgSim.ViewModel;
 
-namespace AlgSim.ViewModel;
+namespace AlgSim.View;
 
 public class Union_ViewModel : ContentPage
 {

@@ -5,8 +5,9 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AlgSim.ViewModel;
 
-namespace AlgSim.ViewModel
+namespace AlgSim.View
 {
     class BubbleOrderPage_ViewModel : ViewModelBase
     {

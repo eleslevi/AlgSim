@@ -1,7 +1,8 @@
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using AlgSim.ViewModel;
 
-namespace AlgSim.ViewModel
+namespace AlgSim.View
 {
     public class KivalasztasPage_ViewModel : ViewModelBase
     {

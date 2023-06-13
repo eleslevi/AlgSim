@@ -8,8 +8,7 @@
     xmlns:Explanation="clr-namespace:AlgSim.View.Explanation"
     xmlns:Task="clr-namespace:AlgSim.View.Task"
     Shell.FlyoutBehavior="{OnPlatform iOS=Flyout, Android=Flyout, WinUI=Locked, MacCatalyst=Locked}"
-    Shell.FlyoutItemIsVisible="False"
-    FlyoutBackgroundColor="Black">
+    Shell.FlyoutItemIsVisible="False">
 
     <FlyoutItem Title="Kezdőlap">
         <ShellContent Title="Kezdőlap"
@@ -20,8 +19,11 @@
         <ShellContent Title="Magyarázat"
         ContentTemplate="{DataTemplate Explanation:Sum_Explanation}"/>
 
-        <ShellContent Title="Szimuláció"
-        ContentTemplate="{DataTemplate View:Sum_Page}"/>
+        <ShellContent Title="Szimuláció" ContentTemplate="{DataTemplate View:Sum_Page}">
+            <ShellContent.BindingContext>
+                <View:SumPage_ViewModel></View:SumPage_ViewModel>
+            </ShellContent.BindingContext>
+        </ShellContent>
 
         <ShellContent Title="Feladatok"
         ContentTemplate="{DataTemplate Task:Sum_Task}"/>
@@ -31,8 +33,11 @@
         <ShellContent Title="Magyarázat"
         ContentTemplate="{DataTemplate Explanation:Eldontes_Explanation}"/>
 
-        <ShellContent Title="Szimuláció"
-        ContentTemplate="{DataTemplate View:Eldontes_Page}"/>
+        <ShellContent Title="Szimuláció" ContentTemplate="{DataTemplate View:Eldontes_Page}">
+            <ShellContent.BindingContext>
+                <View:EldontesPage_ViewModel></View:EldontesPage_ViewModel>
+            </ShellContent.BindingContext>
+        </ShellContent>
 
         <ShellContent Title="Feladatok"
         ContentTemplate="{DataTemplate Task:Eldontes_Task}"/>
@@ -42,8 +47,11 @@
         <ShellContent Title="Magyarázat"
         ContentTemplate="{DataTemplate Explanation:Kivalasztas_Explanation}"/>
 
-        <ShellContent Title="Szimuláció"
-        ContentTemplate="{DataTemplate View:Kivalasztas_Page}"/>
+        <ShellContent Title="Szimuláció" ContentTemplate="{DataTemplate View:Kivalasztas_Page}">
+            <ShellContent.BindingContext>
+                <View:KivalasztasPage_ViewModel></View:KivalasztasPage_ViewModel>
+            </ShellContent.BindingContext>
+        </ShellContent>
 
         <ShellContent Title="Feladatok"
         ContentTemplate="{DataTemplate Task:Kivalasztas_Task}"/>
@@ -53,8 +61,11 @@
         <ShellContent Title="Magyarázat"
         ContentTemplate="{DataTemplate Explanation:Kereses_Explanation}"/>
 
-        <ShellContent Title="Szimuláció"
-        ContentTemplate="{DataTemplate View:Kereses_Page}"/>
+        <ShellContent Title="Szimuláció" ContentTemplate="{DataTemplate View:Kereses_Page}">
+            <ShellContent.BindingContext>
+                <View:KeresesPage_ViewModel></View:KeresesPage_ViewModel>
+            </ShellContent.BindingContext>
+        </ShellContent>
 
         <ShellContent Title="Feladatok"
         ContentTemplate="{DataTemplate Task:Kereses_Task}"/>
@@ -64,8 +75,11 @@
         <ShellContent Title="Magyarázat"
         ContentTemplate="{DataTemplate Explanation:Megszamolas_Explanation}"/>
 
-        <ShellContent Title="Szimuláció"
-        ContentTemplate="{DataTemplate View:Megszamolas_Page}"/>
+        <ShellContent Title="Szimuláció" ContentTemplate="{DataTemplate View:Megszamolas_Page}">
+            <ShellContent.BindingContext>
+                <View:MegszamolasPage_ViewModel></View:MegszamolasPage_ViewModel>
+            </ShellContent.BindingContext>
+        </ShellContent>
 
         <ShellContent Title="Feladatok"
         ContentTemplate="{DataTemplate Task:Megszamolas_Task}"/>
@@ -75,8 +89,11 @@
         <ShellContent Title="Magyarázat"
         ContentTemplate="{DataTemplate Explanation:MaxSelection_Explanation}"/>
 
-        <ShellContent Title="Szimuláció"
-        ContentTemplate="{DataTemplate View:MaxSelection_Page}"/>
+        <ShellContent Title="Szimuláció" ContentTemplate="{DataTemplate View:MaxSelection_Page}">
+            <ShellContent.BindingContext>
+                <View:MaxSelection_ViewModel></View:MaxSelection_ViewModel>
+            </ShellContent.BindingContext>
+        </ShellContent>
 
         <ShellContent Title="Feladatok"
         ContentTemplate="{DataTemplate Task:MaxSelection_Task}"/>
@@ -86,8 +103,11 @@
         <ShellContent Title="Magyarázat"
         ContentTemplate="{DataTemplate Explanation:Copy_Explanation}"/>
 
-        <ShellContent Title="Szimuláció"
-        ContentTemplate="{DataTemplate View:CopyPage}"/>
+        <ShellContent Title="Szimuláció" ContentTemplate="{DataTemplate View:CopyPage}">
+            <ShellContent.BindingContext>
+                <View:CopyPage_ViewModel></View:CopyPage_ViewModel>
+            </ShellContent.BindingContext>
+        </ShellContent>
 
         <ShellContent Title="Feladatok"
         ContentTemplate="{DataTemplate Task:Copy_Task}"/>
@@ -97,8 +117,11 @@
         <ShellContent Title="Magyarázat"
         ContentTemplate="{DataTemplate Explanation:Selection_Explanation}"/>
 
-        <ShellContent Title="Szimuláció"
-        ContentTemplate="{DataTemplate View:SelectionPage}"/>
+        <ShellContent Title="Szimuláció" ContentTemplate="{DataTemplate View:SelectionPage}">
+            <ShellContent.BindingContext>
+                <View:SelectionPage_ViewModel></View:SelectionPage_ViewModel>
+            </ShellContent.BindingContext>
+        </ShellContent>
 
         <ShellContent Title="Feladatok"
         ContentTemplate="{DataTemplate Task:Selection_Task}"/>
@@ -108,8 +131,11 @@
         <ShellContent Title="Magyarázat"
         ContentTemplate="{DataTemplate Explanation:Splitting_Explanation}"/>
 
-        <ShellContent Title="Szimuláció"
-        ContentTemplate="{DataTemplate View:SplittingPage}"/>
+        <ShellContent Title="Szimuláció" ContentTemplate="{DataTemplate View:SplittingPage}">
+            <ShellContent.BindingContext>
+                <View:SplittingPage_ViewModel></View:SplittingPage_ViewModel>
+            </ShellContent.BindingContext>
+        </ShellContent>
 
         <ShellContent Title="Feladatok"
         ContentTemplate="{DataTemplate Task:Splitting_Task}"/>
@@ -119,8 +145,11 @@
         <ShellContent Title="Magyarázat"
         ContentTemplate="{DataTemplate Explanation:Intersection_Explanation}"/>
         
-        <ShellContent Title="Szimuláció"
-        ContentTemplate="{DataTemplate View:Intersection_Page}"/>
+        <ShellContent Title="Szimuláció" ContentTemplate="{DataTemplate View:Intersection_Page}">
+            <ShellContent.BindingContext>
+                <View:Intersection_ViewModel></View:Intersection_ViewModel>
+            </ShellContent.BindingContext>
+        </ShellContent>
 
         <ShellContent Title="Feladatok"
         ContentTemplate="{DataTemplate Task:Intersection_Task}"/>
@@ -130,8 +159,11 @@
         <ShellContent Title="Magyarázat"
         ContentTemplate="{DataTemplate Explanation:Union_Explanation}"/>
 
-        <ShellContent Title="Szimuláció"
-        ContentTemplate="{DataTemplate View:Union_Page}"/>
+        <ShellContent Title="Szimuláció" ContentTemplate="{DataTemplate View:Union_Page}">
+            <ShellContent.BindingContext>
+                <View:Union_ViewModel></View:Union_ViewModel>
+            </ShellContent.BindingContext>
+        </ShellContent>
 
         <ShellContent Title="Feladatok"
         ContentTemplate="{DataTemplate Task:Union_Task}"/>
@@ -141,8 +173,11 @@
         <ShellContent Title="Magyarázat"
         ContentTemplate="{DataTemplate Explanation:Swap_Explanation}"/>
 
-        <ShellContent Title="Szimuláció"
-        ContentTemplate="{DataTemplate View:Swap_Page}"/>
+        <ShellContent Title="Szimuláció" ContentTemplate="{DataTemplate View:Swap_Page}">
+            <ShellContent.BindingContext>
+                <View:Swap_ViewModel></View:Swap_ViewModel>
+            </ShellContent.BindingContext>
+        </ShellContent>
 
         <ShellContent Title="Feladatok"
         ContentTemplate="{DataTemplate Task:Swap_Task}"/>
@@ -152,8 +187,11 @@
         <ShellContent Title="Magyarázat"
         ContentTemplate="{DataTemplate Explanation:MinSelection_Explanation}"/>
 
-        <ShellContent Title="Szimuláció"
-        ContentTemplate="{DataTemplate View:MinSelection_Page}"/>
+        <ShellContent Title="Szimuláció" ContentTemplate="{DataTemplate View:MinSelection_Page}">
+            <ShellContent.BindingContext>
+                <View:MinSelection_ViewModel></View:MinSelection_ViewModel>
+            </ShellContent.BindingContext>
+        </ShellContent>
 
         <ShellContent Title="Feladatok"
         ContentTemplate="{DataTemplate Task:MinSelection_Task}"/>
@@ -163,8 +201,11 @@
         <ShellContent Title="Magyarázat"
         ContentTemplate="{DataTemplate Explanation:BubbleOrder_Explanation}"/>
 
-        <ShellContent Title="Szimuláció"
-        ContentTemplate="{DataTemplate View:BubbleOrderPage}"/>
+        <ShellContent Title="Szimuláció" ContentTemplate="{DataTemplate View:BubbleOrderPage}">
+            <ShellContent.BindingContext>
+                <View:BubbleOrderPage_ViewModel></View:BubbleOrderPage_ViewModel>
+            </ShellContent.BindingContext>
+        </ShellContent>
 
         <ShellContent Title="Feladatok"
         ContentTemplate="{DataTemplate Task:BubbleOrder_Task}"/>
