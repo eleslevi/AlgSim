@@ -13,7 +13,7 @@
         <VerticalStackLayout VerticalOptions="Center" 
                              Padding="{OnPlatform iOS=0, Android=0, WinUI=20, MacCatalyst=20}" 
                              Spacing="{OnPlatform iOS=0, Android=0, WinUI=20, MacCatalyst=20}" 
-                             Grid.ColumnSpan="{OnPlatform iOS=3, Android=3, WinUI=0, MacCatalyst=0}" 
+                             Grid.ColumnSpan="{OnPlatform iOS=3, Android=3, WinUI=1, MacCatalyst=1}" 
                              Grid.RowSpan="{OnPlatform iOS=1, Android=1, MacCatalyst=12, WinUI=12}" 
                              Grid.Column="{OnPlatform iOS=0, Android=0, MacCatalyst=3, WinUI=3}" 
                              Grid.Row="{OnPlatform iOS=0, Android=0, MacCatalyst=1, WinUI=1}">
